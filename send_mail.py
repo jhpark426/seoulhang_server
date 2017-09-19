@@ -10,7 +10,6 @@ from email.mime.text import MIMEText
 from email.mime.image import MIMEImage
 from email.mime.base import MIMEBase
 from email import encoders
-from bson.objectid import ObjectId
 from email.mime.text import MIMEText
 
 translate_data = {}

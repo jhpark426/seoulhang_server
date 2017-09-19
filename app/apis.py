@@ -561,7 +561,9 @@ class FindId(Resource):
                 pname = a['name']
                 pid = a['id']
                 ppass = a['password']
-
+                print("bbbb", pemail)
+                
+        print('aaaaaa', pemail)
         if pemail == "":
             print("이메일 확인하셈")
             return "No such player", 204
