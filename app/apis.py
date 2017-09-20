@@ -562,7 +562,7 @@ class FindId(Resource):
                 pid = a['id']
                 ppass = a['password']
                 print("bbbb", pemail)
-                
+
         print('aaaaaa', pemail)
         if pemail == "":
             print("이메일 확인하셈")
@@ -676,10 +676,21 @@ class UpdatePassword(Resource):
 
 class Withdrawal(Resource):
     def get(self, player_id, password):
+        pinfo = Player.query.filter(Player.id == player_id).first()
+        if pinfo.password != password:
+            return "password error", 204
+
         Player.query.filter(Player.id == player_id).delete()
+
         db.session.commit()
         return 0
 
+class RealWithdrawal(Resource):
+    def get(self, player_id):
+        Player.query.filter(Player.id == player_id).delete()
+
+        db.session.commit()
+        return 0
 
 api.add_resource(Hint,'/hint_player/<string:player_id>/call_code/<int:question_code>')
 api.add_resource(Checking,'/check_player/<string:player_id>')
@@ -699,4 +710,5 @@ api.add_resource(FindId,'/name/<string:name>/email/<string:email>')
 api.add_resource(FindPassword,'/name/<string:name>/email/<string:email>/id/<string:player_id>')
 api.add_resource(EnterCode,'/id/<string:player_id>/code/<string:code>')
 api.add_resource(UpdatePassword, '/id/<string:player_id>/password/<string:password>')
-api.add_resource(Withdrawal, '/delete/id/<string:player_id>/password/<string:password>')
+api.add_resource(Withdrawal, '/withdrawal/id/<string:player_id>/password/<string:password>')
+api.add_resource(RealWithdrawal, '/realwithdrawal/id/<string:player_id>')
