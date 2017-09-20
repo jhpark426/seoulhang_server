@@ -676,21 +676,22 @@ class UpdatePassword(Resource):
 
 class Withdrawal(Resource):
     def get(self, player_id, password):
+        print("여긴왓니1")
         pinfo = Player.query.filter(Player.id == player_id).first()
         if pinfo.password != password:
             return "password error", 204
 
-        Player.query.filter(Player.id == player_id).delete()
-
-        db.session.commit()
-        return 0
+        print("여긴왓니2")
+        return "success"
 
 class RealWithdrawal(Resource):
     def get(self, player_id):
+        print("여긴왓니11")
         Player.query.filter(Player.id == player_id).delete()
 
         db.session.commit()
-        return 0
+        print("여긴왓니22")
+        return "success"
 
 api.add_resource(Hint,'/hint_player/<string:player_id>/call_code/<int:question_code>')
 api.add_resource(Checking,'/check_player/<string:player_id>')
