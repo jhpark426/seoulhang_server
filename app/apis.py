@@ -531,7 +531,7 @@ class Regist(Resource):
 
         print("회원가입한다. %s"%player_id)
         print("이름%s"%name)
-        update_player=Player(id=player_id, password=password, name=name, gender=gender, age=age, email=email, point=0)
+        update_player=Player(id=player_id, password=password, nickname='', name=name, gender=gender, age=age, email=email, point=0)
         db.session.add(update_player)
         db.session.commit()
         print("playerid : %s"%player_id)
@@ -670,27 +670,36 @@ class UpdatePassword(Resource):
         pid = Player.query.filter(player_id == Player.id).first()
         pid.password = password
         db.session.commit()
-
+        print("비밀번호 변경")
         info = {"id": 'aa', "password" : 'aa', "name":'pname', "code": 'key'}
         return info
 
 class Withdrawal(Resource):
     def get(self, player_id, password):
-        print("여긴왓니1")
         pinfo = Player.query.filter(Player.id == player_id).first()
         if pinfo.password != password:
             return "password error", 204
 
-        print("여긴왓니2")
+        print("회원탈퇴를 시도한다..")
         return "success"
 
 class RealWithdrawal(Resource):
     def get(self, player_id):
-        print("여긴왓니11")
         Player.query.filter(Player.id == player_id).delete()
-
         db.session.commit()
-        print("여긴왓니22")
+        print("회원탈퇴를 했다.")
+        return "success"
+
+class EditProfile(Resource):
+    def get(self, player_id, password, nickname, email):
+        print("정보를 수정한다.")
+        player = Player.query.filter(Player.id == player_id).first()
+        if player.password != password:
+            return "password error", 204
+        player.nickname = nickname
+        player.email = email
+        db.session.commit()
+        print("수정 성공")
         return "success"
 
 api.add_resource(Hint,'/hint_player/<string:player_id>/call_code/<int:question_code>')
@@ -713,3 +722,4 @@ api.add_resource(EnterCode,'/id/<string:player_id>/code/<string:code>')
 api.add_resource(UpdatePassword, '/id/<string:player_id>/password/<string:password>')
 api.add_resource(Withdrawal, '/withdrawal/id/<string:player_id>/password/<string:password>')
 api.add_resource(RealWithdrawal, '/realwithdrawal/id/<string:player_id>')
+api.add_resource(EditProfile, '/editprofile/id/<string:player_id>/password/<string:password>/nickname/<string:nickname>/email/<string:email>')
