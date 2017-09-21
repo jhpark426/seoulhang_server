@@ -702,6 +702,16 @@ class EditProfile(Resource):
         print("수정 성공")
         return "success"
 
+class SendQuestionNumber(Resource):
+    def get(self, player_id):
+        pinven = Inventory.query.filter(Inventory.player_code == player_id).all()
+        pinvenlist = []
+        for i in pinven:
+            pinvenlist.append(int(i.question_code))
+
+        print("plyer inven", pinvenlist)
+        return pinvenlist
+
 api.add_resource(Hint,'/hint_player/<string:player_id>/call_code/<int:question_code>')
 api.add_resource(Checking,'/check_player/<string:player_id>')
 api.add_resource(PlayerUnit, '/playerunit/<string:player_id>')
@@ -723,3 +733,4 @@ api.add_resource(UpdatePassword, '/id/<string:player_id>/password/<string:passwo
 api.add_resource(Withdrawal, '/withdrawal/id/<string:player_id>/password/<string:password>')
 api.add_resource(RealWithdrawal, '/realwithdrawal/id/<string:player_id>')
 api.add_resource(EditProfile, '/editprofile/id/<string:player_id>/password/<string:password>/nickname/<string:nickname>/email/<string:email>')
+api.add_resource(SendQuestionNumber, '/quiznum/id/<string:player_id>')

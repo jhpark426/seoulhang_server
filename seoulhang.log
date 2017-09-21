@@ -1231,3 +1231,165 @@ WARNING:tornado.access:404 GET /withdrawal/id/qpqp/password/ (172.30.1.1) 1.70ms
 WARNING:tornado.access:404 GET /withdrawal/id/qpqp/password/ (172.30.1.1) 1.46ms
 WARNING:tornado.access:404 GET /withdrawal/id/qpqp/password/ (172.30.1.1) 1.12ms
 WARNING:tornado.access:404 GET /withdrawal/id/qpqp/password/ (172.30.1.1) 1.88ms
+INFO:tornado.access:204 GET /players/qpqp/password/qpqp (172.30.1.1) 15.83ms
+INFO:tornado.access:200 GET /players/qpqp/password/qpqpqp (172.30.1.1) 7.17ms
+INFO:tornado.access:200 GET /setting_language/qpqp/language/1 (172.30.1.1) 8.83ms
+INFO:tornado.access:200 GET /finish_player/qpqp (172.30.1.1) 7.64ms
+INFO:tornado.access:200 GET /start_player/qpqp (172.30.1.1) 5.50ms
+INFO:tornado.access:200 GET /finish_player/qpqp (172.30.1.1) 9.60ms
+INFO:tornado.access:200 GET /start_player/qpqp (172.30.1.1) 5.69ms
+INFO:tornado.access:200 GET /ranking/qpqp (172.30.1.1) 16.59ms
+INFO:tornado.access:200 GET /rate/qpqp (172.30.1.1) 86.90ms
+INFO:tornado.access:200 GET /finish_player/qpqp (172.30.1.1) 6.50ms
+INFO:tornado.access:204 GET /withdrawal/id/qpqp/password/qp (172.30.1.1) 6.72ms
+INFO:tornado.access:200 GET /withdrawal/id/qpqp/password/qpqpqp (172.30.1.1) 5.44ms
+INFO:tornado.access:200 GET /id/qpqp/password/qpqp (172.30.1.1) 9.59ms
+INFO:tornado.access:204 GET /players/qpqp/password/qpqpqpqp (172.30.1.1) 7.99ms
+INFO:tornado.access:204 GET /players/qpqp/password/qpqpqp (172.30.1.1) 6.61ms
+INFO:tornado.access:200 GET /players/qpqp/password/qpqp (172.30.1.1) 7.02ms
+INFO:tornado.access:200 GET /setting_language/qpqp/language/1 (172.30.1.1) 5.18ms
+INFO:tornado.access:200 GET /finish_player/qpqp (172.30.1.1) 5.91ms
+INFO:tornado.access:200 GET /start_player/qpqp (172.30.1.1) 4.11ms
+INFO:tornado.access:200 GET /finish_player/qpqp (172.30.1.1) 5.41ms
+INFO:tornado.access:200 GET /start_player/qpqp (172.30.1.1) 4.63ms
+INFO:tornado.access:200 GET /finish_player/qpqp (172.30.1.1) 5.27ms
+INFO:tornado.access:200 GET /rate/qpqp (172.30.1.1) 61.91ms
+INFO:tornado.access:200 GET /ranking/qpqp (172.30.1.1) 9.75ms
+INFO:tornado.access:200 GET /withdrawal/id/qpqp/password/qpqp (172.30.1.1) 4.42ms
+INFO:tornado.access:200 GET /id/qpqp/password/qpqpqpqp (172.30.1.1) 7.99ms
+INFO:tornado.access:200 GET /setting_language/qpqp/language/1 (172.30.1.1) 5.40ms
+INFO:tornado.access:200 GET /finish_player/qpqp (172.30.1.1) 5.90ms
+INFO:tornado.access:200 GET /start_player/qpqp (172.30.1.1) 4.56ms
+INFO:tornado.access:200 GET /finish_player/qpqp (172.30.1.1) 7.31ms
+INFO:tornado.access:200 GET /start_player/qpqp (172.30.1.1) 3.43ms
+INFO:tornado.access:200 GET /finish_player/qpqp (172.30.1.1) 5.72ms
+INFO:tornado.access:200 GET /ranking/qpqp (172.30.1.1) 10.22ms
+INFO:tornado.access:200 GET /rate/qpqp (172.30.1.1) 65.82ms
+INFO:tornado.access:204 GET /players/qpqp/password/qpqp (172.30.1.1) 7.22ms
+INFO:tornado.access:200 GET /players/qpqp/password/qpqpqpqp (172.30.1.1) 7.64ms
+INFO:tornado.access:200 GET /setting_language/qpqp/language/1 (172.30.1.1) 6.74ms
+INFO:tornado.access:200 GET /finish_player/qpqp (172.30.1.1) 5.16ms
+INFO:tornado.access:200 GET /start_player/qpqp (172.30.1.1) 3.60ms
+INFO:tornado.access:200 GET /finish_player/qpqp (172.30.1.1) 6.62ms
+INFO:tornado.access:200 GET /start_player/qpqp (172.30.1.1) 4.80ms
+INFO:tornado.access:200 GET /ranking/qpqp (172.30.1.1) 15.36ms
+INFO:tornado.access:200 GET /rate/qpqp (172.30.1.1) 64.27ms
+INFO:tornado.access:200 GET /finish_player/qpqp (172.30.1.1) 6.33ms
+INFO:tornado.access:200 GET /collect/qpqp/call_code/1 (127.0.0.1) 26.11ms
+INFO:tornado.access:200 GET /quiznum/id/qpqp (127.0.0.1) 4.39ms
+INFO:tornado.access:200 GET /collect/qpqp/call_code/2 (127.0.0.1) 17.99ms
+INFO:tornado.access:200 GET /quiznum/id/qpqp (127.0.0.1) 3.98ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+ERROR:tornado.application:Uncaught exception GET /quiznum/id/qpqp (127.0.0.1)
+HTTPServerRequest(protocol='http', host='localhost:5000', method='GET', uri='/quiznum/id/qpqp', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Connection': 'keep-alive', 'Accept-Encoding': 'gzip, deflate, br', 'Cache-Control': 'max-age=0', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36', 'Host': 'localhost:5000', 'Upgrade-Insecure-Requests': '1', 'Accept-Language': 'ko-KR,ko;q=0.8,en-US;q=0.6,en;q=0.4,ja;q=0.2'})
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/web.py", line 1422, in _execute
+    result = self.prepare()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/web.py", line 2681, in prepare
+    self.fallback(self.request)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/wsgi.py", line 277, in __call__
+    WSGIContainer.environ(request), start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/_compat.py", line 32, in reraise
+    raise value.with_traceback(tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/_compat.py", line 32, in reraise
+    raise value.with_traceback(tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 477, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/views.py", line 84, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 587, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py", line 713, in get
+    return int(pinvenlist)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'list'
+ERROR:tornado.access:500 GET /quiznum/id/qpqp (127.0.0.1) 18.29ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.access:200 GET /quiznum/id/qpqp (127.0.0.1) 5.25ms
+INFO:tornado.access:204 GET /players/qpqp/password/qpqp (172.30.1.1) 10.71ms
+INFO:tornado.access:204 GET /players/qpqp/password/qpqp (172.30.1.1) 7.17ms
+INFO:tornado.access:200 GET /players/qpqp/password/qpqpqpqp (172.30.1.1) 8.18ms
+INFO:tornado.access:200 GET /setting_language/qpqp/language/1 (172.30.1.1) 7.11ms
+INFO:tornado.access:200 GET /finish_player/qpqp (172.30.1.1) 9.65ms
+INFO:tornado.access:200 GET /start_player/qpqp (172.30.1.1) 21.47ms
+INFO:tornado.access:200 GET /finish_player/qpqp (172.30.1.1) 6.36ms
+INFO:tornado.access:200 GET /start_player/qpqp (172.30.1.1) 17.75ms
+INFO:tornado.access:200 GET /finish_player/qpqp (172.30.1.1) 9.52ms
+INFO:tornado.access:200 GET /rate/qpqp (172.30.1.1) 75.65ms
+INFO:tornado.access:200 GET /ranking/qpqp (172.30.1.1) 10.11ms
+WARNING:tornado.access:404 GET /quiznum/id/qpqp/ (172.30.1.1) 16.05ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.access:200 GET /quiznum/id/qpqp (127.0.0.1) 6.16ms
+INFO:tornado.access:200 GET /players/qpqp/password/qpqpqpqp (172.30.1.1) 8.42ms
+INFO:tornado.access:200 GET /setting_language/qpqp/language/1 (172.30.1.1) 7.32ms
+INFO:tornado.access:200 GET /finish_player/qpqp (172.30.1.1) 9.27ms
+INFO:tornado.access:200 GET /start_player/qpqp (172.30.1.1) 17.02ms
+INFO:tornado.access:200 GET /finish_player/qpqp (172.30.1.1) 11.92ms
+INFO:tornado.access:200 GET /start_player/qpqp (172.30.1.1) 19.14ms
+INFO:tornado.access:200 GET /ranking/qpqp (172.30.1.1) 12.15ms
+INFO:tornado.access:200 GET /finish_player/qpqp (172.30.1.1) 8.30ms
+INFO:tornado.access:200 GET /rate/qpqp (172.30.1.1) 76.96ms
+WARNING:tornado.access:404 GET /quiznum/id/qpqp/ (172.30.1.1) 12.99ms
+WARNING:tornado.access:404 GET /quiznum/id/qpqp/ (172.30.1.1) 1.39ms
+INFO:tornado.access:200 GET /players/qpqp/password/qpqpqpqp (172.30.1.1) 6.03ms
+INFO:tornado.access:200 GET /setting_language/qpqp/language/1 (172.30.1.1) 6.18ms
+INFO:tornado.access:200 GET /finish_player/qpqp (172.30.1.1) 10.33ms
+INFO:tornado.access:200 GET /start_player/qpqp (172.30.1.1) 18.27ms
+INFO:tornado.access:200 GET /finish_player/qpqp (172.30.1.1) 6.13ms
+INFO:tornado.access:200 GET /start_player/qpqp (172.30.1.1) 21.12ms
+INFO:tornado.access:200 GET /finish_player/qpqp (172.30.1.1) 7.56ms
+INFO:tornado.access:200 GET /rate/qpqp (172.30.1.1) 75.77ms
+INFO:tornado.access:200 GET /ranking/qpqp (172.30.1.1) 12.55ms
+INFO:tornado.access:200 GET /quiznum/id/qpqp (172.30.1.1) 4.07ms
+INFO:tornado.access:200 GET /quiznum/id/qpqp (172.30.1.1) 3.91ms
+INFO:tornado.access:200 GET /players/qpqp/password/qpqpqpqp (172.30.1.1) 6.91ms
+INFO:tornado.access:200 GET /setting_language/qpqp/language/1 (172.30.1.1) 6.39ms
+INFO:tornado.access:200 GET /finish_player/qpqp (172.30.1.1) 7.80ms
+INFO:tornado.access:200 GET /start_player/qpqp (172.30.1.1) 15.09ms
+INFO:tornado.access:200 GET /finish_player/qpqp (172.30.1.1) 6.26ms
+INFO:tornado.access:200 GET /start_player/qpqp (172.30.1.1) 12.76ms
+INFO:tornado.access:200 GET /ranking/qpqp (172.30.1.1) 10.73ms
+INFO:tornado.access:200 GET /finish_player/qpqp (172.30.1.1) 5.98ms
+INFO:tornado.access:200 GET /rate/qpqp (172.30.1.1) 67.00ms
+INFO:tornado.access:200 GET /quiznum/id/qpqp (172.30.1.1) 4.80ms
+INFO:tornado.access:200 GET /players/qpqp/password/qpqpqpqp (172.30.1.1) 7.85ms
+INFO:tornado.access:200 GET /setting_language/qpqp/language/1 (172.30.1.1) 5.99ms
+INFO:tornado.access:200 GET /finish_player/qpqp (172.30.1.1) 8.18ms
+INFO:tornado.access:200 GET /start_player/qpqp (172.30.1.1) 14.42ms
+INFO:tornado.access:200 GET /rate/qpqp (172.30.1.1) 68.53ms
+INFO:tornado.access:200 GET /start_player/qpqp (172.30.1.1) 17.51ms
+INFO:tornado.access:200 GET /finish_player/qpqp (172.30.1.1) 6.95ms
+INFO:tornado.access:200 GET /finish_player/qpqp (172.30.1.1) 9.46ms
+INFO:tornado.access:200 GET /ranking/qpqp (172.30.1.1) 15.49ms
+INFO:tornado.access:200 GET /quiznum/id/qpqp (172.30.1.1) 4.21ms
+INFO:tornado.access:200 GET /collect/qpqp/call_code/1002 (172.30.1.1) 21.85ms
+INFO:tornado.access:200 GET /check_player/qpqp (172.30.1.1) 8.25ms
+INFO:tornado.access:200 GET /setting_language/qpqp/language/1 (172.30.1.1) 5.84ms
+INFO:tornado.access:200 GET /finish_player/qpqp (172.30.1.1) 7.62ms
+INFO:tornado.access:200 GET /start_player/qpqp (172.30.1.1) 17.90ms
+INFO:tornado.access:200 GET /finish_player/qpqp (172.30.1.1) 6.42ms
+INFO:tornado.access:200 GET /start_player/qpqp (172.30.1.1) 22.89ms
+INFO:tornado.access:200 GET /finish_player/qpqp (172.30.1.1) 6.92ms
+INFO:tornado.access:200 GET /rate/qpqp (172.30.1.1) 86.96ms
+INFO:tornado.access:200 GET /ranking/qpqp (172.30.1.1) 10.20ms
+INFO:tornado.access:200 GET /quiznum/id/qpqp (172.30.1.1) 5.95ms
