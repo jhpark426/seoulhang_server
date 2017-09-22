@@ -527,15 +527,30 @@ class CheckID(Resource):
         return player_id
 
 class Regist(Resource):
-    def get(self, player_id, password, name, gender, age, email):
+    def get(self, player_id, password, name, gender, age ,email, logininfo):
 
         print("회원가입한다. %s"%player_id)
         print("이름%s"%name)
-        update_player=Player(id=player_id, password=password, nickname='', name=name, gender=gender, age=age, email=email, point=0)
-        db.session.add(update_player)
-        db.session.commit()
-        print("playerid : %s"%player_id)
+        print("로그인정보", logininfo)
 
+        if logininfo != 'normal':
+            print("로그인정보", logininfo)
+            player = Player.query.filter(Player.id == player_id).first()
+            if player is None:
+                insert_player=Player(id=player_id, password=password, nickname='', name=name, gender=gender, age=age, email=email, logininfo=logininfo, point=0)
+                db.session.add(insert_player)
+                db.session.commit()
+                print("playerid : %s"%player_id)
+
+                return player_id
+            return player_id
+        else:
+            insert_player=Player(id=player_id, password=password, nickname='', name=name, gender=gender, age=age,logininfo=logininfo, email=email, point=0)
+            db.session.add(insert_player)
+            db.session.commit()
+            print("playerid : %s"%player_id)
+
+            return player_id
         return player_id
 
 class FindId(Resource):
@@ -712,6 +727,28 @@ class SendQuestionNumber(Resource):
         print("plyer inven", pinvenlist)
         return pinvenlist
 
+class StartGame(Resource):
+    def get(self, player_id):
+        player = Player.query.filter(Player.id ==player_id).first()
+        print("nickname", player.nickname)
+        if player.nickname == "":
+            print("nickname없다.")
+            return 1
+        print("nickname 있다.")
+        return 0
+
+class NewNickname(Resource):
+    def get (self, player_id, nickname):
+        player = Player.query.filter(Player.id == player_id).first()
+        nickname = player.query.filter(Player.nickname == nickname).first()
+        if not nickname is None:
+            return "already nickname", 204
+
+        player.nickname = nickname
+        db.session.commit()
+        print("수정 성공")
+        return "success"
+
 api.add_resource(Hint,'/hint_player/<string:player_id>/call_code/<int:question_code>')
 api.add_resource(Checking,'/check_player/<string:player_id>')
 api.add_resource(PlayerUnit, '/playerunit/<string:player_id>')
@@ -724,7 +761,7 @@ api.add_resource(Inventoryupdating,'/update_player/<string:player_id>/call_code/
 api.add_resource(Questionstartlist,'/start_player/<string:player_id>')
 api.add_resource(Questionfinishlist,'/finish_player/<string:player_id>')
 api.add_resource(SettingLanguage, '/setting_language/<string:player_id>/language/<int:language>')
-api.add_resource(Regist,'/id/<string:player_id>/pass/<string:password>/name/<string:name>/gender/<string:gender>/age/<int:age>/email/<string:email>')
+api.add_resource(Regist,'/id/<string:player_id>/pass/<string:password>/name/<string:name>/gender/<string:gender>/age/<int:age>/email/<string:email>/logininfo/<string:logininfo>')
 api.add_resource(CheckID,'/checkid/<string:player_id>')
 api.add_resource(FindId,'/name/<string:name>/email/<string:email>')
 api.add_resource(FindPassword,'/name/<string:name>/email/<string:email>/id/<string:player_id>')
@@ -734,3 +771,5 @@ api.add_resource(Withdrawal, '/withdrawal/id/<string:player_id>/password/<string
 api.add_resource(RealWithdrawal, '/realwithdrawal/id/<string:player_id>')
 api.add_resource(EditProfile, '/editprofile/id/<string:player_id>/password/<string:password>/nickname/<string:nickname>/email/<string:email>')
 api.add_resource(SendQuestionNumber, '/quiznum/id/<string:player_id>')
+api.add_resource(StartGame, '/startgame/id/<string:player_id>')
+api.add_resource(NewNickname,'/newnickname/id/<string:player_id>/nickname/<string:nickname>')
