@@ -32,9 +32,10 @@ class Player(db.Model):
     grade=db.Column(db.String(64))
     hint=db.Column(db.Integer)
     language=db.Column(db.Integer)
+    logininfo=db.Column(db.String)
     create_time=db.Column(db.DateTime)
 
-    def __init__(self,id,name,password,nickname,email,gender,age,point=0,questionstatus=0,grade="Unrank",hint=1,language=0,create_time=None):
+    def __init__(self,id,name,password,nickname,email,gender,age,point=0,questionstatus=0,grade="Unrank",hint=1,language=0,logininfo="normal",create_time=None):
         self.id=id
         self.name=name
         self.password=password
@@ -46,6 +47,7 @@ class Player(db.Model):
         self.questionstatus=questionstatus
         self.grade=grade
         self.hint=hint
+        self.logininfo=logininfo
         self.language=language
         if create_time is None:
             create_time=datetime.utcnow()
