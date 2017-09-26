@@ -4911,3 +4911,4 @@ INFO:tornado.access:200 GET /finish_player/qpqp (172.30.1.1) 5.52ms
 INFO:tornado.access:200 GET /rate/qpqp (172.30.1.1) 60.41ms
 INFO:tornado.access:200 GET /ranking/qpqp (172.30.1.1) 10.97ms
 INFO:tornado.access:200 GET /quiznum/id/qpqp (172.30.1.1) 4.21ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/loads.py modified; restarting server
