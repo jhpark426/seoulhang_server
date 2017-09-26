@@ -25,8 +25,6 @@ class Player(db.Model):
     password=db.Column(db.String(64))
     nickname=db.Column(db.String)
     email=db.Column(db.String(64))
-    gender=db.Column(db.String(64))
-    age=db.Column(db.Integer)
     point=db.Column(db.Integer)
     questionstatus=db.Column(db.Integer)
     grade=db.Column(db.String(64))
@@ -35,14 +33,12 @@ class Player(db.Model):
     logininfo=db.Column(db.String)
     create_time=db.Column(db.DateTime)
 
-    def __init__(self,id,name,password,nickname,email,gender,age,point=0,questionstatus=0,grade="Unrank",hint=1,language=0,logininfo="normal",create_time=None):
+    def __init__(self,id,name,password,nickname,email,point=0,questionstatus=0,grade="Unrank",hint=1,language=0,logininfo="normal",create_time=None):
         self.id=id
         self.name=name
         self.password=password
         self.nickname=nickname
         self.email=email
-        self.gender=gender
-        self.age=age
         self.point=point
         self.questionstatus=questionstatus
         self.grade=grade

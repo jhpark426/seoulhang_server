@@ -51,7 +51,6 @@ class PlayerUnit(Resource):
             if p is None: return "No such player", 204
 
             player_pass = p.password
-            player_gender = p.gender
             player_birth = p.birth
             player = make_plain_dict(p)
 
@@ -527,7 +526,7 @@ class CheckID(Resource):
         return player_id
 
 class Regist(Resource):
-    def get(self, player_id, password, name, gender, age ,email, logininfo):
+    def get(self, player_id, password, name ,email, logininfo):
 
         print("회원가입한다. %s"%player_id)
         print("이름%s"%name)
@@ -537,7 +536,7 @@ class Regist(Resource):
             print("로그인정보", logininfo)
             player = Player.query.filter(Player.id == player_id).first()
             if player is None:
-                insert_player=Player(id=player_id, password=password, nickname='', name=name, gender=gender, age=age, email=email, logininfo=logininfo, point=0)
+                insert_player=Player(id=player_id, password=password, nickname='', name=name, email=email, logininfo=logininfo, point=0)
                 db.session.add(insert_player)
                 db.session.commit()
                 print("playerid : %s"%player_id)
@@ -545,7 +544,7 @@ class Regist(Resource):
                 return player_id
             return player_id
         else:
-            insert_player=Player(id=player_id, password=password, nickname='', name=name, gender=gender, age=age,logininfo=logininfo, email=email, point=0)
+            insert_player=Player(id=player_id, password=password, nickname='', name=name, logininfo=logininfo, email=email, point=0)
             db.session.add(insert_player)
             db.session.commit()
             print("playerid : %s"%player_id)
@@ -761,7 +760,7 @@ api.add_resource(Inventoryupdating,'/update_player/<string:player_id>/call_code/
 api.add_resource(Questionstartlist,'/start_player/<string:player_id>')
 api.add_resource(Questionfinishlist,'/finish_player/<string:player_id>')
 api.add_resource(SettingLanguage, '/setting_language/<string:player_id>/language/<int:language>')
-api.add_resource(Regist,'/id/<string:player_id>/pass/<string:password>/name/<string:name>/gender/<string:gender>/age/<int:age>/email/<string:email>/logininfo/<string:logininfo>')
+api.add_resource(Regist,'/id/<string:player_id>/pass/<string:password>/name/<string:name>/email/<string:email>/logininfo/<string:logininfo>')
 api.add_resource(CheckID,'/checkid/<string:player_id>')
 api.add_resource(FindId,'/name/<string:name>/email/<string:email>')
 api.add_resource(FindPassword,'/name/<string:name>/email/<string:email>/id/<string:player_id>')
