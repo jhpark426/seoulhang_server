@@ -90,10 +90,12 @@ class QuestionCollection(Resource):
         else:
             get_question=Eng.query.filter(Eng.question_code==question_code).first()
 
-        check_inven = Inventory.query.filter(Inventory.question_code==question_code and Inventory.player_code==player_id).first()
-        print("asdlfadsf", make_plain_dict(check_inven))
+        print("aaaaaaa", player_id)
+        check_inven = Inventory.query.filter(Inventory.question_code==question_code).first()
+        
 
-        if check_inven == None:
+        if check_inven is None:
+            print("check_inven", check_inven)
             temp_inven=Inventory(id=len(all_index)+1, player_code=player_id, question_code=get_question.question_code, status='start')
             db.session.add(temp_inven)
             db.session.commit()
