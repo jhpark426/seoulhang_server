@@ -92,7 +92,7 @@ class QuestionCollection(Resource):
 
         print("aaaaaaa", player_id)
         check_inven = Inventory.query.filter(Inventory.question_code==question_code).first()
-        
+
 
         if check_inven is None:
             print("check_inven", check_inven)
@@ -185,7 +185,9 @@ class Ranking(Resource):
         for s in sorted_ranking:
             if player_id in s:
                 break
-            rank+=1
+            if not s.nickname is "":
+                if not s.nickname is None:
+                    rank+=1
 
         return_rank=[]
         temp={}
