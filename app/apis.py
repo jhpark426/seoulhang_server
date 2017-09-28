@@ -183,10 +183,12 @@ class Ranking(Resource):
 
         rank=1
         for s in sorted_ranking:
+            print('"asdfasdfasdf"', s)
             if player_id in s:
                 break
-            if not s.nickname is "":
-                if not s.nickname is None:
+            pid = Player.query.filter(Player.id==s[0]).first()
+            if not pid.nickname is "":
+                if not pid.nickname is None:
                     rank+=1
 
         return_rank=[]
