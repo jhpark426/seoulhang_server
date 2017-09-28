@@ -76,6 +76,7 @@ class PlayerUnit(Resource):
 class QuestionCollection(Resource):
 #   @profiling
     def get(self, player_id, question_code):
+
         print('---Call QuestionCollection %s %d---'%(player_id,question_code))
 
         player=Player.query.filter(Player.id==player_id).first()
@@ -89,7 +90,8 @@ class QuestionCollection(Resource):
         else:
             get_question=Eng.query.filter(Eng.question_code==question_code).first()
 
-        check_inven = Inventory.query.filter(Inventory.question_code==question_code).first()
+        check_inven = Inventory.query.filter(Inventory.question_code==question_code and Inventory.player_code==player_id).first()
+        print("asdlfadsf", make_plain_dict(check_inven))
 
         if check_inven == None:
             temp_inven=Inventory(id=len(all_index)+1, player_code=player_id, question_code=get_question.question_code, status='start')
@@ -102,7 +104,7 @@ class QuestionCollection(Resource):
             return 1
         else:
             print('%s player already has question'%player_id)
-            return 1
+            return 0
 
 class Inventoryupdating(Resource):
     def get(self,player_id,question_code):
@@ -209,8 +211,11 @@ class Ranking(Resource):
                 "rank":present_rank,
                 "grade":search_player.grade
             }
-            present_rank+=1
-            return_rank.append(temp)
+            if not search_player.nickname is '':
+                if not search_player.nickname is None:
+                    print("@@@@@@@@@@", search_player.nickname)
+                    present_rank+=1
+                    return_rank.append(temp)
 
         return return_rank
 
@@ -218,7 +223,6 @@ class Achievementrate(Resource):
     def get(self,player_id):
 
         print("---%s player call Achievement rate---"%player_id)
-
 
         player_question_list=Inventory.query.filter(Inventory.player_code==player_id).all()
 
@@ -261,6 +265,7 @@ class Achievementrate(Resource):
             for w in reference_list:
                 if val.region_code==w.region_code:
                     temp={
+                    "region_code":val.region_code,
                     "region_name":val.region_name,
                     "explain":val.explain,
                     "rate":int(check_dict[val.region_code]/rate_list[index]*100)
@@ -290,6 +295,7 @@ class Questionfinishlist(Resource):
                 "question":"",
                 "grade":search_player.grade
                 }
+            print(temp)
             question.append(temp)
             return question
 
@@ -305,12 +311,9 @@ class Questionfinishlist(Resource):
                     if search_player.language==0:
                         get_region=Question.query.filter(Question.question_code==s.question_code).first()
                         get_region_name = Region.query.filter(Region.region_code==get_region.region_code).first()
-
                     else:
-
                         get_region=Eng.query.filter(Eng.question_code==s.question_code).first()
                         get_region_name = EngRegion.query.filter(EngRegion.region_code==get_region.region_code).first()
-
 
                     temp={
                         "player_code":search_player.id,
@@ -356,6 +359,7 @@ class Questionstartlist(Resource):
         if len(get_inventory)==0:
             print("%s player has No question"%player_id)
             temp = {
+                "regioncode":"0",
                 "regionname":"0",
                 "questioncode":0,
                 "question":"",
@@ -379,6 +383,7 @@ class Questionstartlist(Resource):
 
             if flag!=1:
                 temp = {
+                    "regioncode":"0",
                     "regionname":"0",
                     "questioncode":0,
                     "question":"",
@@ -407,6 +412,7 @@ class Questionstartlist(Resource):
 
                 temp={}
                 temp={
+                    "regioncode":get_region.region_code,
                     "regionname":get_region.region_name,
                     "questioncode":get_question.question_code,
                     "question":get_question.question,
@@ -431,6 +437,7 @@ class Questionstartlist(Resource):
                             get_region = EngRegion.query.filter(EngRegion.region_code==get_question.region_code).first()
                         print("come3")
                         temp = {
+                            "regioncode":get_region.region_code,
                             "regionname":get_region.region_name,
                             "questioncode":get_question.question_code,
                             "question":get_question.question,
@@ -444,6 +451,7 @@ class Questionstartlist(Resource):
                 if len(question)==0:
                     print("%s player has no start question"%player_id)
                     temp = {
+                        "regioncode":"0",
                         "regionname":"0",
                         "questioncode":0,
                         "question":"",
@@ -540,9 +548,8 @@ class Regist(Resource):
                 db.session.add(insert_player)
                 db.session.commit()
                 print("playerid : %s"%player_id)
-
                 return player_id
-            return player_id
+            return player_id.nickname
         else:
             insert_player=Player(id=player_id, password=password, nickname='', name=name, logininfo=logininfo, email=email, point=0)
             db.session.add(insert_player)
@@ -736,11 +743,13 @@ class StartGame(Resource):
         print("nickname 있다.")
         return 0
 
+
 class NewNickname(Resource):
     def get (self, player_id, nickname):
+        print("nickname now", nickname)
         player = Player.query.filter(Player.id == player_id).first()
-        nickname = player.query.filter(Player.nickname == nickname).first()
-        if not nickname is None:
+        nownickname = player.query.filter(Player.nickname == nickname).first()
+        if not nownickname is None:
             return "already nickname", 204
 
         player.nickname = nickname
