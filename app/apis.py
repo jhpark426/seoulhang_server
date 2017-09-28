@@ -189,7 +189,7 @@ class Ranking(Resource):
         search_player= Player.query.filter(Player.id==player_id).first()
         temp={
             "player_id":search_player.id,
-            "player_name":search_player.name,
+            "player_name":search_player.nickname,
             "point":search_player.point,
             "rank":rank,
             "grade":search_player.grade
@@ -204,7 +204,7 @@ class Ranking(Resource):
             search_player= Player.query.filter(Player.id==s[0]).first()
             temp={
                 "player_id":search_player.id,
-                "player_name":search_player.name,
+                "player_name":search_player.nickname,
                 "point":search_player.point,
                 "rank":present_rank,
                 "grade":search_player.grade
@@ -282,7 +282,7 @@ class Questionfinishlist(Resource):
 
             temp={
                 "player_code":search_player.id,
-                "player_name":search_player.name,
+                "player_name":search_player.nickname,
                 "point":search_player.point,
                 "hint":search_player.hint,
                 "region_name":"0",
@@ -314,7 +314,7 @@ class Questionfinishlist(Resource):
 
                     temp={
                         "player_code":search_player.id,
-                        "player_name":search_player.name,
+                        "player_name":search_player.nickname,
                         "point":search_player.point,
                         "hint":search_player.hint,
                         "region_name":get_region_name.region_name,
@@ -329,7 +329,7 @@ class Questionfinishlist(Resource):
                 search_player=Player.query.filter(Player.id==player_id).first()
                 temp={
                     "player_code":search_player.id,
-                    "player_name":search_player.name,
+                    "player_name":search_player.nickname,
                     "point":search_player.point,
                     "hint":search_player.hint,
                     "region_name":"0",
