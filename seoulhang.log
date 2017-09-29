@@ -14199,3 +14199,5 @@ AttributeError: 'tuple' object has no attribute 'nickname'
 ERROR:tornado.access:500 GET /ranking/1439718482815328 (127.0.0.1) 19.60ms
 INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
 INFO:tornado.access:200 GET /ranking/1439718482815328 (127.0.0.1) 37.73ms
+INFO:tornado.access:200 GET /ranking/1439718482815328 (127.0.0.1) 7.97ms
+INFO:tornado.access:200 GET /ranking/aaa (127.0.0.1) 14.41ms
