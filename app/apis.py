@@ -91,11 +91,11 @@ class QuestionCollection(Resource):
             get_question=Eng.query.filter(Eng.question_code==question_code).first()
 
         print("aaaaaaa", player_id)
-        check_inven = Inventory.query.filter(Inventory.question_code==question_code).first()
+        question_info = Inventory.query.filter(Inventory.question_code==question_code).first()
 
 
-        if check_inven is None:
-            print("check_inven", check_inven)
+        if question_info is None:
+            print("question_info", question_info)
             temp_inven=Inventory(id=len(all_index)+1, player_code=player_id, question_code=get_question.question_code, status='start')
             db.session.add(temp_inven)
             db.session.commit()
@@ -426,6 +426,7 @@ class Questionstartlist(Resource):
                     "hint":get_question.hint,
                     "questiontype": str(get_question.content_type)
                 }
+                print("temp answer", temp)
                 question.append(temp)
                 print("com2")
 
@@ -451,7 +452,7 @@ class Questionstartlist(Resource):
                             "hint":get_question.hint,
                             "questiontype": str(get_question.content_type)
                         }
-
+                        print("temp answer", temp)
                         question.append(temp)
                         print("come4")
                 if len(question)==0:
@@ -713,6 +714,8 @@ class Withdrawal(Resource):
 class RealWithdrawal(Resource):
     def get(self, player_id):
         Player.query.filter(Player.id == player_id).delete()
+
+        Inventory.query.filter(Inventory.player_code == player_id).delete()
         db.session.commit()
         print("회원탈퇴를 했다.")
         return "success"
