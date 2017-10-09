@@ -20,7 +20,7 @@ class Grade(db.Model):
 
 class Player(db.Model):
     __tablename__='players'
-    id=db.Column(db.String,primary_key=True)
+    id=db.Column(db.String(64),primary_key=True)
     name=db.Column(db.String(64))
     password=db.Column(db.String(64))
     nickname=db.Column(db.String)

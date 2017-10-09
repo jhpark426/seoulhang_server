@@ -79,24 +79,22 @@ class QuestionCollection(Resource):
 
         print('---Call QuestionCollection %s %d---'%(player_id,question_code))
 
-        player=Player.query.filter(Player.id==player_id).first()
+        player = Player.query.filter(Player.id==player_id).first()
 
-        all_index=Inventory.query.order_by(Inventory.id)
-        print("allindex1", all_index)
-        all_index=list(all_index)
+        all_index = Inventory.query.order_by(Inventory.id)
+        all_index = list(all_index)
 
         if player.language==0:
             get_question=Question.query.filter(Question.question_code==question_code).first()
         else:
             get_question=Eng.query.filter(Eng.question_code==question_code).first()
 
-        print("aaaaaaa", player_id)
-        question_info = Inventory.query.filter(Inventory.question_code==question_code).first()
+        print("why", question_code)
+        inven_player = Inventory.query.filter(Inventory.player_code==player_id).all()
+        print("why", len(inven_player))
 
-
-        if question_info is None:
-            print("question_info", question_info)
-            temp_inven=Inventory(id=len(all_index)+1, player_code=player_id, question_code=get_question.question_code, status='start')
+        if len(inven_player) == 0:
+            temp_inven=Inventory(id=len(all_index)+1, player_code=player_id, question_code=question_code, status='start')
             db.session.add(temp_inven)
             db.session.commit()
 
@@ -105,8 +103,17 @@ class QuestionCollection(Resource):
 
             return 1
         else:
-            print('%s player already has question'%player_id)
-            return 0
+            for i in inven_player:
+                if i.question_code == question_code:
+                    print('%s player already has question'%player_id)
+                    return 0
+            temp_inven=Inventory(id=len(all_index)+1, player_code=player_id, question_code=question_code, status='start')
+            db.session.add(temp_inven)
+            db.session.commit()
+
+            player.questionstatus=1
+            db.session.commit()
+            return 1
 
 class Inventoryupdating(Resource):
     def get(self,player_id,question_code):
@@ -170,7 +177,7 @@ class Ranking(Resource):
 
         print("---call ranking---")
         get_rank=Player.query.order_by(Player.point)
-        print(get_rank)
+
         get_rank=list(get_rank)
         if len(get_rank)==0:
             print("Not in player")
@@ -292,10 +299,11 @@ class Questionfinishlist(Resource):
             print('%s player has No Question'%player_id)
 
             temp={
-                "player_code":search_player.id,
-                "player_name":search_player.nickname,
+                "id":search_player.id,
+                "nickname":search_player.nickname,
                 "point":search_player.point,
                 "hint":search_player.hint,
+                "email":search_player.email,
                 "region_name":"0",
                 "question_code":0,
                 "question":"",
@@ -322,10 +330,11 @@ class Questionfinishlist(Resource):
                         get_region_name = EngRegion.query.filter(EngRegion.region_code==get_region.region_code).first()
 
                     temp={
-                        "player_code":search_player.id,
-                        "player_name":search_player.nickname,
+                        "id":search_player.id,
+                        "nickname":search_player.nickname,
                         "point":search_player.point,
                         "hint":search_player.hint,
+                        "email":search_player.email,
                         "region_name":get_region_name.region_name,
                         "question_code":get_region.question_code,
                         "question":get_region.question,
@@ -337,10 +346,11 @@ class Questionfinishlist(Resource):
                 print("%s player has No finished question"%player_id)
                 search_player=Player.query.filter(Player.id==player_id).first()
                 temp={
-                    "player_code":search_player.id,
-                    "player_name":search_player.nickname,
+                    "id":search_player.id,
+                    "nickname":search_player.nickname,
                     "point":search_player.point,
                     "hint":search_player.hint,
+                    "email":search_player.email,
                     "region_name":"0",
                     "question_code":0,
                     "question":"",
@@ -405,21 +415,17 @@ class Questionstartlist(Resource):
                 search_player=Player.query.filter(Player.id==player_id).first()
 
                 if search_player.language==0:
-                    print("한글1")
-                    get_question=Question.query.filter(Question.question_code==temp.question_code).first()
+                    get_question = Question.query.filter(Question.question_code==temp.question_code).first()
                     get_region = Region.query.filter(Region.region_code==get_question.region_code).first()
                 else:
-                    print("영어다1")
                     get_question = Eng.query.filter(Eng.question_code==temp.question_code).first()
-                    print("asdfdsadsafads")
-                    print("get_region", get_question.region_code)
                     get_region = EngRegion.query.filter(EngRegion.region_code==get_question.region_code).first()
                     print("come1")
 
                 temp={}
                 temp={
                     "regioncode":get_region.region_code,
-                    "regionname":get_region.region_name,
+                    "regionname":get_question.question_name,#questionname
                     "questioncode":get_question.question_code,
                     "question":get_question.question,
                     "answer":get_question.answer,
@@ -445,7 +451,7 @@ class Questionstartlist(Resource):
                         print("come3")
                         temp = {
                             "regioncode":get_region.region_code,
-                            "regionname":get_region.region_name,
+                            "regionname":get_question.question_name,#question_name
                             "questioncode":get_question.question_code,
                             "question":get_question.question,
                             "answer":get_question.answer,
@@ -725,12 +731,21 @@ class EditProfile(Resource):
         print("정보를 수정한다.")
         player = Player.query.filter(Player.id == player_id).first()
         if player.password != password:
-            return "password error", 204
+            return "password_error", 204
+
+        newnickname = player.query.filter(Player.nickname == nickname).first()
+
+        if not newnickname is None:
+            if newnickname.id != player_id:
+                return "nickname_error", 204
+
         player.nickname = nickname
         player.email = email
         db.session.commit()
         print("수정 성공")
         return "success"
+
+
 
 class SendQuestionNumber(Resource):
     def get(self, player_id):
@@ -766,6 +781,30 @@ class NewNickname(Resource):
         print("수정 성공")
         return "success"
 
+class TopTenRegion(Resource):
+    def get (self, player_id):
+        print("call TopTenRegion")
+
+        inven = Inventory.query.order_by(Inventory.question_code)
+        code_list = []
+        for i in inven:
+            code_list.append(i.question_code)
+        w_count = {}
+
+        for lst in code_list:
+            try: w_count[lst] += 1
+            except: w_count[lst]=1
+        print ("w_count", w_count)
+        a = sorted(w_count.items(), key=operator.itemgetter(1), reverse=True)
+        b = []
+        index =1
+        for i in a:
+            if index == 11:
+                return a
+            b.append(i)
+            index +=1
+        return b
+
 api.add_resource(Hint,'/hint_player/<string:player_id>/call_code/<int:question_code>')
 api.add_resource(Checking,'/check_player/<string:player_id>')
 api.add_resource(PlayerUnit, '/playerunit/<string:player_id>')
@@ -790,3 +829,4 @@ api.add_resource(EditProfile, '/editprofile/id/<string:player_id>/password/<stri
 api.add_resource(SendQuestionNumber, '/quiznum/id/<string:player_id>')
 api.add_resource(StartGame, '/startgame/id/<string:player_id>')
 api.add_resource(NewNickname,'/newnickname/id/<string:player_id>/nickname/<string:nickname>')
+api.add_resource(TopTenRegion, '/toptenregion/id/<string:player_id>')

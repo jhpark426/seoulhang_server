@@ -1,9 +1,6 @@
+서울행 아이디 찾기 서비스 입니다.
 <!DOCTYPE html>
 <html>
-<!-- created 2010-01-01 -->
-<head>
- <title> 운학아 섹스하자 </title> 
-</head>
  <body>
   <span style=" font: italic bold 1.5em/1em Georgia, serif ; color: black;">서울행 아이디 찾기 서비스</span>
  <br/>
