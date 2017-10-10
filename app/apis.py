@@ -29,11 +29,11 @@ class PlayerFindUnit(Resource):
         ppass = Player.query.filter(password == Player.password).first()
 
         if pid is None:
-            print("아디 확인하셈")
+            print("아이디 확인.")
             return "No such player", 204
 
         if ppass is None:
-            print("비번 확인하셈")
+            print("비번 확인.")
             return "No such player", 204
 
         player = make_plain_dict(pid)
@@ -46,9 +46,9 @@ class PlayerUnit(Resource):
         if len(request.args) == 0: return "TEST-CASE", 204
 
         if request.args['platform'] == 'android':
-            p = Player.query.filter(player_id == Player.id).first()
+            player_info = Player.query.filter(Player.id==player_id).first()
 
-            if p is None: return "No such player", 204
+            if player_info is None: return "No such player", 204
 
             player_pass = p.password
             player_birth = p.birth
@@ -56,8 +56,8 @@ class PlayerUnit(Resource):
 
             return player
         if request.args['platform'] == 'ios':
-            p = Player.query.filter(player_id == Player.id).first()
-            if p is None: return "No such player", 204
+            player_info = Player.query.filter(Player.id==player_id).first()
+            if player_info is None: return "No such player", 204
 
             return player
 
@@ -89,14 +89,11 @@ class QuestionCollection(Resource):
         else:
             get_question=Eng.query.filter(Eng.question_code==question_code).first()
 
-        print("why", question_code)
         inven_player = Inventory.query.filter(Inventory.player_code==player_id).all()
-        print("why", len(inven_player))
 
         if len(inven_player) == 0:
             temp_inven=Inventory(id=len(all_index)+1, player_code=player_id, question_code=question_code, status='start')
             db.session.add(temp_inven)
-            db.session.commit()
 
             player.questionstatus=1
             db.session.commit()
@@ -109,7 +106,6 @@ class QuestionCollection(Resource):
                     return 0
             temp_inven=Inventory(id=len(all_index)+1, player_code=player_id, question_code=question_code, status='start')
             db.session.add(temp_inven)
-            db.session.commit()
 
             player.questionstatus=1
             db.session.commit()
@@ -809,9 +805,11 @@ class TopTenRegion(Resource):
         for ten in top_ten:
             top = {}
             quest = Question.query.filter(Question.question_code==ten[0]).first()
+            region = Region.query.filter(Region.region_code==quest.region_code)
             top = {
                 "question_code" : ten[0],
                 "question_name" : str(quest.question_name),
+                "region_name": region.region_name,
                 "count" : int(ten[1])
             }
             print(top)
@@ -819,8 +817,13 @@ class TopTenRegion(Resource):
 
         print(result)
         if len(result)==0:
-            result = [{1, "에이", 5},{2,"비",4},{3,"씨",3},{4,"디",2}]
-        
+            result = [
+                {"question_code" : 1, "question_name" : "에이", "region_name" : 1, "count" : 5},
+                {"question_code" : 2, "question_name": "비", "region_name" : 2, "count" : 4},
+                {"question_code" : 3, "question_name": "씨", "region_name" : 3, "count" : 3},
+                {"question_code" : 4, "question_name": "디", "region_name" : 4, "count" : 2}
+            ]
+
         return result
 
 api.add_resource(Hint,'/hint_player/<string:player_id>/call_code/<int:question_code>')
