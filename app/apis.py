@@ -816,6 +816,9 @@ class TopTenRegion(Resource):
             result.append(top)
 
         print(result)
+        if len(result)==0:
+            result = [[1, "에이", 5],[2,"비",4],[3,"씨",3],[4,"디",2]]
+        result = [[1, "에이", 5],[2,"비",4],[3,"씨",3],[4,"디",2]]
         return result
 
 api.add_resource(Hint,'/hint_player/<string:player_id>/call_code/<int:question_code>')
