@@ -793,6 +793,7 @@ class TopTenRegion(Resource):
             except: w_count[lst]=1
 
         sorted_list = sorted(w_count.items(), key=operator.itemgetter(1), reverse=True)
+        
         top_ten = []
         index =1
         for i in sorted_list:
