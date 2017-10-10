@@ -807,18 +807,20 @@ class TopTenRegion(Resource):
 
         result = []
         for ten in top_ten:
-            top = []
+            top = {}
             quest = Question.query.filter(Question.question_code==ten[0]).first()
-            top.append(ten[0])
-            top.append(quest.question_name)
-            top.append(ten[1])
+            top = {
+                "question_code" : ten[0],
+                "question_name" : str(quest.question_name),
+                "count" : int(ten[1])
+            }
             print(top)
             result.append(top)
 
         print(result)
         if len(result)==0:
-            result = [[1, "에이", 5],[2,"비",4],[3,"씨",3],[4,"디",2]]
-        result = [[1, "에이", 5],[2,"비",4],[3,"씨",3],[4,"디",2]]
+            result = [{1, "에이", 5},{2,"비",4},{3,"씨",3},{4,"디",2}]
+        
         return result
 
 api.add_resource(Hint,'/hint_player/<string:player_id>/call_code/<int:question_code>')
