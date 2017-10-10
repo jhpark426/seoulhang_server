@@ -793,7 +793,7 @@ class TopTenRegion(Resource):
             except: w_count[lst]=1
 
         sorted_list = sorted(w_count.items(), key=operator.itemgetter(1), reverse=True)
-        
+
         top_ten = []
         index =1
         for i in sorted_list:
@@ -806,7 +806,7 @@ class TopTenRegion(Resource):
         for ten in top_ten:
             top = {}
             quest = Question.query.filter(Question.question_code==ten[0]).first()
-            region = Region.query.filter(Region.region_code==quest.region_code)
+            region = Region.query.filter(Region.region_code==quest.region_code).first()
             top = {
                 "question_code" : ten[0],
                 "question_name" : str(quest.question_name),
