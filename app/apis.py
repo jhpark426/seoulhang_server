@@ -786,6 +786,7 @@ class TopTenRegion(Resource):
         print("call TopTenRegion")
 
         inven = Inventory.query.order_by(Inventory.question_code)
+
         code_list = []
         for i in inven:
             code_list.append(i.question_code)
@@ -794,16 +795,28 @@ class TopTenRegion(Resource):
         for lst in code_list:
             try: w_count[lst] += 1
             except: w_count[lst]=1
-        print ("w_count", w_count)
-        a = sorted(w_count.items(), key=operator.itemgetter(1), reverse=True)
-        b = []
+
+        sorted_list = sorted(w_count.items(), key=operator.itemgetter(1), reverse=True)
+        top_ten = []
         index =1
-        for i in a:
+        for i in sorted_list:
             if index == 11:
                 return a
-            b.append(i)
+            top_ten.append(i)
             index +=1
-        return b
+
+        result = []
+        for ten in top_ten:
+            top = []
+            quest = Question.query.filter(Question.question_code==ten[0]).first()
+            top.append(ten[0])
+            top.append(quest.question_name)
+            top.append(ten[1])
+            print(top)
+            result.append(top)
+
+        print(result)
+        return result
 
 api.add_resource(Hint,'/hint_player/<string:player_id>/call_code/<int:question_code>')
 api.add_resource(Checking,'/check_player/<string:player_id>')
