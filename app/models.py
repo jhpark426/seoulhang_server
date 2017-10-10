@@ -169,6 +169,21 @@ class FindInfo(db.Model):
         self.player_id = player_id
         self.key = key
 
+class Notice(db.Model):
+    __tablename__='notice'
+    id=db.Column(db.Integer,primary_key=True)
+    title=db.Column(db.String)
+    contents=db.Column(db.String)
+    create_time=db.Column(db.DateTime,default=datetime.now)
+
+    def __init__(self,id,title,contents,create_time):
+        self.id=id
+        self.title=title
+        self.contents=contents
+        if create_time is None:
+            create_time=datetime.utcnow()
+            self.create_time=create_timetime.now
+
 class Profile(db.Model):
     __tablename__='profiles'
     id=db.Column(db.Integer,primary_key=True)

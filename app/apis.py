@@ -3,7 +3,7 @@ from flask_restful import Resource, Api
 from sqlalchemy import or_, and_
 from app import app
 from .common import profiling, make_plain_dict
-from .models import Player,Question,Region,Inventory,Grade,Eng,EngRegion,FindInfo
+from .models import Player,Question,Region,Inventory,Grade,Eng, EngRegion, FindInfo, Notice
 from tornado.ioloop import IOLoop
 import tornado.web
 from json import dumps
@@ -827,6 +827,22 @@ class TopTenRegion(Resource):
 
         return result
 
+class Notice_c(Resource):
+    def get(self, player_id):
+        print("notice!!!!")
+        notice = Notice.query.order_by(Notice.id)
+        result = []
+        info = {}
+        for i in notice:
+            info = {
+                "title" : i.title,
+                "contents" : i.contents,
+                "date": str(i.create_time)
+            }
+            result.append(info)
+
+        return result
+
 api.add_resource(Hint,'/hint_player/<string:player_id>/call_code/<int:question_code>')
 api.add_resource(Checking,'/check_player/<string:player_id>')
 api.add_resource(PlayerUnit, '/playerunit/<string:player_id>')
@@ -852,3 +868,4 @@ api.add_resource(SendQuestionNumber, '/quiznum/id/<string:player_id>')
 api.add_resource(StartGame, '/startgame/id/<string:player_id>')
 api.add_resource(NewNickname,'/newnickname/id/<string:player_id>/nickname/<string:nickname>')
 api.add_resource(TopTenRegion, '/toptenregion/id/<string:player_id>')
+api.add_resource(Notice_c, '/notice/id/<string:player_id>')
