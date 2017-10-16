@@ -184,6 +184,16 @@ class Notice(db.Model):
             create_time=datetime.utcnow()
             self.create_time=create_timetime.now
 
+class QuestionNum(db.Model):
+    __tablename__='question_num'
+    id = db.Column(db.Integer, primary_key=True)
+    count = db.Column(db.Integer)
+
+    def __init__(self, id, count=0):
+        self.id = id
+        self.count = count
+
+
 class Profile(db.Model):
     __tablename__='profiles'
     id=db.Column(db.Integer,primary_key=True)

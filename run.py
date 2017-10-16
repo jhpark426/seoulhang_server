@@ -7,7 +7,7 @@ from app import app
 from tornado.ioloop import IOLoop
 from tornado.wsgi import WSGIContainer
 import tornado.web
-from tornado.web import FallbackHandler, RequestHandler, Application, StaticFileHandler
+# from tornado.web import FallbackHandler, RequestHandler, Application, StaticFileHandler
 from tornado.options import define, options, parse_command_line
 
 define("port", default=5000, help="run on the given port", type=int)
@@ -19,6 +19,7 @@ tr = WSGIContainer(app)
 class Application(tornado.web.Application):
     def __init__(self):
         handlers = [
+            (r"/www/(.*)", tornado.web.StaticFileHandler, {'path': 'www/'}),
             (r"/(.*)", tornado.web.FallbackHandler, dict(fallback=tr))
         ]
         settings = {

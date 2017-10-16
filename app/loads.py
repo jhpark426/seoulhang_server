@@ -1,7 +1,7 @@
 # coding:UTF-8
 from os import path
 from xlrd import open_workbook
-from .models import Player,Region,Question,Inventory,Grade,Eng,EngRegion
+from .models import Player,Region,Question,Inventory,Grade,Eng,EngRegion,QuestionNum
 from app import db
 
 XL_PATH = '/import/DB_seoulhang.xlsx'
@@ -103,6 +103,16 @@ def _create_eng_region():
         db.session.add(s)
     db.session.commit()
 
+def _create_count():
+    create_count=load_worksheet(nh_wb, "question_num")
+    for r in range(create_count.nrows-1):
+        row={}
+        for c,key in enumerate(load_keys(create_count)):
+            row[key]=create_count.cell_value(r+1,c)
+        s = QuestionNum(id=int(row["question_code"]), count=int(row["count"]))
+        db.session.add(s)
+    db.session.commit()
+
 def create_all():
     if _check_previous_populated():
         return
@@ -111,4 +121,5 @@ def create_all():
     _create_grade()
     _create_eng_region()
     _create_eng()
+    _create_count()
 create_all()

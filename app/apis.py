@@ -3,7 +3,7 @@ from flask_restful import Resource, Api
 from sqlalchemy import or_, and_
 from app import app
 from .common import profiling, make_plain_dict
-from .models import Player,Question,Region,Inventory,Grade,Eng, EngRegion, FindInfo, Notice
+from .models import Player,Question,Region,Inventory,Grade,Eng, EngRegion, FindInfo, Notice, QuestionNum
 from tornado.ioloop import IOLoop
 import tornado.web
 from json import dumps
@@ -81,8 +81,8 @@ class QuestionCollection(Resource):
 
         player = Player.query.filter(Player.id==player_id).first()
 
-        all_index = Inventory.query.order_by(Inventory.id)
-        all_index = list(all_index)
+        inven_index = Inventory.query.order_by(Inventory.id)
+        inven_index = list(inven_index)
 
         if player.language==0:
             get_question=Question.query.filter(Question.question_code==question_code).first()
@@ -92,8 +92,11 @@ class QuestionCollection(Resource):
         inven_player = Inventory.query.filter(Inventory.player_code==player_id).all()
 
         if len(inven_player) == 0:
-            temp_inven=Inventory(id=len(all_index)+1, player_code=player_id, question_code=question_code, status='start')
+            temp_inven=Inventory(id=len(inven_index)+1, player_code=player_id, question_code=question_code, status='start')
             db.session.add(temp_inven)
+
+            question_num = QuestionNum.query.filter(QuestionNum.id == question_code)
+            question_num.count += 1
 
             player.questionstatus=1
             db.session.commit()
@@ -104,10 +107,13 @@ class QuestionCollection(Resource):
                 if i.question_code == question_code:
                     print('%s player already has question'%player_id)
                     return 0
-            temp_inven=Inventory(id=len(all_index)+1, player_code=player_id, question_code=question_code, status='start')
+            temp_inven=Inventory(id=len(inven_index)+1, player_code=player_id, question_code=question_code, status='start')
             db.session.add(temp_inven)
 
-            player.questionstatus=1
+            question_num = QuestionNum.query.filter(QuestionNum.id == question_code)
+            question_num.count += 1
+
+            player.questionstatus = 1
             db.session.commit()
             return 1
 
@@ -807,11 +813,12 @@ class TopTenRegion(Resource):
             top = {}
             quest = Question.query.filter(Question.question_code==ten[0]).first()
             region = Region.query.filter(Region.region_code==quest.region_code).first()
+            question_num = QuestionNum.query.filter(QuestionNum.id==quest.question_code).first()
             top = {
                 "question_code" : ten[0],
                 "question_name" : str(quest.question_name),
                 "region_name": region.region_name,
-                "count" : int(ten[1])
+                "count" : question_num.count
             }
             print(top)
             result.append(top)
@@ -819,10 +826,10 @@ class TopTenRegion(Resource):
         print(result)
         if len(result)==0:
             result = [
-                {"question_code" : 1, "question_name" : "에이", "region_name" : 1, "count" : 5},
-                {"question_code" : 2, "question_name": "비", "region_name" : 2, "count" : 4},
-                {"question_code" : 3, "question_name": "씨", "region_name" : 3, "count" : 3},
-                {"question_code" : 4, "question_name": "디", "region_name" : 4, "count" : 2}
+                {"question_code" : 1, "question_name" : "경복궁", "region_name" : "종로구", "count" : 5},
+                {"question_code" : 2, "question_name": "광화문", "region_name" : "종로구", "count" : 4},
+                {"question_code" : 18, "question_name": "서울", "region_name" : "중구", "count" : 3},
+                {"question_code" : 21, "question_name": "시청", "region_name" : "중구", "count" : 2}
             ]
 
         return result
@@ -842,6 +849,7 @@ class Notice_c(Resource):
             result.append(info)
 
         return result
+
 
 api.add_resource(Hint,'/hint_player/<string:player_id>/call_code/<int:question_code>')
 api.add_resource(Checking,'/check_player/<string:player_id>')
