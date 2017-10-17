@@ -511,33 +511,35 @@ class Checking(Resource):
                 return 0
 
 class Hint(Resource):
-    def get(self,player_id,question_code):
+    def get(self,player_id,question_code,check):
         search_player=Player.query.filter(Player.id==player_id).first()
 
         print("%s player call hint_update"%player_id)
-
         return_hint={}
-        if search_player.hint==0:
+        if check =="check":
             search_question=Inventory.query.filter(Inventory.question_code==question_code).first()
             return_hint={
-                "hintcount":0,"hintflag":search_question.hintflag
-            }
-            return return_hint
-
-        else:
-            search_player.hint-=1
-            db.session.commit()
-            search_question=Inventory.query.filter(Inventory.question_code==question_code).first()
-            search_question.hintflag=1
-            db.session.commit()
-
-            return_hint={
-                "hintcount":1,
                 "hintflag":search_question.hintflag
             }
-
             return return_hint
+        else:
+            if search_player.hint==0:
+                return_hint={
+                    "hintcount":0,
+                }
+                return return_hint
+            else:
+                search_player.hint-=1
+                db.session.commit()
+                search_question=Inventory.query.filter(Inventory.question_code==question_code).first()
+                search_question.hintflag=1
+                db.session.commit()
 
+                return_hint={
+                    "hintcount":1,
+                }
+                return return_hint
+        
 class CheckID(Resource):
     def get(self,player_id):
         search_player=Player.query.filter(Player.id==player_id).first()
@@ -851,7 +853,7 @@ class Notice_c(Resource):
         return result
 
 
-api.add_resource(Hint,'/hint_player/<string:player_id>/call_code/<int:question_code>')
+api.add_resource(Hint,'/hint_player/<string:player_id>/call_code/<int:question_code>/check/<string:check>')
 api.add_resource(Checking,'/check_player/<string:player_id>')
 api.add_resource(PlayerUnit, '/playerunit/<string:player_id>')
 api.add_resource(PlayerFindUnit, '/players/<string:player_id>/password/<string:password>') #plural //로그인단.

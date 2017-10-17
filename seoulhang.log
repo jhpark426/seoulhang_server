@@ -22249,3 +22249,5 @@ INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server
 INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
 INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
 INFO:tornado.access:200 GET /toptenregion/id/aaa (127.0.0.1) 10.67ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
