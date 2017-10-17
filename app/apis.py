@@ -818,7 +818,7 @@ class TopTenRegion(Resource):
                 "question_code" : ten[0],
                 "question_name" : str(quest.question_name),
                 "region_name": region.region_name,
-                "count" : question_num.count
+                "count" : question_num.question_count
             }
             print(top)
             result.append(top)
