@@ -539,7 +539,7 @@ class Hint(Resource):
                     "hintcount":1,
                 }
                 return return_hint
-        
+
 class CheckID(Resource):
     def get(self,player_id):
         search_player=Player.query.filter(Player.id==player_id).first()
@@ -843,10 +843,11 @@ class Notice_c(Resource):
         result = []
         info = {}
         for i in notice:
+            time = str(i.create_time)
             info = {
                 "title" : i.title,
                 "contents" : i.contents,
-                "date": str(i.create_time)
+                "date": time.split('.')[0]
             }
             result.append(info)
 
