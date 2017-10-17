@@ -80,6 +80,7 @@ class QuestionCollection(Resource):
         print('---Call QuestionCollection %s %d---'%(player_id,question_code))
 
         player = Player.query.filter(Player.id==player_id).first()
+        question_num = QuestionNum.query.filter(QuestionNum.id == question_code).first()
 
         inven_index = Inventory.query.order_by(Inventory.id)
         inven_index = list(inven_index)
@@ -95,9 +96,8 @@ class QuestionCollection(Resource):
             temp_inven=Inventory(id=len(inven_index)+1, player_code=player_id, question_code=question_code, status='start')
             db.session.add(temp_inven)
 
-            question_num = QuestionNum.query.filter(QuestionNum.id == question_code)
-            question_num.count += 1
-
+            print(question_num.question_count)
+            question_num.question_count += 1
             player.questionstatus=1
             db.session.commit()
 
@@ -110,8 +110,8 @@ class QuestionCollection(Resource):
             temp_inven=Inventory(id=len(inven_index)+1, player_code=player_id, question_code=question_code, status='start')
             db.session.add(temp_inven)
 
-            question_num = QuestionNum.query.filter(QuestionNum.id == question_code)
-            question_num.count += 1
+            print(question_num)
+            question_num.question_count += 1
 
             player.questionstatus = 1
             db.session.commit()

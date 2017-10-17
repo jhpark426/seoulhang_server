@@ -187,11 +187,11 @@ class Notice(db.Model):
 class QuestionNum(db.Model):
     __tablename__='question_num'
     id = db.Column(db.Integer, primary_key=True)
-    count = db.Column(db.Integer)
+    question_count = db.Column(db.Integer)
 
-    def __init__(self, id, count=0):
+    def __init__(self, id, question_count=0):
         self.id = id
-        self.count = count
+        self.question_count = question_count
 
 
 class Profile(db.Model):

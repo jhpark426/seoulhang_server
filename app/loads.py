@@ -109,7 +109,7 @@ def _create_count():
         row={}
         for c,key in enumerate(load_keys(create_count)):
             row[key]=create_count.cell_value(r+1,c)
-        s = QuestionNum(id=int(row["question_code"]), count=int(row["count"]))
+        s = QuestionNum(id=int(row["question_code"]), question_count=int(row["question_count"]))
         db.session.add(s)
     db.session.commit()
 
