@@ -843,11 +843,13 @@ class Notice_c(Resource):
         result = []
         info = {}
         for i in notice:
-            time = str(i.create_time)
+            splited_time = str(i.create_time)
+            create_time = splited_time.split('.')[0]
             info = {
                 "title" : i.title,
                 "contents" : i.contents,
-                "date": time.split('.')[0]
+                "date1": create_time.split(' ')[0],
+                "date2": create_time.split(' ')[1]
             }
             result.append(info)
 

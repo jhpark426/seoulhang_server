@@ -22298,3 +22298,5 @@ NameError: name 'y_jusik' is not defined
 ERROR:tornado.access:500 GET /notice/id/aaa (127.0.0.1) 16.33ms
 INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
 INFO:tornado.access:200 GET /notice/id/aaa (127.0.0.1) 4.23ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.access:200 GET /notice/id/aaa (127.0.0.1) 4.43ms
