@@ -855,6 +855,16 @@ class Notice_c(Resource):
 
         return result
 
+class GradeRate(Resource):
+    def get (self, player_id):
+        print("grade rate!!!!")
+        grade = Grade.query.order_by(Grade.id)
+        result = []
+        for i in grade:
+            print(i.correct)
+            result.append(int(i.correct))
+        print(result)
+        return result
 
 api.add_resource(Hint,'/hint_player/<string:player_id>/call_code/<int:question_code>/check/<string:check>')
 api.add_resource(Checking,'/check_player/<string:player_id>')
@@ -882,3 +892,4 @@ api.add_resource(StartGame, '/startgame/id/<string:player_id>')
 api.add_resource(NewNickname,'/newnickname/id/<string:player_id>/nickname/<string:nickname>')
 api.add_resource(TopTenRegion, '/toptenregion/id/<string:player_id>')
 api.add_resource(Notice_c, '/notice/id/<string:player_id>')
+api.add_resource(GradeRate, '/grade/id/<string:player_id>')
