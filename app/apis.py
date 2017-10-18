@@ -955,11 +955,10 @@ class SendDB(Resource):
         if player is None:
             print("error")
             return "error", 204
-            
+
         questions=Question.query.order_by(Question.question_code)
         question_index=list(questions)
         result = []
-        result.append(len(question_index))
 
         for question in questions:
             question_en = Eng.query.filter(Eng.question_code == question.question_code).first()
@@ -967,6 +966,7 @@ class SendDB(Resource):
                 "question_code" : question.question_code,
                 "question_name_ko" : question.question_name,
                 "question_name_en" : question_en.question_name,
+                "question_length" : len(question_index),
                 "train_code" : question_en.train_code,
                 "x_coordinate" : question.x_coordinate,
                 "y_coordinate" : question.y_coordinate
