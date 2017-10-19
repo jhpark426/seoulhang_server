@@ -27,11 +27,14 @@ class Player(db.Model):
     questionstatus=db.Column(db.Integer)
     grade=db.Column(db.String(64))
     hint=db.Column(db.Integer)
+    check_hint=db.Column(db.Integer)
+    check_count=db.Column(db.Integer)
+    quiz_count=db.Column(db.Integer)
     language=db.Column(db.Integer)
     logininfo=db.Column(db.String)
     create_time=db.Column(db.DateTime)
 
-    def __init__(self,id,name,password,nickname,email,point=0,questionstatus=0,grade="Unrank",hint=1,language=0,logininfo="normal",create_time=None):
+    def __init__(self,id,name,password,nickname,email,point=0,questionstatus=0,grade="Unrank",hint=3,check_hint=0,quiz_count=1,check_count=0,language=0,logininfo="normal",create_time=None):
         self.id=id
         self.name=name
         self.password=password
@@ -41,6 +44,9 @@ class Player(db.Model):
         self.questionstatus=questionstatus
         self.grade=grade
         self.hint=hint
+        self.check_hint=check_hint
+        self.quiz_count=quiz_count
+        self.check_count=check_count
         self.logininfo=logininfo
         self.language=language
         if create_time is None:

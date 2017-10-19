@@ -1,5 +1,6 @@
 from flask import request
 from flask_restful import Resource, Api
+from flask import render_template
 from sqlalchemy import or_, and_
 from app import app
 from .common import profiling, make_plain_dict
@@ -19,6 +20,10 @@ api = Api(app)
 @app.route('/')
 def hello_world():
     return 'Hello World!'
+
+@app.route('/login')
+def login():
+    return render_template ("login.html")
 
 class PlayerFindUnit(Resource):
     # @profiling
@@ -138,10 +143,26 @@ class Inventoryupdating(Resource):
                 s.finish_time=datetime.utcnow()
                 db.session.commit()
 
-                update_player_point=Player.query.filter(Player.id==player_id).first()
-                update_player_point.point=update_player_point.point+10
-                point=update_player_point.point
+                update_player=Player.query.filter(Player.id==player_id).first()
+                question = Question.query.filter(Question.question_code==question_code).first()
 
+                if question.content_type == "ox":
+                    update_player.point=update_player.point+5
+                    update_player.check_hint=update_player.check_hint+5
+                    update_player.check_count=update_player.check_count+5
+                else:
+                    update_player.point=update_player.point+10
+                    update_player.check_hint=update_player.check_hint+10
+                    update_player.check_count=update_player.check_count+10
+
+                if update_player.check_hint==30:
+                    update_player.hint +=1
+                    update_player.check_hint=0
+                if update_player.check_count==50:
+                    update_player.make_quiz +=1
+                    update_player.check_count=0
+
+                point=update_player_point.point
                 db.session.commit()
 
                 print(point/10)
@@ -300,9 +321,6 @@ class Questionfinishlist(Resource):
         get_question=Inventory.query.filter(Inventory.player_code==player_id).all()
         search_player=Player.query.filter(Player.id==player_id).first()
 
-        get_hint = int((search_player.point) / 30 +3)
-        get_make_quiz = int((search_player.point) / 50 + 1)
-
         if len(get_question)==0:
             print('%s player has No Question'%player_id)
 
@@ -310,8 +328,8 @@ class Questionfinishlist(Resource):
                 "id":search_player.id,
                 "nickname":search_player.nickname,
                 "point":search_player.point,
-                "hint":get_hint,
-                "make_quiz" : get_make_quiz,
+                "hint":search_player.hint,
+                "make_quiz" : search_player.quiz_count,
                 "email":search_player.email,
                 "region_name":"0",
                 "question_code":0,
@@ -338,8 +356,8 @@ class Questionfinishlist(Resource):
                         "id":search_player.id,
                         "nickname":search_player.nickname,
                         "point":search_player.point,
-                        "hint":get_hint,
-                        "make_quiz":get_make_quiz,
+                        "hint":search_player.hint,
+                        "make_quiz" : search_player.quiz_count,
                         "email":search_player.email,
                         "region_name":get_region_name.region_name,
                         "question_code":get_region.question_code,
@@ -355,8 +373,8 @@ class Questionfinishlist(Resource):
                     "id":search_player.id,
                     "nickname":search_player.nickname,
                     "point":search_player.point,
-                    "hint":get_hint,
-                    "make_quiz":get_make_quiz,
+                    "hint":search_player.hint,
+                    "make_quiz" : search_player.quiz_count,
                     "email":search_player.email,
                     "region_name":"0",
                     "question_code":0,
@@ -793,27 +811,6 @@ class TopTenRegion(Resource):
         print("call TopTenRegion")
         top_ten_list = QuestionNum.query.order_by(QuestionNum.question_count.desc()).offset(0).limit(10)
 
-        # inven = Inventory.query.order_by(Inventory.question_code)
-        #
-        # code_list = []
-        # for i in inven:
-        #     code_list.append(i.question_code)
-        # w_count = {}
-        #
-        # for lst in code_list:
-        #     try: w_count[lst] += 1
-        #     except: w_count[lst]=1
-        #
-        # sorted_list = sorted(w_count.items(), key=operator.itemgetter(1), reverse=True)
-        #
-        # top_ten = []
-        # index =1
-        # for i in sorted_list:
-        #     if index == 11:
-        #         return a
-        #     top_ten.append(i)
-        #     index +=1
-
         result = []
         for ten in top_ten_list:
             top = {}
@@ -874,87 +871,59 @@ class MakingQuiz(Resource):
     def get(self, player_id, question_name, x_coordinate, y_coordinate, question, answer, hint, locale):
         print("making quiz!!")
         player = Player.query.filter(Player.id==player_id).first()
-        if player is None:
-            print("에러")
+
+        if player.quiz_count == 0:
+            print("포인트 부족..")
             return 0, 204
+
+        print("point", player.point)
+
         if locale == 0:
-            question_index=Question.query.order_by(Question.question_code)
-            question_index=list(question_index)
-
-            temp_question = Question(question_code=len(question_index)+1,
-                                    region_code=26,
-                                    train_code=0,
-                                    question_name=question_name,
-                                    line=0,
-                                    foreign_code="ko",
-                                    x_coordinate=x_coordinate,
-                                    y_coordinate=y_coordinate,
-                                    question=question,
-                                    answer=answer,
-                                    hint=hint,
-                                    content_type="ox")
-            db.session.add(temp_question)
-            db.session.commit()
-
-            temp_question = Eng(question_code=len(question_index)+1,
-                                    region_code=26,
-                                    train_code=0,
-                                    question_name=question_name,
-                                    line=0,
-                                    foreign_code="ko",
-                                    x_coordinate=x_coordinate,
-                                    y_coordinate=y_coordinate,
-                                    question=question,
-                                    answer=answer,
-                                    hint=hint,
-                                    content_type="ox")
-            db.session.add(temp_question)
-            db.session.commit()
-            temp_question_num = QuestionNum(id=len(question_index)+1,
-                                            question_count=0)
-            db.session.add(temp_question_num)
-            db.session.commit()
-
-            return 1
+            p_foreign_code = "ko"
         else:
-            question_index=Question.query.order_by(Question.question_code)
-            question_index=list(question_index)
+            p_foreign_code = "en"
 
-            temp_question = Question(question_code=len(question_index)+1,
-                                    region_code=26,
-                                    train_code=0,
-                                    question_name=question_name,
-                                    line=0,
-                                    foreign_code="en",
-                                    x_coordinate=x_coordinate,
-                                    y_coordinate=y_coordinate,
-                                    question=question,
-                                    answer=answer,
-                                    hint=hint,
-                                    content_type="ox")
-            db.session.add(temp_question)
-            db.session.commit()
+        question_index=Question.query.order_by(Question.question_code)
+        question_index=list(question_index)
 
-            temp_question = Eng(question_code=len(question_index)+1,
-                                    region_code=26,
-                                    train_code=0,
-                                    question_name=question_name,
-                                    line=0,
-                                    foreign_code="en",
-                                    x_coordinate=x_coordinate,
-                                    y_coordinate=y_coordinate,
-                                    question=question,
-                                    answer=answer,
-                                    hint=hint,
-                                    content_type="ox")
-            db.session.add(temp_question)
-            db.session.commit()
-            temp_question_num = QuestionNum(id=len(question_index)+1,
-                                            question_count=0)
-            db.session.add(temp_question_num)
-            db.session.commit()
+        temp_question = Question(question_code=len(question_index)+1,
+                                region_code=26,
+                                train_code=0,
+                                question_name=question_name,
+                                line=0,
+                                foreign_code=p_foreign_code,
+                                x_coordinate=x_coordinate,
+                                y_coordinate=y_coordinate,
+                                question=question,
+                                answer=answer,
+                                hint=hint,
+                                content_type="ox")
+        db.session.add(temp_question)
+        db.session.commit()
 
-            return 1
+        temp_question = Eng(question_code=len(question_index)+1,
+                                region_code=26,
+                                train_code=0,
+                                question_name=question_name,
+                                line=0,
+                                foreign_code=p_foreign_code,
+                                x_coordinate=x_coordinate,
+                                y_coordinate=y_coordinate,
+                                question=question,
+                                answer=answer,
+                                hint=hint,
+                                content_type="ox")
+        db.session.add(temp_question)
+        db.session.commit()
+        temp_question_num = QuestionNum(id=len(question_index)+1,
+                                        question_count=0)
+        db.session.add(temp_question_num)
+        db.session.commit()
+
+        player.quiz_count -= 1
+        db.session.commit()
+        print("성공..")
+        return 1
 
 class SendDB(Resource):
     def get (self, player_id):

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap Login Form Template</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/form-elements.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <!-- Top content -->
+    <div class="top-content">
+        <div class="inner-bg">
+            <div class="container">
+                <div class="row">
+                       <form method="post" role="form" class="login-form" name="loginfrm" action="{{url_for('login_ok')}}" onsubmit="return false;" >
+                        <div class="col-sm-6 col-sm-offset-3 form-box">
+                            <div class="form-bottom">
+                                <div class="form-group">
+                                    <label class="sr-only" for="form-username">Username</label>
+                                    <input type="text" name="userid" placeholder="ID" class="form-username form-control iText" id="form-username">
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="form-password">Password</label>
+                                    <input type="password" name="passwd" placeholder="PASSWD" class="form-password form-control iText" id="form-password">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-sm-offset-3 form-box">
+                           <div class="form-bottom">
+                            <div class="pull-left">
+                                <input type="checkbox" id="">
+                                <label for="">아이디 저장</label>
+                            </div>
+                            <div class="pull-right">
+                                <button type="submit" class="btn loginBtn" onclick=login_check()>로그인</button>
+                            </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2 social-login">
+                        <!--                        	<h3>...or login with:</h3>-->
+                            <a class="btn btn-link-2" href="#">
+	                        		<i class="fa fa-user-circle-o"></i>아이디 찾기
+	                        	</a>
+                            <a class="btn btn-link-2" href="#">
+	                        		<i class="fa fa-key"></i>비밀번호 찾기
+	                        	</a>
+                            <a class="btn btn-link-2" href="{{ url_for('join') }}">
+	                        		<i class="fa fa-user-plus"></i> 회원가입
+	                        	</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Javascript -->
+    <script src="assets/js/scripts.js"></script>
+</body>
+</html>
