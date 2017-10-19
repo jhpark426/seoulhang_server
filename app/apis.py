@@ -300,6 +300,9 @@ class Questionfinishlist(Resource):
         get_question=Inventory.query.filter(Inventory.player_code==player_id).all()
         search_player=Player.query.filter(Player.id==player_id).first()
 
+        get_hint = int((search_player.point) / 30 +3)
+        get_make_quiz = int((search_player.point) / 50 + 1)
+
         if len(get_question)==0:
             print('%s player has No Question'%player_id)
 
@@ -307,7 +310,8 @@ class Questionfinishlist(Resource):
                 "id":search_player.id,
                 "nickname":search_player.nickname,
                 "point":search_player.point,
-                "hint":search_player.hint,
+                "hint":get_hint,
+                "make_quiz" : get_make_quiz,
                 "email":search_player.email,
                 "region_name":"0",
                 "question_code":0,
@@ -319,14 +323,10 @@ class Questionfinishlist(Resource):
             return question
 
         else:
-
             for s in get_question:
                 temp={}
                 flag=0
                 if s.status=='finish':
-                    #eng_player=Player.query.filter(Player.id==player_id).first()
-                    #search_player=Player.query.filter(Player.id==player_id).first()
-
                     if search_player.language==0:
                         get_region=Question.query.filter(Question.question_code==s.question_code).first()
                         get_region_name = Region.query.filter(Region.region_code==get_region.region_code).first()
@@ -338,7 +338,8 @@ class Questionfinishlist(Resource):
                         "id":search_player.id,
                         "nickname":search_player.nickname,
                         "point":search_player.point,
-                        "hint":search_player.hint,
+                        "hint":get_hint,
+                        "make_quiz":get_make_quiz,
                         "email":search_player.email,
                         "region_name":get_region_name.region_name,
                         "question_code":get_region.question_code,
@@ -354,7 +355,8 @@ class Questionfinishlist(Resource):
                     "id":search_player.id,
                     "nickname":search_player.nickname,
                     "point":search_player.point,
-                    "hint":search_player.hint,
+                    "hint":get_hint,
+                    "make_quiz":get_make_quiz,
                     "email":search_player.email,
                     "region_name":"0",
                     "question_code":0,

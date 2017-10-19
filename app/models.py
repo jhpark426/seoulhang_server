@@ -10,13 +10,11 @@ class Grade(db.Model):
     id=db.Column(db.Integer,primary_key=True)
     correct=db.Column(db.Integer)
     grade=db.Column(db.String(64))
-    hint=db.Column(db.Integer)
 
-    def __init__(self,id,correct,grade,hint):
+    def __init__(self,id,correct,grade):
         self.id=id
         self.correct=correct
         self.grade=grade
-        self.hint=hint
 
 class Player(db.Model):
     __tablename__='players'

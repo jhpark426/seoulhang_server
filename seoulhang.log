@@ -27146,3 +27146,27 @@ INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server
 INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
 INFO:tornado.access:200 GET /make_quiz/id/aaa/question_name/aaa/x/37.1234/y/127.1234/question/aaa/answer/o/hint/aaa/locale/0 (127.0.0.1) 47.47ms
 INFO:tornado.access:200 GET /collect/bbb/call_code/347 (127.0.0.1) 32.45ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.access:200 GET /get_grade/id/aaa (127.0.0.1) 7.37ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.access:204 GET /get_grade/id/aaa (127.0.0.1) 5.15ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.access:200 GET /get_grade/id/aaa (127.0.0.1) 6.46ms
+INFO:tornado.access:200 GET /get_grade/id/bbb (127.0.0.1) 6.08ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.access:200 GET /id/bbb/pass/bbb/name/bbb/email/bbb@naver.com/logininfo/normal (127.0.0.1) 8.16ms
+INFO:tornado.access:200 GET /collect/bbb/call_code/300 (127.0.0.1) 37.79ms
+INFO:tornado.access:200 GET /update_player/bbb/call_code/300 (127.0.0.1) 25.31ms
+INFO:tornado.access:200 GET /finish_player/bbb (127.0.0.1) 8.17ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.access:200 GET /finish_player/bbb (127.0.0.1) 11.73ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.access:200 GET /finish_player/bbb (127.0.0.1) 10.11ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.access:200 GET /finish_player/bbb (127.0.0.1) 12.31ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.access:200 GET /finish_player/bbb (127.0.0.1) 9.37ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server

@@ -65,7 +65,7 @@ def _create_grade():
         row={}
         for c,key in enumerate(load_keys(create_grade)):
             row[key]=create_grade.cell_value(r+1,c)
-        g=Grade(id=int(row["id"]),correct=int(row["correct"]),grade=row["grade"],hint=row["hint"])
+        g=Grade(id=int(row["id"]),correct=int(row["correct"]),grade=row["grade"])
         db.session.add(g)
     db.session.commit()
 
