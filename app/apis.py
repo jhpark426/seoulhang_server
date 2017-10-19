@@ -145,32 +145,33 @@ class Inventoryupdating(Resource):
 
                 update_player=Player.query.filter(Player.id==player_id).first()
                 question = Question.query.filter(Question.question_code==question_code).first()
-
+                print("point", update_player.point)
                 if question.content_type == "ox":
                     update_player.point=update_player.point+5
                     update_player.check_hint=update_player.check_hint+5
                     update_player.check_count=update_player.check_count+5
+                    print("point", update_player.point)
                 else:
                     update_player.point=update_player.point+10
                     update_player.check_hint=update_player.check_hint+10
                     update_player.check_count=update_player.check_count+10
+                    print("point", update_player.point)
 
                 if update_player.check_hint==30:
                     update_player.hint +=1
                     update_player.check_hint=0
                 if update_player.check_count==50:
-                    update_player.make_quiz +=1
+                    update_player.quiz_count +=1
                     update_player.check_count=0
-
-                point=update_player_point.point
+                print("point", update_player.point)
+                point=update_player.point
                 db.session.commit()
 
                 print(point/10)
                 search_point=Grade.query.filter(Grade.correct==int(point/10)).first()
 
                 if not search_point is None:
-                    update_player_point.grade=search_point.grade
-                    update_player_point.hint=update_player_point.hint+search_point.hint
+                    update_player.grade=search_point.grade
                     db.session.commit()
                     print("%s player rank up"%player_id)
                     return 2
