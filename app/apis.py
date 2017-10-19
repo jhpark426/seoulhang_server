@@ -98,7 +98,6 @@ class QuestionCollection(Resource):
             temp_inven=Inventory(id=len(inven_index)+1, player_code=player_id, question_code=question_code, status='start')
 
             db.session.add(temp_inven)
-
             question_num.question_count += 1
 
             db.session.commit()
@@ -877,10 +876,10 @@ class MakingQuiz(Resource):
             print("에러")
             return 0, 204
         if locale == 0:
-            questoin_index=Question.query.order_by(Question.question_code)
-            questoin_index=list(questoin_index)
+            question_index=Question.query.order_by(Question.question_code)
+            question_index=list(question_index)
 
-            temp_question = Question(question_code=len(questoin_index)+1,
+            temp_question = Question(question_code=len(question_index)+1,
                                     region_code=26,
                                     train_code=0,
                                     question_name=question_name,
@@ -895,7 +894,7 @@ class MakingQuiz(Resource):
             db.session.add(temp_question)
             db.session.commit()
 
-            temp_question = Eng(question_code=len(questoin_index)+1,
+            temp_question = Eng(question_code=len(question_index)+1,
                                     region_code=26,
                                     train_code=0,
                                     question_name=question_name,
@@ -908,14 +907,18 @@ class MakingQuiz(Resource):
                                     hint=hint,
                                     content_type="ox")
             db.session.add(temp_question)
+            db.session.commit()
+            temp_question_num = QuestionNum(id=len(question_index)+1,
+                                            question_count=0)
+            db.session.add(temp_question_num)
             db.session.commit()
 
             return 1
         else:
-            questoin_index=Question.query.order_by(Question.question_code)
-            questoin_index=list(questoin_index)
+            question_index=Question.query.order_by(Question.question_code)
+            question_index=list(question_index)
 
-            temp_question = Question(question_code=len(questoin_index)+1,
+            temp_question = Question(question_code=len(question_index)+1,
                                     region_code=26,
                                     train_code=0,
                                     question_name=question_name,
@@ -930,7 +933,7 @@ class MakingQuiz(Resource):
             db.session.add(temp_question)
             db.session.commit()
 
-            temp_question = Eng(question_code=len(questoin_index)+1,
+            temp_question = Eng(question_code=len(question_index)+1,
                                     region_code=26,
                                     train_code=0,
                                     question_name=question_name,
@@ -943,6 +946,10 @@ class MakingQuiz(Resource):
                                     hint=hint,
                                     content_type="ox")
             db.session.add(temp_question)
+            db.session.commit()
+            temp_question_num = QuestionNum(id=len(question_index)+1,
+                                            question_count=0)
+            db.session.add(temp_question_num)
             db.session.commit()
 
             return 1
