@@ -99,7 +99,7 @@ class QuestionCollection(Resource):
 
                 db.session.add(temp_inven)
                 question_num.question_count += 1
-
+                player.questionstatus = 1
                 db.session.commit()
                 return 2
             else:
@@ -575,7 +575,7 @@ class SettingLanguage(Resource):
             return 1
 
 class Checking(Resource):
-    def get(self,player_id):
+    def get(self,player_id, question_code):
         search_player=Player.query.filter(Player.id==player_id).first()
 
         print("%s player call checking"%player_id)
@@ -583,6 +583,14 @@ class Checking(Resource):
             return 0
         else:
             if search_player.questionstatus==1:
+                player = Player.query.filter(Player.id==player_id).first()
+                question_check = Question.query.filter(Question.question_code==question_code).first()
+
+                if player.nickname == question_check.question_name:
+                    if question_check.region_code == 26:
+                        print("can't get question")
+                        return 2
+
                 search_player.questionstatus=0
                 db.session.commit()
                 print("call success")
@@ -1066,7 +1074,7 @@ class OKFalse(Resource):
 
 
 api.add_resource(Hint,'/hint_player/<string:player_id>/call_code/<int:question_code>/check/<string:check>')
-api.add_resource(Checking,'/check_player/<string:player_id>')
+api.add_resource(Checking,'/check_player/<string:player_id>/question_code/<int:question_code>')
 api.add_resource(PlayerUnit, '/playerunit/<string:player_id>')
 api.add_resource(PlayerFindUnit, '/players/<string:player_id>/password/<string:password>') #plural //로그인단.
 api.add_resource(Achievementrate,'/rate/<string:player_id>')
