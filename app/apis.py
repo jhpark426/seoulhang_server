@@ -288,7 +288,6 @@ class Achievementrate(Resource):
         for s in region_list:
             check_dict[s.region_code]=0
 
-
         for s in player_question_list:
             if s.status=='finish':
                 check_dict[question_reference_dict[s.question_code]]+=1
@@ -1040,4 +1039,4 @@ api.add_resource(Notice_c, '/notice/id/<string:player_id>')
 api.add_resource(GradeRate, '/grade/id/<string:player_id>')
 api.add_resource(MakingQuiz, '/make_quiz/id/<string:player_id>/question_name/<string:question_name>/x/<float:x_coordinate>/y/<float:y_coordinate>/question/<string:question>/answer/<string:answer>/hint/<string:hint>/locale/<string:locale>')
 api.add_resource(SendDB, '/send_db/id/<string:player_id>')
-api.add_resource(OKFalse, '/ok_false/id/<string:player_id>/question_code/<int:question_code>')
+api.add_resource(OKFalse, '/ok_false/id/<string:player_id>/question_code/<string:question_code>')
