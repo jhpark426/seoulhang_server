@@ -91,8 +91,8 @@ class QuestionCollection(Resource):
         inven_index = Inventory.query.order_by(Inventory.id)
         inven_index = list(inven_index)
         print("playernick", player.nickname)
-        print("question_name", question_name)
-        
+        print("question_name", question_check.question_name)
+
         if player.nickname == question_check.question_name:
             if question_check.region_code == 26:
                 temp_inven=Inventory(id=len(inven_index)+1, player_code=player_id, question_code=question_code, status='finish')
@@ -102,6 +102,43 @@ class QuestionCollection(Resource):
 
                 db.session.commit()
                 return 2
+            else:
+                if player.language==0:
+                    get_question=Question.query.filter(Question.question_code==question_code).first()
+                else:
+                    get_question=Eng.query.filter(Eng.question_code==question_code).first()
+
+                inven_player = Inventory.query.filter(Inventory.player_code==player_id).all()
+
+                if len(inven_player) == 0:
+                    print(len(inven_index))
+                    print(player_id)
+                    print(question_code)
+                    temp_inven=Inventory(id=len(inven_index)+1, player_code=player_id, question_code=question_code, status='start')
+
+                    db.session.add(temp_inven)
+                    question_num.question_count += 1
+
+                    db.session.commit()
+
+                    player.questionstatus = 1
+                    db.session.commit()
+                    return 1
+                else:
+                    for i in inven_player:
+                        if i.question_code == question_code:
+                            print('%s player already has question'%player_id)
+                            return 0
+                    temp_inven=Inventory(id=len(inven_index)+1, player_code=player_id, question_code=question_code, status='start')
+                    db.session.add(temp_inven)
+
+                    print(question_num)
+                    question_num.question_count += 1
+
+                    player.questionstatus = 1
+                    db.session.commit()
+                    return 1
+
         else:
             if player.language==0:
                 get_question=Question.query.filter(Question.question_code==question_code).first()
