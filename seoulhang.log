@@ -27928,3 +27928,5 @@ INFO:tornado.access:200 GET /id/1439718482815328/pass/1439718482815328/name/1439
 INFO:tornado.access:200 GET /rate/1439718482815328 (127.0.0.1) 88.93ms
 INFO:tornado.access:200 GET /id/1439718482815328/pass/1439718482815328/name/1439718482815328/email/oper892@gmail.com/logininfo/facebook (127.0.0.1) 16.89ms
 INFO:tornado.access:200 GET /rate/1439718482815328 (127.0.0.1) 137.77ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server

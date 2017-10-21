@@ -81,49 +81,56 @@ class PlayerUnit(Resource):
 class QuestionCollection(Resource):
 #   @profiling
     def get(self, player_id, question_code):
-
         print('---Call QuestionCollection %s %d---'%(player_id,question_code))
 
         player = Player.query.filter(Player.id==player_id).first()
-        question_num = QuestionNum.query.filter(QuestionNum.id == question_code).first()
+        question_check = Question.query.filter(Question.question_code==question_code).first()
+
         inven_index = Inventory.query.order_by(Inventory.id)
         inven_index = list(inven_index)
 
-        if player.language==0:
-            get_question=Question.query.filter(Question.question_code==question_code).first()
+        if question_check.region_code == 26:
+            if player.nickname == question_check.question_name:
+                temp_inven=Inventory(id=len(inven_index)+1, player_code=player_id, question_code=question_code, status='finish')            
+                return 2
         else:
-            get_question=Eng.query.filter(Eng.question_code==question_code).first()
+            question_num = QuestionNum.query.filter(QuestionNum.id == question_code).first()
 
-        inven_player = Inventory.query.filter(Inventory.player_code==player_id).all()
+            if player.language==0:
+                get_question=Question.query.filter(Question.question_code==question_code).first()
+            else:
+                get_question=Eng.query.filter(Eng.question_code==question_code).first()
 
-        if len(inven_player) == 0:
-            print(len(inven_index))
-            print(player_id)
-            print(question_code)
-            temp_inven=Inventory(id=len(inven_index)+1, player_code=player_id, question_code=question_code, status='start')
+            inven_player = Inventory.query.filter(Inventory.player_code==player_id).all()
 
-            db.session.add(temp_inven)
-            question_num.question_count += 1
+            if len(inven_player) == 0:
+                print(len(inven_index))
+                print(player_id)
+                print(question_code)
+                temp_inven=Inventory(id=len(inven_index)+1, player_code=player_id, question_code=question_code, status='start')
 
-            db.session.commit()
+                db.session.add(temp_inven)
+                question_num.question_count += 1
 
-            player.questionstatus = 1
-            db.session.commit()
-            return 1
-        else:
-            for i in inven_player:
-                if i.question_code == question_code:
-                    print('%s player already has question'%player_id)
-                    return 0
-            temp_inven=Inventory(id=len(inven_index)+1, player_code=player_id, question_code=question_code, status='start')
-            db.session.add(temp_inven)
+                db.session.commit()
 
-            print(question_num)
-            question_num.question_count += 1
+                player.questionstatus = 1
+                db.session.commit()
+                return 1
+            else:
+                for i in inven_player:
+                    if i.question_code == question_code:
+                        print('%s player already has question'%player_id)
+                        return 0
+                temp_inven=Inventory(id=len(inven_index)+1, player_code=player_id, question_code=question_code, status='start')
+                db.session.add(temp_inven)
 
-            player.questionstatus = 1
-            db.session.commit()
-            return 1
+                print(question_num)
+                question_num.question_count += 1
+
+                player.questionstatus = 1
+                db.session.commit()
+                return 1
 
 class Inventoryupdating(Resource):
     def get(self,player_id,question_code):
