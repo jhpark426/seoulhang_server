@@ -163,21 +163,26 @@ class Inventoryupdating(Resource):
                 if update_player.check_count==50:
                     update_player.quiz_count +=1
                     update_player.check_count=0
+
                 print("point", update_player.point)
                 point=update_player.point
                 db.session.commit()
 
-                print(point/10)
-                search_point=Grade.query.filter(Grade.correct==int(point/10)).first()
 
-                if not search_point is None:
-                    update_player.grade=search_point.grade
-                    db.session.commit()
-                    print("%s player rank up"%player_id)
-                    return 2
+                grade_list=Grade.query.order_by(Grade.correct.desc())
 
-                print('%s player inventory updating success'%player_id)
-                return 1
+                for grade in grade_list:
+                    if update_player.point >= grade.correct:
+                        if update_player.grade == grade.grade:
+                            print('%s player inventory updating success'%player_id)
+                            return 1
+                        update_player.grade=grade.grade
+                        db.session.commit()
+                        print("%s player rank up"%player_id)
+                        return 2
+                    print("grade_test", grade.grade)
+
+
 
         print('%s player is not has start question'%player_id)
         return 0
@@ -324,7 +329,7 @@ class Questionfinishlist(Resource):
 
         if len(get_question)==0:
             print('%s player has No Question'%player_id)
-
+            print("hint and quiz", search_player.hint, search_player.quiz_count)
             temp={
                 "id":search_player.id,
                 "nickname":search_player.nickname,
@@ -352,7 +357,7 @@ class Questionfinishlist(Resource):
                     else:
                         get_region=Eng.query.filter(Eng.question_code==s.question_code).first()
                         get_region_name = EngRegion.query.filter(EngRegion.region_code==get_region.region_code).first()
-
+                    print("hint and quiz", search_player.hint, search_player.quiz_count)
                     temp={
                         "id":search_player.id,
                         "nickname":search_player.nickname,
@@ -370,6 +375,7 @@ class Questionfinishlist(Resource):
             if len(question)==0:
                 print("%s player has No finished question"%player_id)
                 search_player=Player.query.filter(Player.id==player_id).first()
+                print("hint and quiz", search_player.hint, search_player.quiz_count)
                 temp={
                     "id":search_player.id,
                     "nickname":search_player.nickname,

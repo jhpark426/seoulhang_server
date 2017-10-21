@@ -27609,3 +27609,107 @@ INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server
 INFO:tornado.access:200 GET /update_player/bbb/call_code/4 (127.0.0.1) 4.74ms
 INFO:tornado.access:200 GET /collect/bbb/call_code/5 (127.0.0.1) 16.54ms
 INFO:tornado.access:200 GET /update_player/bbb/call_code/5 (127.0.0.1) 15.17ms
+INFO:tornado.access:200 GET /id/bbb/pass/bbb/name/bbb/email/bbb@naver.com/logininfo/normal (127.0.0.1) 25.97ms
+INFO:tornado.access:200 GET /collect/bbb/call_code/1 (127.0.0.1) 47.69ms
+INFO:tornado.access:200 GET /collect/bbb/call_code/2 (127.0.0.1) 24.83ms
+INFO:tornado.access:200 GET /collect/bbb/call_code/3 (127.0.0.1) 21.96ms
+INFO:tornado.access:200 GET /collect/bbb/call_code/4 (127.0.0.1) 20.29ms
+INFO:tornado.access:200 GET /collect/bbb/call_code/5 (127.0.0.1) 18.85ms
+INFO:tornado.access:200 GET /collect/bbb/call_code/6 (127.0.0.1) 21.01ms
+INFO:tornado.access:200 GET /update_player/bbb/call_code/1 (127.0.0.1) 16.03ms
+INFO:tornado.access:200 GET /update_player/bbb/call_code/2 (127.0.0.1) 25.02ms
+INFO:tornado.access:200 GET /update_player/bbb/call_code/3 (127.0.0.1) 22.39ms
+INFO:tornado.access:200 GET /update_player/bbb/call_code/4 (127.0.0.1) 23.94ms
+INFO:tornado.access:200 GET /update_player/bbb/call_code/5 (127.0.0.1) 31.08ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.access:200 GET /finish_player/bbb (127.0.0.1) 27.20ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.access:200 GET /collect/bbb/call_code/7 (127.0.0.1) 32.09ms
+INFO:tornado.access:200 GET /collect/bbb/call_code/8 (127.0.0.1) 13.36ms
+INFO:tornado.access:200 GET /collect/bbb/call_code/9 (127.0.0.1) 14.69ms
+INFO:tornado.access:200 GET /collect/bbb/call_code/10 (127.0.0.1) 14.19ms
+INFO:tornado.access:200 GET /collect/bbb/call_code/11 (127.0.0.1) 13.53ms
+INFO:tornado.access:200 GET /collect/bbb/call_code/12 (127.0.0.1) 14.38ms
+INFO:tornado.access:200 GET /collect/bbb/call_code/13 (127.0.0.1) 14.94ms
+INFO:tornado.access:200 GET /update_player/bbb/call_code/6 (127.0.0.1) 31.28ms
+INFO:tornado.access:200 GET /update_player/bbb/call_code/7 (127.0.0.1) 16.03ms
+INFO:tornado.access:200 GET /update_player/bbb/call_code/8 (127.0.0.1) 15.38ms
+INFO:tornado.access:200 GET /update_player/bbb/call_code/9 (127.0.0.1) 18.21ms
+INFO:tornado.access:200 GET /update_player/bbb/call_code/10 (127.0.0.1) 15.67ms
+INFO:tornado.access:200 GET /update_player/bbb/call_code/11 (127.0.0.1) 26.96ms
+INFO:tornado.access:200 GET /update_player/bbb/call_code/12 (127.0.0.1) 18.04ms
+INFO:tornado.access:200 GET /ranking/bbb (127.0.0.1) 15.61ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.access:200 GET /id/bbb/pass/bbb/name/bbb/email/bbb@naver.com/logininfo/normal (127.0.0.1) 13.43ms
+INFO:tornado.access:200 GET /collect/bbb/call_code/1 (127.0.0.1) 43.82ms
+INFO:tornado.access:200 GET /collect/bbb/call_code/2 (127.0.0.1) 15.01ms
+INFO:tornado.access:200 GET /collect/bbb/call_code/3 (127.0.0.1) 27.73ms
+INFO:tornado.access:200 GET /collect/bbb/call_code/4 (127.0.0.1) 22.33ms
+INFO:tornado.access:200 GET /collect/bbb/call_code/5 (127.0.0.1) 16.75ms
+INFO:tornado.access:200 GET /collect/bbb/call_code/6 (127.0.0.1) 22.78ms
+INFO:tornado.access:200 GET /collect/bbb/call_code/7 (127.0.0.1) 12.67ms
+ERROR:tornado.application:Uncaught exception GET /update_player/bbb/call_code/1 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='localhost:5000', method='GET', uri='/update_player/bbb/call_code/1', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8', 'Connection': 'keep-alive', 'Accept-Encoding': 'gzip, deflate, br', 'Upgrade-Insecure-Requests': '1', 'Host': 'localhost:5000', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36', 'Accept-Language': 'ko-KR,ko;q=0.8,en-US;q=0.6,en;q=0.4,ja;q=0.2'})
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/web.py", line 1422, in _execute
+    result = self.prepare()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/web.py", line 2681, in prepare
+    self.fallback(self.request)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/wsgi.py", line 277, in __call__
+    WSGIContainer.environ(request), start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/_compat.py", line 32, in reraise
+    raise value.with_traceback(tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/_compat.py", line 32, in reraise
+    raise value.with_traceback(tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 477, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/views.py", line 84, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 587, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py", line 175, in get
+    if update_player.point > grade:
+TypeError: unorderable types: int() > Grade()
+ERROR:tornado.access:500 GET /update_player/bbb/call_code/1 (127.0.0.1) 34.98ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.access:200 GET /update_player/bbb/call_code/2 (127.0.0.1) 22.92ms
+INFO:tornado.access:200 GET /update_player/bbb/call_code/3 (127.0.0.1) 33.41ms
+INFO:tornado.access:200 GET /update_player/bbb/call_code/4 (127.0.0.1) 25.45ms
+INFO:tornado.access:200 GET /update_player/bbb/call_code/5 (127.0.0.1) 36.62ms
+INFO:tornado.access:200 GET /update_player/bbb/call_code/6 (127.0.0.1) 52.20ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.access:200 GET /update_player/bbb/call_code/7 (127.0.0.1) 45.04ms
+INFO:tornado.access:200 GET /update_player/bbb/call_code/8 (127.0.0.1) 4.69ms
+INFO:tornado.access:200 GET /collect/bbb/call_code/8 (127.0.0.1) 15.48ms
+INFO:tornado.access:200 GET /collect/bbb/call_code/9 (127.0.0.1) 24.10ms
+INFO:tornado.access:200 GET /collect/bbb/call_code/10 (127.0.0.1) 29.90ms
+INFO:tornado.access:200 GET /collect/bbb/call_code/11 (127.0.0.1) 31.78ms
+INFO:tornado.access:200 GET /collect/bbb/call_code/12 (127.0.0.1) 28.08ms
+INFO:tornado.access:200 GET /collect/bbb/call_code/13 (127.0.0.1) 27.91ms
+INFO:tornado.access:200 GET /update_player/bbb/call_code/9 (127.0.0.1) 39.62ms
+INFO:tornado.access:200 GET /update_player/bbb/call_code/10 (127.0.0.1) 33.80ms
+INFO:tornado.access:200 GET /update_player/bbb/call_code/11 (127.0.0.1) 27.16ms
+INFO:tornado.access:200 GET /update_player/bbb/call_code/12 (127.0.0.1) 36.36ms
+INFO:tornado.access:200 GET /ranking/bbb (127.0.0.1) 10.97ms
