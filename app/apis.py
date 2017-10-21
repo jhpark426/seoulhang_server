@@ -302,8 +302,12 @@ class Achievementrate(Resource):
             rate_list.append(count)
 
         for index,val in enumerate(region_list):
+            print("index", index)
+            print("val", val)
+            print("region_code", val.region_code)
             temp={}
             for w in reference_list:
+                print("reference_code", w.region_code)
                 if val.region_code==w.region_code:
                     temp={
                     "region_code":val.region_code,
