@@ -27930,3 +27930,102 @@ INFO:tornado.access:200 GET /id/1439718482815328/pass/1439718482815328/name/1439
 INFO:tornado.access:200 GET /rate/1439718482815328 (127.0.0.1) 137.77ms
 INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
 INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.access:200 GET /id/1439718482815328/pass/1439718482815328/name/1439718482815328/email/oper892@gmail.com/logininfo/facebook (127.0.0.1) 10.65ms
+ERROR:tornado.application:Uncaught exception GET /make_quiz/id/1439718482815328/question_name/1439718482815328/x/37.1234/y/127.1234/question/1439718482815328/answer/o/hint/1439718482815328/locale/0 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='localhost:5000', method='GET', uri='/make_quiz/id/1439718482815328/question_name/1439718482815328/x/37.1234/y/127.1234/question/1439718482815328/answer/o/hint/1439718482815328/locale/0', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Encoding': 'gzip, deflate, br', 'Connection': 'keep-alive', 'Accept-Language': 'ko-KR,ko;q=0.8,en-US;q=0.6,en;q=0.4,ja;q=0.2', 'Host': 'localhost:5000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8', 'Upgrade-Insecure-Requests': '1', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36'})
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1139, in _execute_context
+    context)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/engine/default.py", line 450, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.IntegrityError: UNIQUE constraint failed: question_num.id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/web.py", line 1422, in _execute
+    result = self.prepare()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/web.py", line 2681, in prepare
+    self.fallback(self.request)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/wsgi.py", line 277, in __call__
+    WSGIContainer.environ(request), start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/_compat.py", line 32, in reraise
+    raise value.with_traceback(tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/_compat.py", line 32, in reraise
+    raise value.with_traceback(tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 477, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/views.py", line 84, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 587, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py", line 935, in get
+    db.session.commit()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/scoping.py", line 150, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 790, in commit
+    self.transaction.commit()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 392, in commit
+    self._prepare_impl()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 372, in _prepare_impl
+    self.session.flush()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 2004, in flush
+    self._flush(objects)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 2122, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/util/langhelpers.py", line 60, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/util/compat.py", line 182, in reraise
+    raise value
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 2086, in _flush
+    flush_context.execute()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/unitofwork.py", line 373, in execute
+    rec.execute(self)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/unitofwork.py", line 532, in execute
+    uow
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/persistence.py", line 174, in save_obj
+    mapper, table, insert)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/persistence.py", line 748, in _emit_insert_statements
+    execute(statement, multiparams)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 914, in execute
+    return meth(self, multiparams, params)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/sql/elements.py", line 323, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1010, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1146, in _execute_context
+    context)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1341, in _handle_dbapi_exception
+    exc_info
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/util/compat.py", line 188, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=exc_value)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/util/compat.py", line 181, in reraise
+    raise value.with_traceback(tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1139, in _execute_context
+    context)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/engine/default.py", line 450, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: question_num.id [SQL: 'INSERT INTO question_num (id, question_count) VALUES (?, ?)'] [parameters: (296, 0)]
+ERROR:tornado.access:500 GET /make_quiz/id/1439718482815328/question_name/1439718482815328/x/37.1234/y/127.1234/question/1439718482815328/answer/o/hint/1439718482815328/locale/0 (127.0.0.1) 51.19ms
+INFO:tornado.access:200 GET /id/1439718482815328/pass/1439718482815328/name/1439718482815328/email/oper892@gmail.com/logininfo/facebook (127.0.0.1) 12.20ms
+INFO:tornado.access:200 GET /make_quiz/id/1439718482815328/question_name/1439718482815328/x/37.1234/y/127.1234/question/1439718482815328/answer/o/hint/1439718482815328/locale/0 (127.0.0.1) 45.94ms
