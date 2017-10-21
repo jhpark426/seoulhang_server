@@ -157,12 +157,12 @@ class Inventoryupdating(Resource):
                     update_player.check_count=update_player.check_count+10
                     print("point", update_player.point)
 
-                if update_player.check_hint==30:
+                if update_player.check_hint>=30:
                     update_player.hint +=1
-                    update_player.check_hint=0
-                if update_player.check_count==50:
+                    update_player.check_hint=update_player.check_hint - 30
+                if update_player.check_count>=50:
                     update_player.quiz_count +=1
-                    update_player.check_count=0
+                    update_player.check_count=update_player.check_count - 50
 
                 print("point", update_player.point)
                 point=update_player.point
