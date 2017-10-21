@@ -53,7 +53,7 @@ def _create_question():
                     x_coordinate=float(row["x_coordinate"]),
                     y_coordinate=float(row["y_coordinate"]),
                     question=row["question"],
-                    answer=row["answer"],
+                    answer=str(row["answer"]),
                     hint=row["hint"],
                     content_type=row["content_type"])
         db.session.add(q)

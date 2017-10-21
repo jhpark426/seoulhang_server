@@ -27788,3 +27788,87 @@ INFO:tornado.access:200 GET /collect/1439718482815328/call_code/27 (127.0.0.1) 1
 INFO:tornado.access:200 GET /collect/1439718482815328/call_code/28 (127.0.0.1) 17.58ms
 INFO:tornado.access:200 GET /collect/1439718482815328/call_code/29 (127.0.0.1) 12.65ms
 INFO:tornado.access:200 GET /collect/1439718482815328/call_code/30 (127.0.0.1) 13.19ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/loads.py modified; restarting server
+INFO:tornado.access:200 GET /id/1439718482815328/pass/1439718482815328/name/1439718482815328/email/oper892@gmail.com/logininfo/facebook (127.0.0.1) 8.22ms
+INFO:tornado.access:200 GET /collect/1439718482815328/call_code/1 (127.0.0.1) 24.48ms
+INFO:tornado.access:200 GET /collect/1439718482815328/call_code/2 (127.0.0.1) 19.13ms
+INFO:tornado.access:200 GET /collect/1439718482815328/call_code/3 (127.0.0.1) 11.15ms
+INFO:tornado.access:200 GET /collect/1439718482815328/call_code/8 (127.0.0.1) 13.16ms
+INFO:tornado.access:200 GET /update_player/bbb/call_code/8 (127.0.0.1) 3.79ms
+ERROR:tornado.application:Uncaught exception GET /ok_false/id/1439718482815328 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='localhost:5000', method='GET', uri='/ok_false/id/1439718482815328', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'ko-KR,ko;q=0.8,en-US;q=0.6,en;q=0.4,ja;q=0.2', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36', 'Accept-Encoding': 'gzip, deflate, br', 'Upgrade-Insecure-Requests': '1', 'Connection': 'keep-alive', 'Host': 'localhost:5000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'})
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/web.py", line 1422, in _execute
+    result = self.prepare()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/web.py", line 2681, in prepare
+    self.fallback(self.request)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/wsgi.py", line 277, in __call__
+    WSGIContainer.environ(request), start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/_compat.py", line 32, in reraise
+    raise value.with_traceback(tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/_compat.py", line 32, in reraise
+    raise value.with_traceback(tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 477, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/views.py", line 84, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 587, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py", line 972, in get
+    if s.question_code==question_code and s.status=='start':
+NameError: name 'question_code' is not defined
+ERROR:tornado.access:500 GET /ok_false/id/1439718482815328 (127.0.0.1) 25.68ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.access:200 GET /ok_false/id/1439718482815328/question_code/8 (127.0.0.1) 29.41ms
+INFO:tornado.access:200 GET /id/1439718482815328/pass/1439718482815328/name/1439718482815328/email/oper892@gmail.com/logininfo/facebook (127.0.0.1) 13.74ms
+INFO:tornado.access:200 GET /collect/1439718482815328/call_code/1 (127.0.0.1) 20.02ms
+INFO:tornado.access:200 GET /collect/1439718482815328/call_code/2 (127.0.0.1) 21.84ms
+INFO:tornado.access:200 GET /collect/1439718482815328/call_code/3 (127.0.0.1) 20.25ms
+INFO:tornado.access:200 GET /collect/1439718482815328/call_code/4 (127.0.0.1) 26.90ms
+INFO:tornado.access:200 GET /collect/1439718482815328/call_code/5 (127.0.0.1) 21.03ms
+INFO:tornado.access:200 GET /collect/1439718482815328/call_code/6 (127.0.0.1) 17.39ms
+INFO:tornado.access:200 GET /collect/1439718482815328/call_code/7 (127.0.0.1) 14.00ms
+INFO:tornado.access:200 GET /collect/1439718482815328/call_code/8 (127.0.0.1) 15.35ms
+INFO:tornado.access:200 GET /collect/1439718482815328/call_code/9 (127.0.0.1) 11.16ms
+INFO:tornado.access:200 GET /collect/1439718482815328/call_code/10 (127.0.0.1) 14.39ms
+INFO:tornado.access:200 GET /collect/1439718482815328/call_code/11 (127.0.0.1) 17.13ms
+INFO:tornado.access:200 GET /collect/1439718482815328/call_code/12 (127.0.0.1) 12.93ms
+INFO:tornado.access:200 GET /collect/1439718482815328/call_code/13 (127.0.0.1) 12.83ms
+INFO:tornado.access:200 GET /collect/1439718482815328/call_code/14 (127.0.0.1) 12.40ms
+INFO:tornado.access:200 GET /collect/1439718482815328/call_code/15 (127.0.0.1) 11.76ms
+INFO:tornado.access:200 GET /collect/1439718482815328/call_code/16 (127.0.0.1) 13.58ms
+INFO:tornado.access:200 GET /collect/1439718482815328/call_code/17 (127.0.0.1) 18.20ms
+INFO:tornado.access:200 GET /collect/1439718482815328/call_code/18 (127.0.0.1) 11.58ms
+INFO:tornado.access:200 GET /collect/1439718482815328/call_code/19 (127.0.0.1) 12.18ms
+INFO:tornado.access:200 GET /collect/1439718482815328/call_code/20 (127.0.0.1) 16.44ms
+INFO:tornado.access:200 GET /collect/1439718482815328/call_code/21 (127.0.0.1) 13.35ms
+INFO:tornado.access:200 GET /collect/1439718482815328/call_code/22 (127.0.0.1) 14.75ms
+INFO:tornado.access:200 GET /collect/1439718482815328/call_code/23 (127.0.0.1) 18.71ms
+INFO:tornado.access:200 GET /collect/1439718482815328/call_code/24 (127.0.0.1) 14.85ms
+INFO:tornado.access:200 GET /collect/1439718482815328/call_code/25 (127.0.0.1) 17.73ms
+INFO:tornado.access:200 GET /collect/1439718482815328/call_code/26 (127.0.0.1) 16.83ms
+INFO:tornado.access:200 GET /collect/1439718482815328/call_code/27 (127.0.0.1) 15.17ms
+INFO:tornado.access:200 GET /collect/1439718482815328/call_code/28 (127.0.0.1) 14.20ms
+INFO:tornado.access:200 GET /collect/1439718482815328/call_code/29 (127.0.0.1) 14.25ms
+INFO:tornado.access:200 GET /collect/1439718482815328/call_code/230 (127.0.0.1) 15.96ms
+INFO:tornado.access:200 GET /collect/1439718482815328/call_code/30 (127.0.0.1) 15.79ms

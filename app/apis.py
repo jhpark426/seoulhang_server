@@ -168,7 +168,6 @@ class Inventoryupdating(Resource):
                 point=update_player.point
                 db.session.commit()
 
-
                 grade_list=Grade.query.order_by(Grade.correct.desc())
 
                 for grade in grade_list:
@@ -181,8 +180,6 @@ class Inventoryupdating(Resource):
                         print("%s player rank up"%player_id)
                         return 2
                     print("grade_test", grade.grade)
-
-
 
         print('%s player is not has start question'%player_id)
         return 0
@@ -960,6 +957,60 @@ class SendDB(Resource):
 
         return result
 
+class OKFalse(Resource):
+    def get(self, player_id, question_code):
+        player = Player.query.filter(Player.id==player_id).first()
+
+        get_player_index=Inventory.query.filter(Inventory.player_code==player_id).all()
+
+        if len(get_player_index)==0:
+            print('%s player is not exist in Inventory'%player_id)
+            return "error", 204
+
+        for s in get_player_index:
+
+            if s.question_code==question_code and s.status=='start':
+                s.status='finish'
+                s.finish_time=datetime.utcnow()
+                db.session.commit()
+
+                update_player=Player.query.filter(Player.id==player_id).first()
+                question = Question.query.filter(Question.question_code==question_code).first()
+
+                print("point", update_player.point)
+                if question.content_type == "ox":
+                    update_player.point=update_player.point+3
+                    update_player.check_hint=update_player.check_hint+3
+                    update_player.check_count=update_player.check_count+3
+                    print("point", update_player.point)
+
+                if update_player.check_hint>=30:
+                    update_player.hint +=1
+                    update_player.check_hint=update_player.check_hint - 30
+                if update_player.check_count>=50:
+                    update_player.quiz_count +=1
+                    update_player.check_count=update_player.check_count - 50
+
+                print("point", update_player.point)
+                point=update_player.point
+                db.session.commit()
+
+                grade_list=Grade.query.order_by(Grade.correct.desc())
+
+                for grade in grade_list:
+                    if update_player.point >= grade.correct:
+                        if update_player.grade == grade.grade:
+                            print('%s player inventory updating success'%player_id)
+                            return "success"
+                        update_player.grade=grade.grade
+                        db.session.commit()
+                        print("%s player rank up"%player_id)
+                        return "rankup"
+
+                    print("grade_test", grade.grade)
+                return "success"
+
+
 api.add_resource(Hint,'/hint_player/<string:player_id>/call_code/<int:question_code>/check/<string:check>')
 api.add_resource(Checking,'/check_player/<string:player_id>')
 api.add_resource(PlayerUnit, '/playerunit/<string:player_id>')
@@ -989,3 +1040,4 @@ api.add_resource(Notice_c, '/notice/id/<string:player_id>')
 api.add_resource(GradeRate, '/grade/id/<string:player_id>')
 api.add_resource(MakingQuiz, '/make_quiz/id/<string:player_id>/question_name/<string:question_name>/x/<float:x_coordinate>/y/<float:y_coordinate>/question/<string:question>/answer/<string:answer>/hint/<string:hint>/locale/<string:locale>')
 api.add_resource(SendDB, '/send_db/id/<string:player_id>')
+api.add_resource(OKFalse, '/ok_false/id/<string:player_id>/question_code/<int:question_code>')
