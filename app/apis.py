@@ -86,16 +86,23 @@ class QuestionCollection(Resource):
         player = Player.query.filter(Player.id==player_id).first()
         question_check = Question.query.filter(Question.question_code==question_code).first()
 
+        question_num = QuestionNum.query.filter(QuestionNum.id == question_code).first()
+
         inven_index = Inventory.query.order_by(Inventory.id)
         inven_index = list(inven_index)
+        print("playernick", player.nickname)
+        print("question_name", question_name)
+        
+        if player.nickname == question_check.question_name:
+            if question_check.region_code == 26:
+                temp_inven=Inventory(id=len(inven_index)+1, player_code=player_id, question_code=question_code, status='finish')
 
-        if question_check.region_code == 26:
-            if player.nickname == question_check.question_name:
-                temp_inven=Inventory(id=len(inven_index)+1, player_code=player_id, question_code=question_code, status='finish')            
+                db.session.add(temp_inven)
+                question_num.question_count += 1
+
+                db.session.commit()
                 return 2
         else:
-            question_num = QuestionNum.query.filter(QuestionNum.id == question_code).first()
-
             if player.language==0:
                 get_question=Question.query.filter(Question.question_code==question_code).first()
             else:

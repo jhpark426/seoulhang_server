@@ -28029,3 +28029,14 @@ sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed
 ERROR:tornado.access:500 GET /make_quiz/id/1439718482815328/question_name/1439718482815328/x/37.1234/y/127.1234/question/1439718482815328/answer/o/hint/1439718482815328/locale/0 (127.0.0.1) 51.19ms
 INFO:tornado.access:200 GET /id/1439718482815328/pass/1439718482815328/name/1439718482815328/email/oper892@gmail.com/logininfo/facebook (127.0.0.1) 12.20ms
 INFO:tornado.access:200 GET /make_quiz/id/1439718482815328/question_name/1439718482815328/x/37.1234/y/127.1234/question/1439718482815328/answer/o/hint/1439718482815328/locale/0 (127.0.0.1) 45.94ms
+INFO:tornado.access:200 GET /id/1439718482815328/pass/1439718482815328/name/1439718482815328/email/oper892@gmail.com/logininfo/facebook (127.0.0.1) 13.17ms
+INFO:tornado.access:200 GET /make_quiz/id/1439718482815328/question_name/1439718482815328/x/37.1234/y/127.1234/question/1439718482815328/answer/o/hint/1439718482815328/locale/0 (127.0.0.1) 38.02ms
+INFO:tornado.access:200 GET /id/1439718482815328/pass/1439718482815328/name/1439718482815328/email/oper892@gmail.com/logininfo/facebook (127.0.0.1) 11.54ms
+INFO:tornado.access:200 GET /make_quiz/id/1439718482815328/question_name/%ED%8C%9F%ED%8C%9F/x/37.1234/y/127.1234/question/1439718482815328/answer/o/hint/1439718482815328/locale/0 (127.0.0.1) 45.03ms
+INFO:tornado.access:204 GET /ok_false/id/1439718482815328/question_code/295 (127.0.0.1) 5.47ms
+INFO:tornado.access:204 GET /ok_false/id/1439718482815328/question_code/295 (127.0.0.1) 5.46ms
+INFO:tornado.access:200 GET /collect/1439718482815328/call_code/296 (127.0.0.1) 6.44ms
+INFO:tornado.access:200 GET /collect/1439718482815328/call_code/295 (127.0.0.1) 7.82ms
+INFO:tornado.access:200 GET /collect/1439718482815328/call_code/296 (127.0.0.1) 5.86ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
