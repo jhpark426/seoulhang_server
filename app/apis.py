@@ -95,14 +95,15 @@ class QuestionCollection(Resource):
 
         if player.nickname == question_check.question_name:
             if question_check.region_code == 26:
+                print("지가낸거")
                 temp_inven=Inventory(id=len(inven_index)+1, player_code=player_id, question_code=question_code, status='finish')
 
                 db.session.add(temp_inven)
-                question_num.question_count += 1
                 player.questionstatus = 1
                 db.session.commit()
                 return 2
             else:
+                print("지가안낸거1")
                 if player.language==0:
                     get_question=Question.query.filter(Question.question_code==question_code).first()
                 else:
@@ -129,6 +130,7 @@ class QuestionCollection(Resource):
                         if i.question_code == question_code:
                             print('%s player already has question'%player_id)
                             return 0
+                    print("지가안낸거2")
                     temp_inven=Inventory(id=len(inven_index)+1, player_code=player_id, question_code=question_code, status='start')
                     db.session.add(temp_inven)
 
