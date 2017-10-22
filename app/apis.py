@@ -869,6 +869,11 @@ class NewNickname(Resource):
         if not nownickname is None:
             return "already nickname", 204
 
+        question = Question.query.order_by(Question.queston_code.desc())
+        for quest in qustion:
+            if not quest.question_name is None:
+                return "already nickname", 204
+
         player.nickname = nickname
         db.session.commit()
         print("수정 성공")
@@ -1013,6 +1018,7 @@ class SendDB(Resource):
                 "question_name_ko" : question.question_name,
                 "question_name_en" : question_en.question_name,
                 "question_length" : len(question_index),
+                "region_code" : quesiton.region_code,
                 "train_code" : question_en.train_code,
                 "x_coordinate" : question.x_coordinate,
                 "y_coordinate" : question.y_coordinate
@@ -1038,7 +1044,7 @@ class OKFalse(Resource):
             print("question_code.s", type(s.question_code))
             print("status", s.status)
             if int(question_code) == int(s.question_code) and s.status == 'start':
-                
+
                 print("12")
                 s.status='finish'
                 print("13")

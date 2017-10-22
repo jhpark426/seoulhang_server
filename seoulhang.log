@@ -28175,3 +28175,6 @@ Traceback (most recent call last):
     print("playernick", player.nickname)
 AttributeError: 'NoneType' object has no attribute 'nickname'
 ERROR:tornado.access:500 GET /collect/1439718482815328/call_code/87 (127.0.0.1) 25.18ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
