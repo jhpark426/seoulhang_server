@@ -865,15 +865,17 @@ class NewNickname(Resource):
     def get (self, player_id, nickname):
         print("nickname now", nickname)
         player = Player.query.filter(Player.id == player_id).first()
-        nownickname = player.query.filter(Player.nickname == nickname).first()
+        nownickname = Player.query.filter(Player.nickname == nickname).first()
+
         if not nownickname is None:
             return "already nickname", 204
 
-        question = Question.query.order_by(Question.queston_code.desc())
-        for quest in qustion:
-            if not quest.question_name == nickname is None:
-                return "already nickname", 204
+        question = Question.query.order_by(Question.question_code.desc())
 
+        for quest in question:
+            if quest.question_name == nickname:
+                return "already nickname", 204
+        print("player", player.id)
         player.nickname = nickname
         db.session.commit()
         print("수정 성공")

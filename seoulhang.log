@@ -28179,3 +28179,336 @@ INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server
 INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
 INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
 INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.access:200 GET /id/1439718482815328/pass/1439718482815328/name/1439718482815328/email/oper892@gmail.com/logininfo/facebook (127.0.0.1) 9.61ms
+ERROR:tornado.application:Uncaught exception GET /newnickname/id/1439718482815328/nickname/aa (127.0.0.1)
+HTTPServerRequest(protocol='http', host='localhost:5000', method='GET', uri='/newnickname/id/1439718482815328/nickname/aa', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Connection': 'keep-alive', 'Host': 'localhost:5000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8', 'Upgrade-Insecure-Requests': '1', 'Accept-Encoding': 'gzip, deflate, br', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36', 'Accept-Language': 'ko-KR,ko;q=0.8,en-US;q=0.6,en;q=0.4,ja;q=0.2'})
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/web.py", line 1422, in _execute
+    result = self.prepare()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/web.py", line 2681, in prepare
+    self.fallback(self.request)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/wsgi.py", line 277, in __call__
+    WSGIContainer.environ(request), start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/_compat.py", line 32, in reraise
+    raise value.with_traceback(tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/_compat.py", line 32, in reraise
+    raise value.with_traceback(tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 477, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/views.py", line 84, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 587, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py", line 872, in get
+    question = Question.query.order_by(Question.queston_code.desc())
+AttributeError: type object 'Question' has no attribute 'queston_code'
+ERROR:tornado.access:500 GET /newnickname/id/1439718482815328/nickname/aa (127.0.0.1) 11.73ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+ERROR:tornado.application:Uncaught exception GET /newnickname/id/1439718482815328/nickname/aa (127.0.0.1)
+HTTPServerRequest(protocol='http', host='localhost:5000', method='GET', uri='/newnickname/id/1439718482815328/nickname/aa', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36', 'Host': 'localhost:5000', 'Upgrade-Insecure-Requests': '1', 'Accept-Encoding': 'gzip, deflate, br', 'Cache-Control': 'max-age=0', 'Connection': 'keep-alive', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8', 'Accept-Language': 'ko-KR,ko;q=0.8,en-US;q=0.6,en;q=0.4,ja;q=0.2'})
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/web.py", line 1422, in _execute
+    result = self.prepare()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/web.py", line 2681, in prepare
+    self.fallback(self.request)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/wsgi.py", line 277, in __call__
+    WSGIContainer.environ(request), start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/_compat.py", line 32, in reraise
+    raise value.with_traceback(tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/_compat.py", line 32, in reraise
+    raise value.with_traceback(tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 477, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/views.py", line 84, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 587, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py", line 872, in get
+    question = Question.query.order_by(Question.queston_code.desc())
+AttributeError: type object 'Question' has no attribute 'queston_code'
+ERROR:tornado.access:500 GET /newnickname/id/1439718482815328/nickname/aa (127.0.0.1) 11.57ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.access:204 GET /newnickname/id/1439718482815328/nickname/aa (127.0.0.1) 14.75ms
+INFO:tornado.access:204 GET /newnickname/id/1439718482815328/nickname/aa (127.0.0.1) 17.24ms
+INFO:tornado.access:204 GET /newnickname/id/1439718482815328/nickname/aa (127.0.0.1) 18.32ms
+INFO:tornado.access:204 GET /newnickname/id/1439718482815328/nickname/aa (127.0.0.1) 20.17ms
+ERROR:tornado.application:Uncaught exception GET /id/1439718482815328/pass/1439718482815328/name/1439718482815328/email/oper892@gmail.com/logininfo/facebook (127.0.0.1)
+HTTPServerRequest(protocol='http', host='localhost:5000', method='GET', uri='/id/1439718482815328/pass/1439718482815328/name/1439718482815328/email/oper892@gmail.com/logininfo/facebook', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Connection': 'keep-alive', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36', 'Host': 'localhost:5000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8', 'Cache-Control': 'max-age=0', 'Accept-Encoding': 'gzip, deflate, br', 'Upgrade-Insecure-Requests': '1', 'Accept-Language': 'ko-KR,ko;q=0.8,en-US;q=0.6,en;q=0.4,ja;q=0.2'})
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/web.py", line 1422, in _execute
+    result = self.prepare()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/web.py", line 2681, in prepare
+    self.fallback(self.request)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/wsgi.py", line 277, in __call__
+    WSGIContainer.environ(request), start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/_compat.py", line 32, in reraise
+    raise value.with_traceback(tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/_compat.py", line 32, in reraise
+    raise value.with_traceback(tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 477, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/views.py", line 84, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 587, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py", line 660, in get
+    return player_id.nickname
+AttributeError: 'str' object has no attribute 'nickname'
+ERROR:tornado.access:500 GET /id/1439718482815328/pass/1439718482815328/name/1439718482815328/email/oper892@gmail.com/logininfo/facebook (127.0.0.1) 8.30ms
+INFO:tornado.access:200 GET /id/1439718482815328/pass/1439718482815328/name/1439718482815328/email/oper892@gmail.com/logininfo/facebook (127.0.0.1) 10.98ms
+INFO:tornado.access:204 GET /newnickname/id/1439718482815328/nickname/aa (127.0.0.1) 13.98ms
+INFO:tornado.access:204 GET /newnickname/id/1439718482815328/nickname/aa (127.0.0.1) 14.93ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.access:204 GET /newnickname/id/1439718482815328/nickname/aa (127.0.0.1) 7.01ms
+INFO:tornado.access:200 GET /id/1439718482815328/pass/1439718482815328/name/1439718482815328/email/oper892@gmail.com/logininfo/facebook (127.0.0.1) 10.25ms
+INFO:tornado.access:204 GET /newnickname/id/1439718482815328/nickname/aa (127.0.0.1) 5.40ms
+INFO:tornado.access:204 GET /newnickname/id/1439718482815328/nickname/avas (127.0.0.1) 7.25ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.access:204 GET /newnickname/id/1439718482815328/nickname/avas (127.0.0.1) 18.24ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.access:204 GET /newnickname/id/1439718482815328/nickname/avas (127.0.0.1) 18.48ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.access:204 GET /newnickname/id/1439718482815328/nickname/avas (127.0.0.1) 20.60ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.access:204 GET /newnickname/id/1439718482815328/nickname/avas (127.0.0.1) 19.41ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.access:204 GET /newnickname/id/1439718482815328/nickname/avas (127.0.0.1) 20.15ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+ERROR:tornado.application:Uncaught exception GET /newnickname/id/1439718482815328/nickname/avas (127.0.0.1)
+HTTPServerRequest(protocol='http', host='localhost:5000', method='GET', uri='/newnickname/id/1439718482815328/nickname/avas', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Encoding': 'gzip, deflate, br', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36', 'Upgrade-Insecure-Requests': '1', 'Host': 'localhost:5000', 'Accept-Language': 'ko-KR,ko;q=0.8,en-US;q=0.6,en;q=0.4,ja;q=0.2', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8', 'Connection': 'keep-alive', 'Cache-Control': 'max-age=0'})
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/web.py", line 1422, in _execute
+    result = self.prepare()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/web.py", line 2681, in prepare
+    self.fallback(self.request)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/wsgi.py", line 277, in __call__
+    WSGIContainer.environ(request), start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/_compat.py", line 32, in reraise
+    raise value.with_traceback(tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/_compat.py", line 32, in reraise
+    raise value.with_traceback(tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 477, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/views.py", line 84, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 587, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py", line 868, in get
+    nownickname = player.query.filter(Player.nickname == nickname).first()
+AttributeError: 'NoneType' object has no attribute 'query'
+ERROR:tornado.access:500 GET /newnickname/id/1439718482815328/nickname/avas (127.0.0.1) 10.70ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+ERROR:tornado.application:Uncaught exception GET /newnickname/id/1439718482815328/nickname/avas (127.0.0.1)
+HTTPServerRequest(protocol='http', host='localhost:5000', method='GET', uri='/newnickname/id/1439718482815328/nickname/avas', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36', 'Accept-Encoding': 'gzip, deflate, br', 'Connection': 'keep-alive', 'Host': 'localhost:5000', 'Cache-Control': 'max-age=0', 'Accept-Language': 'ko-KR,ko;q=0.8,en-US;q=0.6,en;q=0.4,ja;q=0.2', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8', 'Upgrade-Insecure-Requests': '1'})
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/web.py", line 1422, in _execute
+    result = self.prepare()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/web.py", line 2681, in prepare
+    self.fallback(self.request)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/wsgi.py", line 277, in __call__
+    WSGIContainer.environ(request), start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/_compat.py", line 32, in reraise
+    raise value.with_traceback(tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/_compat.py", line 32, in reraise
+    raise value.with_traceback(tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 477, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/views.py", line 84, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 587, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py", line 883, in get
+    player.nickname = nickname
+AttributeError: 'NoneType' object has no attribute 'nickname'
+ERROR:tornado.access:500 GET /newnickname/id/1439718482815328/nickname/avas (127.0.0.1) 20.69ms
+ERROR:tornado.application:Uncaught exception GET /newnickname/id/1439718482815328/nickname/avas (127.0.0.1)
+HTTPServerRequest(protocol='http', host='localhost:5000', method='GET', uri='/newnickname/id/1439718482815328/nickname/avas', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Connection': 'keep-alive', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8', 'Upgrade-Insecure-Requests': '1', 'Accept-Language': 'ko-KR,ko;q=0.8,en-US;q=0.6,en;q=0.4,ja;q=0.2', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36', 'Host': 'localhost:5000'})
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/web.py", line 1422, in _execute
+    result = self.prepare()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/web.py", line 2681, in prepare
+    self.fallback(self.request)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/wsgi.py", line 277, in __call__
+    WSGIContainer.environ(request), start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/_compat.py", line 32, in reraise
+    raise value.with_traceback(tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/_compat.py", line 32, in reraise
+    raise value.with_traceback(tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 477, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/views.py", line 84, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 587, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py", line 883, in get
+    player.nickname = nickname
+AttributeError: 'NoneType' object has no attribute 'nickname'
+ERROR:tornado.access:500 GET /newnickname/id/1439718482815328/nickname/avas (127.0.0.1) 30.17ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+ERROR:tornado.application:Uncaught exception GET /newnickname/id/1439718482815328/nickname/avas (127.0.0.1)
+HTTPServerRequest(protocol='http', host='localhost:5000', method='GET', uri='/newnickname/id/1439718482815328/nickname/avas', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Host': 'localhost:5000', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8', 'Connection': 'keep-alive', 'Cache-Control': 'max-age=0', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36', 'Accept-Language': 'ko-KR,ko;q=0.8,en-US;q=0.6,en;q=0.4,ja;q=0.2', 'Upgrade-Insecure-Requests': '1'})
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/web.py", line 1422, in _execute
+    result = self.prepare()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/web.py", line 2681, in prepare
+    self.fallback(self.request)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/wsgi.py", line 277, in __call__
+    WSGIContainer.environ(request), start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/_compat.py", line 32, in reraise
+    raise value.with_traceback(tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/_compat.py", line 32, in reraise
+    raise value.with_traceback(tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 477, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/views.py", line 84, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 587, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py", line 878, in get
+    print("player", player.id)
+AttributeError: 'NoneType' object has no attribute 'id'
+ERROR:tornado.access:500 GET /newnickname/id/1439718482815328/nickname/avas (127.0.0.1) 18.69ms
+INFO:tornado.access:200 GET /id/1439718482815328/pass/1439718482815328/name/1439718482815328/email/oper892@gmail.com/logininfo/facebook (127.0.0.1) 10.89ms
+INFO:tornado.access:200 GET /newnickname/id/1439718482815328/nickname/avas (127.0.0.1) 17.97ms
