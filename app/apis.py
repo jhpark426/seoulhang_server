@@ -1003,6 +1003,7 @@ class MakingQuiz(Resource):
 class SendDB(Resource):
     def get (self, player_id):
         print("sendDB!!")
+        print("player_id", player_id)
         player = Player.query.filter(Player.id==player_id).first()
 
         if player is None:
@@ -1020,7 +1021,7 @@ class SendDB(Resource):
                 "question_name_ko" : question.question_name,
                 "question_name_en" : question_en.question_name,
                 "question_length" : len(question_index),
-                "region_code" : quesiton.region_code,
+                "region_code" : question.region_code,
                 "train_code" : question_en.train_code,
                 "x_coordinate" : question.x_coordinate,
                 "y_coordinate" : question.y_coordinate
