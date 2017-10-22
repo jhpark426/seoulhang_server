@@ -1024,18 +1024,26 @@ class SendDB(Resource):
 class OKFalse(Resource):
     def get(self, player_id, question_code):
         player = Player.query.filter(Player.id==player_id).first()
-
+        print("1")
         get_player_index=Inventory.query.filter(Inventory.player_code==player_id).all()
 
         if len(get_player_index)==0:
             print('%s player is not exist in Inventory'%player_id)
             return "error", 204
 
+        print("111")
         for s in get_player_index:
-
-            if s.question_code==question_code and s.status=='start':
+            print("11")
+            print("question_code", type(s.question_code))
+            print("question_code.s", type(s.question_code))
+            print("status", s.status)
+            if int(question_code) == int(s.question_code) and s.status == 'start':
+                
+                print("12")
                 s.status='finish'
+                print("13")
                 s.finish_time=datetime.utcnow()
+                print("11")
                 db.session.commit()
 
                 update_player=Player.query.filter(Player.id==player_id).first()
