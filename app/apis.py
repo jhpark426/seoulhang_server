@@ -871,7 +871,7 @@ class NewNickname(Resource):
 
         question = Question.query.order_by(Question.queston_code.desc())
         for quest in qustion:
-            if not quest.question_name is None:
+            if not quest.question_name == nickname is None:
                 return "already nickname", 204
 
         player.nickname = nickname
