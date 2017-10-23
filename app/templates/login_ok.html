@@ -10,8 +10,8 @@
     <!-- CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!--    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">-->
-    <link rel="stylesheet" href="assets/css/form-elements.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='login_ok_form-elements.css') }}">
+    <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='login_ok_style.css') }}">
 </head>
 
 <body>
@@ -45,18 +45,10 @@
                                     <textarea name="content" placeholder="내용" class="form-content form-control iText" id="form-password"></textarea>
                                 </div>
                                   <button type="submit" class="btn">등록</button>
-
                             </form>
                         </div>
-
-
                     </div>
-
-
                 </div>
-
-
-
             </div>
         </div>
 
@@ -64,12 +56,11 @@
 
 
     <!-- Javascript -->
-    <script src="assets/js/scripts.js"></script>
+    <script src="login_ok_assets/js/scripts.js"></script>
 
     <!--[if lt IE 10]>
             <script src="assets/js/placeholder.js"></script>
         <![endif]-->
 
 </body>
-
 </html>

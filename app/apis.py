@@ -23,7 +23,29 @@ def hello_world():
 
 @app.route('/login')
 def login():
-    return render_template ("login.html")
+    return render_template("login.html")
+
+@app.route('/login_ok', methods=["POST"])
+def login_ok():
+    if request.method == "POST":
+        print(request.method)
+        print(request.form)
+
+        userid = request.form["userid"]
+        passwd = request.form["passwd"]
+
+        player = Player.query.filter(Player.id == userid).first()
+        print("pid",player.id)
+
+        print("id", userid)
+        print("passwd", passwd)
+
+        if userid=='dnsgkrwnsgnladmin' and passwd=='wnsgnldnsgkradmin':
+            print("관리자입니다.")
+            return render_template('login_ok.html', userid=userid, passwd=passwd)
+        else:
+            return render_template('login_error.html')
+
 
 class PlayerFindUnit(Resource):
     # @profiling
@@ -95,7 +117,7 @@ class QuestionCollection(Resource):
 
         if player.nickname == question_check.question_name:
             if question_check.region_code == 26:
-                print("지가낸거")
+                print("본인이 낸 문제")
                 temp_inven=Inventory(id=len(inven_index)+1, player_code=player_id, question_code=question_code, status='finish')
 
                 db.session.add(temp_inven)
@@ -103,7 +125,7 @@ class QuestionCollection(Resource):
                 db.session.commit()
                 return 2
             else:
-                print("지가안낸거1")
+                print("본인이 내지 않은 문제")
                 if player.language==0:
                     get_question=Question.query.filter(Question.question_code==question_code).first()
                 else:
@@ -130,7 +152,7 @@ class QuestionCollection(Resource):
                         if i.question_code == question_code:
                             print('%s player already has question'%player_id)
                             return 0
-                    print("지가안낸거2")
+                    print("본인이 내지 않은 문제2")
                     temp_inven=Inventory(id=len(inven_index)+1, player_code=player_id, question_code=question_code, status='start')
                     db.session.add(temp_inven)
 

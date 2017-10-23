@@ -8,10 +8,9 @@
     <title>Bootstrap Login Form Template</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/form-elements.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='login_form-elements.css') }}">
+    <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='login_style.css') }}">
 </head>
-
 <body>
     <!-- Top content -->
     <div class="top-content">
@@ -42,6 +41,23 @@
                             </div>
                             </div>
                         </div>
+                        <!-- Javascript -->
+                        <script type="text/javascript">
+                        function login_check() {
+                            if (document.loginfrm.userid.value == "") {
+                                alert("아이디를 입력하여 주시기 바랍니다.");
+                                document.loginfrm1.userid.focus();
+                                return false;
+                            }
+
+                            if (document.loginfrm.passwd.value == "") {
+                                alert("비밀번호를 입력하여 주시기 바랍니다.");
+                                document.loginfrm1.passwd.focus();
+                                return false;
+                            }
+                            document.loginfrm.submit();
+                        }
+                        </script>
                     </form>
                 </div>
                 <div class="row">
@@ -53,7 +69,7 @@
                             <a class="btn btn-link-2" href="#">
 	                        		<i class="fa fa-key"></i>비밀번호 찾기
 	                        	</a>
-                            <a class="btn btn-link-2" href="{{ url_for('join') }}">
+                            <a class="btn btn-link-2" href="#">
 	                        		<i class="fa fa-user-plus"></i> 회원가입
 	                        	</a>
                     </div>
@@ -62,8 +78,5 @@
         </div>
 
     </div>
-
-    <!-- Javascript -->
-    <script src="assets/js/scripts.js"></script>
 </body>
 </html>
