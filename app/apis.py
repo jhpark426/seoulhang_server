@@ -65,7 +65,7 @@ def regit_ok():
         notice_index = list(notice_index)
 
         utcnow = datetime.utcnow()
-        time_gap = timedelta(hours=9, minutes=-2)
+        time_gap = timedelta(hours=9, minutes=-2, seconds=-25)
         kor_time = utcnow + time_gap
         print("time_g", time_gap)
         print("time", kor_time)
