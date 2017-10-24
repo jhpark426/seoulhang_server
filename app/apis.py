@@ -175,6 +175,7 @@ class QuestionCollection(Resource):
                 if i.question_code == question_code:
                     print('%s player already has question'%player_id)
                     return 0
+
             print("본인이 내지 않은 문제2")
             temp_inven=Inventory(id=len(inven_index)+1, player_code=player_id, question_code=question_code, status='start')
             db.session.add(temp_inven)
@@ -205,17 +206,11 @@ class Inventoryupdating(Resource):
 
                 update_player=Player.query.filter(Player.id==player_id).first()
                 question = Question.query.filter(Question.question_code==question_code).first()
+
+                update_player.point=update_player.point+10
+                update_player.check_hint=update_player.check_hint+10
+                update_player.check_count=update_player.check_count+10
                 print("point", update_player.point)
-                if question.content_type == "ox":
-                    update_player.point=update_player.point+5
-                    update_player.check_hint=update_player.check_hint+5
-                    update_player.check_count=update_player.check_count+5
-                    print("point", update_player.point)
-                else:
-                    update_player.point=update_player.point+10
-                    update_player.check_hint=update_player.check_hint+10
-                    update_player.check_count=update_player.check_count+10
-                    print("point", update_player.point)
 
                 if update_player.check_hint>=30:
                     update_player.hint +=1
@@ -271,6 +266,7 @@ class Ranking(Resource):
         if len(get_rank)==0:
             print("Not in player")
             return 0
+
         ranking={}
         for s in get_rank:
             ranking[s.id]=s.point
@@ -1067,9 +1063,9 @@ class OKFalse(Resource):
 
                 print("point", update_player.point)
                 if question.content_type == "ox":
-                    update_player.point=update_player.point+3
-                    update_player.check_hint=update_player.check_hint+3
-                    update_player.check_count=update_player.check_count+3
+                    update_player.point=update_player.point+5
+                    update_player.check_hint=update_player.check_hint+5
+                    update_player.check_count=update_player.check_count+5
                     print("point", update_player.point)
 
                 if update_player.check_hint>=30:
