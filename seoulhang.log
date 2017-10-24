@@ -29368,3 +29368,10 @@ INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server
 INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
 INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/loads.py modified; restarting server
 INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/loads.py modified; restarting server
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.access:200 GET /login (127.0.0.1) 15.77ms
+INFO:tornado.access:200 POST /login_ok (127.0.0.1) 9.22ms
+WARNING:tornado.access:404 GET /login_ok_assets/js/scripts.js (127.0.0.1) 16.54ms
+INFO:tornado.access:200 POST /regit_ok (127.0.0.1) 15.94ms
+WARNING:tornado.access:404 GET /static/style.css (127.0.0.1) 1.86ms

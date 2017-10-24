@@ -63,11 +63,12 @@ def regit_ok():
 
         notice_index = Notice.query.order_by(Notice.id)
         notice_index = list(notice_index)
-        print("temp1")
+
         temp_notice=Notice(id=len(notice_index)+1, title=title, contents=content, create_time=datetime.now())
         db.session.add(temp_notice)
         db.session.commit()
-        print("temp2")
+
+        print("time!!", datetime.now())
 
     return render_template('regit_ok.html', title = title, content=content)
 
