@@ -65,16 +65,14 @@ def regit_ok():
         notice_index = list(notice_index)
 
         utcnow = datetime.utcnow()
-        time_gap = timedelta(hours=9, minutes=-2, seconds=-25)
+        time_gap = timedelta(hours=9, minutes=-2, seconds=-24)
         kor_time = utcnow + time_gap
         print("time_g", time_gap)
         print("time", kor_time)
 
         temp_notice=Notice(id=len(notice_index)+1, title=title, contents=content, create_time=kor_time)
 
-
     return render_template('regit_ok.html', title = title, content=content)
-
 
 class PlayerFindUnit(Resource):
     # @profiling
