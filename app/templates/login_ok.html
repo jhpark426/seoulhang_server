@@ -30,7 +30,7 @@
                             </div>
                         </div>
                         <div class="form-bottom">
-                            <form method="post" role="form" class="login-form" name="loginfrm" action="{{url_for('login_ok')}}" onsubmit="return false;">
+                            <form method="post" role="form" class="login-form" name="loginfrm" action="{{url_for('regit_ok')}}" onsubmit="return false;">
                                 <div class="form-group">
                                     <label class="sr-only" for="form-title">title</label>
                                     <label for="title" class="col-sm-2">제목</label>
@@ -44,7 +44,23 @@
 
                                     <textarea name="content" placeholder="내용" class="form-content form-control iText" id="form-password"></textarea>
                                 </div>
-                                  <button type="submit" class="btn">등록</button>
+                                  <button type="submit" class="btn" onclick=regist_ok()>등록</button>
+                                  <script type="text/javascript">
+                                  function regist_ok() {
+                                      if (document.loginfrm.title.value == "") {
+                                          alert("제목을 입력하여 주시기 바랍니다.");
+                                          document.loginfrm1.title.focus();
+                                          return false;
+                                      }
+
+                                      if (document.loginfrm.content.value == "") {
+                                          alert("내용을 입력하여 주시기 바랍니다.");
+                                          document.loginfrm1.content.focus();
+                                          return false;
+                                      }
+                                      document.loginfrm.submit();
+                                  }
+                                  </script>
                             </form>
                         </div>
                     </div>

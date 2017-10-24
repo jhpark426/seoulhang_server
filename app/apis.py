@@ -27,15 +27,17 @@ def login():
 
 @app.route('/login_ok', methods=["POST"])
 def login_ok():
+    print("왓니")
     if request.method == "POST":
+        if len(request.form)==0:
+            print("여기니..")
+            return render_template('login_ok.html')
+        print("왓니2")
         print(request.method)
         print(request.form)
 
         userid = request.form["userid"]
         passwd = request.form["passwd"]
-
-        player = Player.query.filter(Player.id == userid).first()
-        print("pid",player.id)
 
         print("id", userid)
         print("passwd", passwd)
@@ -45,6 +47,29 @@ def login_ok():
             return render_template('login_ok.html', userid=userid, passwd=passwd)
         else:
             return render_template('login_error.html')
+    else:
+        return render_template('login_ok.html')
+
+@app.route('/regit_ok', methods=["POST"])
+def regit_ok():
+    if request.method == "POST":
+        print(request.method)
+        print(request.form)
+        title = request.form["title"]
+        content = request.form["content"]
+
+        print("title", title)
+        print("content", content)
+
+        notice_index = Notice.query.order_by(Notice.id)
+        notice_index = list(notice_index)
+        print("temp1")
+        temp_notice=Notice(id=len(notice_index)+1, title=title, contents=content, create_time=datetime.now())
+        db.session.add(temp_notice)
+        db.session.commit()
+        print("temp2")
+
+    return render_template('regit_ok.html', title = title, content=content)
 
 
 class PlayerFindUnit(Resource):

@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+    <body>
+      <form method="post" role="form" class="login-form" name="loginfrm" action="{{url_for('login_ok')}}" onsubmit="return false;">
+          <div class="loginForm">
+              <div class="box">
+                공지사항 등록이 완료되었습니다!!
+              <!-- <a href="/login_ok" id="" class="loginBtn">돌아가기</a> -->
+              <button type="submit" class="btn" onclick=regist_ok()>돌아가기</button>
+              </div>
+              <script type="text/javascript">
+              function regist_ok() {
+                document.loginfrm.submit();
+              }
+              </script>
+          </div>
+      </form>
+    </body>
+  </head>
+</html>
