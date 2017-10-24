@@ -64,9 +64,11 @@ def regit_ok():
         notice_index = Notice.query.order_by(Notice.id)
         notice_index = list(notice_index)
 
-        temp_notice=Notice(id=len(notice_index)+1, title=title, contents=content, create_time=datetime.now())
-        db.session.add(temp_notice)
-        db.session.commit()
+        utcnow = datetime.datetime.utcnow()
+        time_gap = datetime.timedelta(hours=9, minutes=-2)
+        kor_time = utcnow + time_gap
+
+        temp_notice=Notice(id=len(notice_index)+1, title=title, contents=content, create_time=kor_time)
 
         print("time!!", datetime.now())
         print("time test", datetime.utcnow())
