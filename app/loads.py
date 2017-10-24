@@ -1,7 +1,8 @@
 # coding:UTF-8
 from os import path
 from xlrd import open_workbook
-from .models import Player,Region,Question,Inventory,Grade,Eng,EngRegion,QuestionNum
+from .models import Player,Region,Question,Inventory,Grade,Eng,EngRegion,QuestionNum,Notice
+from datetime import datetime
 from app import db
 
 XL_PATH = '/import/DB_seoulhang.xlsx'
@@ -113,6 +114,16 @@ def _create_count():
         db.session.add(s)
     db.session.commit()
 
+def _create_notice():
+        create_notice=load_worksheet(nh_wb, "notice")
+        for r in range(create_notice.nrows-1):
+            row={}
+            for c,key in enumerate(load_keys(create_notice)):
+                row[key]=create_notice.cell_value(r+1,c)
+            s = Notice(id=int(row["id"]), title=str(row["title"]), contents=str(row["contents"]), create_time=datetime.now())
+            db.session.add(s)
+        db.session.commit()
+
 def create_all():
     if _check_previous_populated():
         return
@@ -122,4 +133,5 @@ def create_all():
     _create_eng_region()
     _create_eng()
     _create_count()
+    _create_notice()
 create_all()
