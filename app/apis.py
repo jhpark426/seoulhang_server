@@ -69,6 +69,8 @@ def regit_ok():
         db.session.commit()
 
         print("time!!", datetime.now())
+        print("time test", datetime.datetime.utcnow())
+
 
     return render_template('regit_ok.html', title = title, content=content)
 
