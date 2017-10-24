@@ -149,81 +149,41 @@ class QuestionCollection(Resource):
                 player.questionstatus = 1
                 db.session.commit()
                 return 2
-            else:
-                print("본인이 내지 않은 문제")
-                if player.language==0:
-                    get_question=Question.query.filter(Question.question_code==question_code).first()
-                else:
-                    get_question=Eng.query.filter(Eng.question_code==question_code).first()
 
-                inven_player = Inventory.query.filter(Inventory.player_code==player_id).all()
-
-                if len(inven_player) == 0:
-                    print(len(inven_index))
-                    print(player_id)
-                    print(question_code)
-                    temp_inven=Inventory(id=len(inven_index)+1, player_code=player_id, question_code=question_code, status='start')
-
-                    db.session.add(temp_inven)
-                    question_num.question_count += 1
-
-                    db.session.commit()
-
-                    player.questionstatus = 1
-                    db.session.commit()
-                    return 1
-                else:
-                    for i in inven_player:
-                        if i.question_code == question_code:
-                            print('%s player already has question'%player_id)
-                            return 0
-                    print("본인이 내지 않은 문제2")
-                    temp_inven=Inventory(id=len(inven_index)+1, player_code=player_id, question_code=question_code, status='start')
-                    db.session.add(temp_inven)
-
-                    print(question_num)
-                    question_num.question_count += 1
-
-                    player.questionstatus = 1
-                    db.session.commit()
-                    return 1
-
+        print("본인이 내지 않은 문제")
+        if player.language==0:
+            get_question=Question.query.filter(Question.question_code==question_code).first()
         else:
-            if player.language==0:
-                get_question=Question.query.filter(Question.question_code==question_code).first()
-            else:
-                get_question=Eng.query.filter(Eng.question_code==question_code).first()
+            get_question=Eng.query.filter(Eng.question_code==question_code).first()
 
-            inven_player = Inventory.query.filter(Inventory.player_code==player_id).all()
+        inven_player = Inventory.query.filter(Inventory.player_code==player_id).all()
 
-            if len(inven_player) == 0:
-                print(len(inven_index))
-                print(player_id)
-                print(question_code)
-                temp_inven=Inventory(id=len(inven_index)+1, player_code=player_id, question_code=question_code, status='start')
+        if len(inven_player) == 0:
+            print(len(inven_index))
+            print(player_id)
+            print(question_code)
+            temp_inven=Inventory(id=len(inven_index)+1, player_code=player_id, question_code=question_code, status='start')
+            db.session.add(temp_inven)
 
-                db.session.add(temp_inven)
-                question_num.question_count += 1
+            question_num.question_count += 1
 
-                db.session.commit()
+            player.questionstatus = 1
+            db.session.commit()
+            return 1
+        else:
+            for i in inven_player:
+                if i.question_code == question_code:
+                    print('%s player already has question'%player_id)
+                    return 0
+            print("본인이 내지 않은 문제2")
+            temp_inven=Inventory(id=len(inven_index)+1, player_code=player_id, question_code=question_code, status='start')
+            db.session.add(temp_inven)
 
-                player.questionstatus = 1
-                db.session.commit()
-                return 1
-            else:
-                for i in inven_player:
-                    if i.question_code == question_code:
-                        print('%s player already has question'%player_id)
-                        return 0
-                temp_inven=Inventory(id=len(inven_index)+1, player_code=player_id, question_code=question_code, status='start')
-                db.session.add(temp_inven)
+            question_num.question_count += 1
 
-                print(question_num)
-                question_num.question_count += 1
-
-                player.questionstatus = 1
-                db.session.commit()
-                return 1
+            player.questionstatus = 1
+            db.session.commit()
+            return 1
 
 class Inventoryupdating(Resource):
     def get(self,player_id,question_code):
