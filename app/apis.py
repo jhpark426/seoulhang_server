@@ -11,7 +11,7 @@ from json import dumps
 from json import JSONEncoder
 import random
 import operator
-from datetime import datetime
+from datetime import datetime, timedelta
 from app import db
 import time
 from send_mail import SendMail
@@ -64,14 +64,13 @@ def regit_ok():
         notice_index = Notice.query.order_by(Notice.id)
         notice_index = list(notice_index)
 
-        utcnow = datetime.datetime.utcnow()
-        time_gap = datetime.timedelta(hours=9, minutes=-2)
+        utcnow = datetime.utcnow()
+        time_gap = timedelta(hours=9, minutes=-2)
         kor_time = utcnow + time_gap
+        print("time_g", time_gap)
+        print("time", kor_time)
 
         temp_notice=Notice(id=len(notice_index)+1, title=title, contents=content, create_time=kor_time)
-
-        print("time!!", datetime.now())
-        print("time test", datetime.utcnow())
 
 
     return render_template('regit_ok.html', title = title, content=content)
