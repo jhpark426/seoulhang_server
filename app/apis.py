@@ -71,8 +71,11 @@ def regit_ok():
         print("time", kor_time)
 
         temp_notice=Notice(id=len(notice_index)+1, title=title, contents=content, create_time=kor_time)
+        db.session.add(temp_notice)
+        db.session.commit()
 
     return render_template('regit_ok.html', title = title, content=content)
+
 
 class PlayerFindUnit(Resource):
     # @profiling

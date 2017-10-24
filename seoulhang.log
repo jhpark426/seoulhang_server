@@ -29694,3 +29694,16 @@ WARNING:tornado.access:404 GET /static/style.css (127.0.0.1) 22.33ms
 INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
 INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
 INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.access:200 GET /login (127.0.0.1) 14.21ms
+INFO:tornado.access:200 POST /login_ok (127.0.0.1) 11.44ms
+WARNING:tornado.access:404 GET /login_ok_assets/js/scripts.js (127.0.0.1) 27.71ms
+INFO:tornado.access:200 POST /regit_ok (127.0.0.1) 10.46ms
+WARNING:tornado.access:404 GET /static/style.css (127.0.0.1) 3.95ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+WARNING:tornado.access:405 GET /regit_ok (127.0.0.1) 9.45ms
+INFO:tornado.access:200 GET /login (127.0.0.1) 10.22ms
+INFO:tornado.access:200 POST /login_ok (127.0.0.1) 11.10ms
+WARNING:tornado.access:404 GET /login_ok_assets/js/scripts.js (127.0.0.1) 1.77ms
+WARNING:tornado.access:404 GET /login_ok_assets/js/scripts.js (127.0.0.1) 1.37ms
+INFO:tornado.access:200 POST /regit_ok (127.0.0.1) 24.35ms
+WARNING:tornado.access:404 GET /static/style.css (127.0.0.1) 6.39ms
