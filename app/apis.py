@@ -81,7 +81,6 @@ def regit_ok():
 
     return render_template('regit_ok.html', title = title, content=content)
 
-
 class PlayerFindUnit(Resource):
     # @profiling
     def get(self, player_id, password):
@@ -898,12 +897,18 @@ class TopTenRegion(Resource):
     def get (self, player_id):
         print("call TopTenRegion")
         top_ten_list = QuestionNum.query.order_by(QuestionNum.question_count.desc()).offset(0).limit(10)
-
+        player = Player.query.filter(Player.id==player_id).first()
+        print("player location", player.language)
         result = []
         for ten in top_ten_list:
             top = {}
-            quest = Question.query.filter(Question.question_code==ten.id).first()
-            region = Region.query.filter(Region.region_code==quest.region_code).first()
+            if player.language == 0:
+                quest = Question.query.filter(Question.question_code==ten.id).first()
+                region = Region.query.filter(Region.region_code==quest.region_code).first()
+            else:
+                quest = Eng.query.filter(Eng.question_code==ten.id).first()
+                region = EngRegion.query.filter(EngRegion.region_code==quest.region_code).first()
+
             question_num = QuestionNum.query.filter(QuestionNum.id==quest.question_code).first()
             top = {
                 "question_code" : ten.id,
