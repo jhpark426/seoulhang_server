@@ -430,7 +430,7 @@ class Questionfinishlist(Resource):
                         "hint":search_player.hint,
                         "make_quiz" : search_player.quiz_count,
                         "email":search_player.email,
-                        "region_name":get_region_name.region_name,
+                        "region_name":get_region.question_name,
                         "question_code":get_region.question_code,
                         "question":get_region.question,
                         "grade":search_player.grade
