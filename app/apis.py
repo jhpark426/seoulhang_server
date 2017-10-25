@@ -69,10 +69,12 @@ def regit_ok():
         notice_index = Notice.query.order_by(Notice.id)
         notice_index = list(notice_index)
 
-        utcnow = datetime.utcnow()
-        time_gap = timedelta(hours=9, minutes=-2, seconds=-24)
-        kor_time = utcnow + time_gap
-        print("time_g", time_gap)
+        utcnow = datetime.now()
+        hour_gap = timedelta(hours=9)
+        minute_gap = timedelta(minutes=-2)
+        seconds_gap = timedelta(seconds=-24)
+        kor_time = utcnow + hour_gap + minute_gap + seconds_gap
+
         print("time", kor_time)
 
         temp_notice=Notice(id=len(notice_index)+1, title=title, contents=content, create_time=kor_time)
@@ -167,28 +169,21 @@ class QuestionCollection(Resource):
 
         inven_player = Inventory.query.filter(Inventory.player_code==player_id).all()
 
-        if len(inven_player) == 0:
+        if len(inven_player) != 0:
+            print("처음이 아니다.")
+            for i in inven_player:
+                if i.question_code == question_code:
+                    print('%s player already has question'%player_id)
+                    return 0
+
+            print("처음이다.")
             print(len(inven_index))
             print(player_id)
             print(question_code)
             temp_inven=Inventory(id=len(inven_index)+1, player_code=player_id, question_code=question_code, status='start')
             db.session.add(temp_inven)
 
-            question_num.question_count += 1
-
-            player.questionstatus = 1
-            db.session.commit()
-            return 1
-        else:
-            for i in inven_player:
-                if i.question_code == question_code:
-                    print('%s player already has question'%player_id)
-                    return 0
-
             print("본인이 내지 않은 문제2")
-            temp_inven=Inventory(id=len(inven_index)+1, player_code=player_id, question_code=question_code, status='start')
-            db.session.add(temp_inven)
-
             question_num.question_count += 1
 
             player.questionstatus = 1

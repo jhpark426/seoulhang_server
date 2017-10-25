@@ -29754,3 +29754,97 @@ WARNING:tornado.access:404 GET /login_ok_assets/js/scripts.js (127.0.0.1) 1.78ms
 INFO:tornado.access:200 GET /administer (127.0.0.1) 1.32ms
 INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
 INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.access:200 GET /login (127.0.0.1) 16.94ms
+INFO:tornado.access:304 GET /static/login_form-elements.css (127.0.0.1) 12.81ms
+INFO:tornado.access:304 GET /static/login_style.css (127.0.0.1) 1.60ms
+INFO:tornado.access:200 POST /login_ok (127.0.0.1) 12.33ms
+INFO:tornado.access:304 GET /static/login_ok_style.css (127.0.0.1) 2.91ms
+INFO:tornado.access:304 GET /static/login_ok_form-elements.css (127.0.0.1) 2.04ms
+WARNING:tornado.access:404 GET /login_ok_assets/js/scripts.js (127.0.0.1) 15.63ms
+INFO:tornado.access:200 POST /regit_ok (127.0.0.1) 23.78ms
+WARNING:tornado.access:404 GET /static/style.css (127.0.0.1) 2.13ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+ERROR:tornado.application:Uncaught exception POST /regit_ok (127.0.0.1)
+HTTPServerRequest(protocol='http', host='localhost:5000', method='POST', uri='/regit_ok', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Connection': 'keep-alive', 'Accept-Encoding': 'gzip, deflate, br', 'Accept-Language': 'ko-KR,ko;q=0.8,en-US;q=0.6,en;q=0.4,ja;q=0.2', 'Upgrade-Insecure-Requests': '1', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36', 'Host': 'localhost:5000', 'Referer': 'http://localhost:5000/login_ok', 'Cache-Control': 'max-age=0', 'Origin': 'http://localhost:5000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'})
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/web.py", line 1422, in _execute
+    result = self.prepare()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/web.py", line 2681, in prepare
+    self.fallback(self.request)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/wsgi.py", line 277, in __call__
+    WSGIContainer.environ(request), start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py", line 74, in regit_ok
+    minute_gap = timedelte(minutes=-2)
+NameError: name 'timedelte' is not defined
+ERROR:tornado.access:500 POST /regit_ok (127.0.0.1) 24.01ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+ERROR:tornado.application:Uncaught exception POST /regit_ok (127.0.0.1)
+HTTPServerRequest(protocol='http', host='localhost:5000', method='POST', uri='/regit_ok', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Origin': 'http://localhost:5000', 'Cache-Control': 'max-age=0', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8', 'Accept-Language': 'ko-KR,ko;q=0.8,en-US;q=0.6,en;q=0.4,ja;q=0.2', 'Accept-Encoding': 'gzip, deflate, br', 'Connection': 'keep-alive', 'Host': 'localhost:5000', 'Upgrade-Insecure-Requests': '1', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36', 'Referer': 'http://localhost:5000/login_ok'})
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/web.py", line 1422, in _execute
+    result = self.prepare()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/web.py", line 2681, in prepare
+    self.fallback(self.request)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/wsgi.py", line 277, in __call__
+    WSGIContainer.environ(request), start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py", line 77, in regit_ok
+    print("time_g", time_gap)
+NameError: name 'time_gap' is not defined
+ERROR:tornado.access:500 POST /regit_ok (127.0.0.1) 20.36ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.access:200 POST /regit_ok (127.0.0.1) 35.75ms
+WARNING:tornado.access:404 GET /static/style.css (127.0.0.1) 20.15ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.access:200 POST /regit_ok (127.0.0.1) 30.45ms
+WARNING:tornado.access:404 GET /static/style.css (127.0.0.1) 12.68ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
