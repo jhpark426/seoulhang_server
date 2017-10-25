@@ -21,6 +21,11 @@ api = Api(app)
 def hello_world():
     return 'Hello World!'
 
+@app.route('/administer')
+def administer():
+    print("왜안되니..")
+    return render_template("admin.html")
+
 @app.route('/login')
 def login():
     return render_template("login.html")

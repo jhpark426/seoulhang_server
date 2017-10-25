@@ -2,9 +2,9 @@
 <!DOCTYPE html>
 <html>
  <body>
-  <span style=" font: italic bold 1.5em/1em Georgia, serif ; color: black;">서울행 아이디 찾기 서비스</span>
+  <span style=" font: bold 1.5em/1em Georgia, serif ; color: black;">서울행 아이디 찾기 서비스</span>
  <br/>
- {name}님의 아이디는 {pid]입니다.
+ {name}님의 아이디는 {pid}입니다.
  <br/>
  이용해 주셔서 감사합니다.
  </body>
