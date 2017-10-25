@@ -3,6 +3,7 @@ from flask_restful import Resource, Api
 from flask import render_template
 from sqlalchemy import or_, and_
 from app import app
+from pytz import timezone
 from .common import profiling, make_plain_dict
 from .models import Player,Question,Region,Inventory,Grade,Eng, EngRegion, FindInfo, Notice, QuestionNum
 from tornado.ioloop import IOLoop
@@ -66,18 +67,16 @@ def regit_ok():
         print("title", title)
         print("content", content)
 
+        fmt = "%Y-%m-%d %H:%M:%S %Z%z"
+
+        kst = datetime.now(timezone('Asia/Seoul'))
+        print("kst", kst)
+        print("aaa", kst.strftime(fmt))
+
         notice_index = Notice.query.order_by(Notice.id)
         notice_index = list(notice_index)
 
-        utcnow = datetime.now()
-        hour_gap = timedelta(hours=9)
-        minute_gap = timedelta(minutes=-2)
-        seconds_gap = timedelta(seconds=-24)
-        kor_time = utcnow + hour_gap + minute_gap + seconds_gap
-
-        print("time", kor_time)
-
-        temp_notice=Notice(id=len(notice_index)+1, title=title, contents=content, create_time=kor_time)
+        temp_notice=Notice(id=len(notice_index)+1, title=title, contents=content, create_time=kst)
         db.session.add(temp_notice)
         db.session.commit()
 

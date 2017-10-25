@@ -29848,3 +29848,9 @@ INFO:tornado.access:200 POST /regit_ok (127.0.0.1) 30.45ms
 WARNING:tornado.access:404 GET /static/style.css (127.0.0.1) 12.68ms
 INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
 INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.access:200 GET /login (127.0.0.1) 13.28ms
+INFO:tornado.access:200 POST /login_ok (127.0.0.1) 10.67ms
+WARNING:tornado.access:404 GET /login_ok_assets/js/scripts.js (127.0.0.1) 14.84ms
+INFO:tornado.access:200 POST /regit_ok (127.0.0.1) 96.43ms
+WARNING:tornado.access:404 GET /static/style.css (127.0.0.1) 2.20ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
