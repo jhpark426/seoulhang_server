@@ -184,9 +184,7 @@ class Notice(db.Model):
         self.id=id
         self.title=title
         self.contents=contents
-        if create_time is None:
-            create_time=datetime.utcnow()
-            self.create_time=create_timetime.now
+        self.create_time = create_time
 
 class QuestionNum(db.Model):
     __tablename__='question_num'
