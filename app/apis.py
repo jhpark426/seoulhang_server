@@ -176,19 +176,19 @@ class QuestionCollection(Resource):
                     print('%s player already has question'%player_id)
                     return 0
 
-            print("처음이다.")
-            print(len(inven_index))
-            print(player_id)
-            print(question_code)
-            temp_inven=Inventory(id=len(inven_index)+1, player_code=player_id, question_code=question_code, status='start')
-            db.session.add(temp_inven)
+        print("처음이다.")
+        print(len(inven_index))
+        print(player_id)
+        print(question_code)
+        temp_inven=Inventory(id=len(inven_index)+1, player_code=player_id, question_code=question_code, status='start')
+        db.session.add(temp_inven)
 
-            print("본인이 내지 않은 문제2")
-            question_num.question_count += 1
+        print("본인이 내지 않은 문제2")
+        question_num.question_count += 1
 
-            player.questionstatus = 1
-            db.session.commit()
-            return 1
+        player.questionstatus = 1
+        db.session.commit()
+        return 1
 
 class Inventoryupdating(Resource):
     def get(self,player_id,question_code):
