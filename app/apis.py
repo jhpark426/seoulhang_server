@@ -201,7 +201,6 @@ class Inventoryupdating(Resource):
             return 0
 
         for s in get_player_index:
-
             if s.question_code==question_code and s.status=='start':
                 s.status='finish'
                 s.finish_time=datetime.utcnow()
@@ -525,7 +524,6 @@ class Questionstartlist(Resource):
                 }
                 print("temp answer", temp)
                 question.append(temp)
-                print("com2")
 
                 for s in get_inventory:
                     temp={}
@@ -536,10 +534,10 @@ class Questionstartlist(Resource):
                             get_question = Question.query.filter(Question.question_code==s.question_code).first()
                             get_region = Region.query.filter(Region.region_code==get_question.region_code).first()
                         else:
-                            print("영어다2")
+                            print("영어2")
                             get_question = Eng.query.filter(Eng.question_code==s.question_code).first()
                             get_region = EngRegion.query.filter(EngRegion.region_code==get_question.region_code).first()
-                        print("come3")
+
                         temp = {
                             "regioncode":get_region.region_code,
                             "regionname":get_question.question_name,#question_name
@@ -551,7 +549,7 @@ class Questionstartlist(Resource):
                         }
                         print("temp answer", temp)
                         question.append(temp)
-                        print("come4")
+
                 if len(question)==0:
                     print("%s player has no start question"%player_id)
                     temp = {
@@ -678,7 +676,7 @@ class FindId(Resource):
         pname = Player.query.filter(name == Player.name).all()
 
         if pname is None:
-            print("이름 확인하셈")
+            print("이름 확인")
             return "No such player", 204
 
         pinfo = []
@@ -700,7 +698,7 @@ class FindId(Resource):
 
         print('aaaaaa', pemail)
         if pemail == "":
-            print("이메일 확인하셈")
+            print("이메일 확인")
             return "No such player", 204
 
         print("찾기 성공")
@@ -723,7 +721,7 @@ class FindPassword(Resource):
         pid = Player.query.filter(player_id == Player.id).first()
 
         if pid is None:
-            print("id 확인하셈")
+            print("id 확인")
             return "No such player", 204
 
         player = make_plain_dict(pid)
@@ -735,11 +733,11 @@ class FindPassword(Resource):
         ppass = player['password']
 
         if pemail != email:
-            print("메일 확인하셈")
+            print("메일 확인")
             return "No such player", 204
 
         if pname != name:
-            print("이름 확인하셈")
+            print("이름 확인")
             return "No such player", 204
 
         print("찾기 성공")
@@ -865,7 +863,6 @@ class StartGame(Resource):
             return 1
         print("nickname 있다.")
         return 0
-
 
 class NewNickname(Resource):
     def get (self, player_id, nickname):
@@ -1102,7 +1099,6 @@ class OKFalse(Resource):
 
                     print("grade_test", grade.grade)
                 return "success"
-
 
 api.add_resource(Hint,'/hint_player/<string:player_id>/call_code/<int:question_code>/check/<string:check>')
 api.add_resource(Checking,'/check_player/<string:player_id>/question_code/<int:question_code>')
