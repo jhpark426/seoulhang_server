@@ -3,17 +3,12 @@
 폴더 생성
 - app 폴더에 export 폴더를 생성한다.
 
-DB install
-- postgresql
-    postgresql의 경로를 잡아주야 한다.
-    export PATH=/Applications/Postgres.app/Contents/Versions/9.4/bin:$PATH
-
 - sqlite3
     개발시에 쓴다. sgd.sqlite 파일이 생긴다.
     GUI 툴은 https://addons.mozilla.org/ko/firefox/addon/sqlite-manager/ 을 쓴다.
 
-- 초기화
-    http://localhost:5000/www/#/admin 에 접속하여 디비를 초기화한다.
+- 공지사항 등록
+  ec2-13-124-194-255.ap-northeast-2.compute.amazonaws.com:5000/login에서 로그인 후 공지사항 등록.
 
 pip3 install
 
@@ -22,7 +17,6 @@ pip3 install
 - flask-restful
 - tornado
 - xlrd
-- psycopg2 (포스트그레스 쓰는 경우에만 설치. should install postgresql before install this module)
 
 bower install
 - www 디렉토리에서 한다.
