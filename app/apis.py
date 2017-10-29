@@ -830,13 +830,19 @@ class EditProfile(Resource):
         print("정보를 수정한다.")
         player = Player.query.filter(Player.id == player_id).first()
         if player.password != password:
-            return "password_error", 204
+            return "passwderror"
 
-        newnickname = player.query.filter(Player.nickname == nickname).first()
+        newnickname = Player.query.filter(Player.nickname == nickname).first()
 
         if not newnickname is None:
             if newnickname.id != player_id:
-                return "nickname_error", 204
+                return "nicknameerror"
+
+        usingnickname = Question.query.filter(Question.question_name==nickname).first()
+
+        if not usingnickname is None:
+            if usingnickname.id != player_id:
+                return "nicknameerror"
 
         player.nickname = nickname
         player.email = email
