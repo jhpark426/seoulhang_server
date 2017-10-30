@@ -19,7 +19,6 @@ pip3 install
 - xlrd
 
 bower install
-- www 디렉토리에서 한다.
 
 - gmail 모듈을 설치한다.
     https://github.com/charlierguo/gmail
