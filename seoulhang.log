@@ -29962,3 +29962,9 @@ WARNING:tornado.access:404 GET /login_ok_assets/js/scripts.js (127.0.0.1) 15.72m
 INFO:tornado.access:200 POST /regit_ok (127.0.0.1) 44.26ms
 WARNING:tornado.access:404 GET /static/style.css (127.0.0.1) 2.17ms
 INFO:tornado.access:200 GET /notice/id/aaa (127.0.0.1) 6.53ms
+INFO:tornado.access:200 GET /id/jpark426/pass/abc1234!/name/%EB%B0%95%EC%A4%80%ED%9C%98/email/hwipark426@gmail.com/logininfo/normal (127.0.0.1) 8.62ms
+INFO:tornado.access:200 GET /id/oper920/pass/abc1234!/name/%EC%B5%9C%EC%9A%B4%ED%95%99/email/oper920@gmail.com/logininfo/normal (127.0.0.1) 6.60ms
+INFO:tornado.access:200 GET /id/wnsgnl00/pass/abc1234!/name/%EA%B0%90%EC%9E%90/email/wnsgnl00@naver.com/logininfo/normal (127.0.0.1) 5.48ms
+INFO:tornado.access:200 GET /id/wnsgnl000/pass/abc1234!/name/%EC%95%84%EA%B5%AC%EC%B0%9C/email/wnsgnl000@naver.com/logininfo/normal (127.0.0.1) 5.51ms
+INFO:tornado.access:200 GET /id/wnsgnl0000/pass/abc1234!/name/%ED%95%9C%EB%B0%A9%EA%B0%90%EC%9E%90/email/wnsgnl00@hanmail.net/logininfo/normal (127.0.0.1) 4.35ms
+INFO:tornado.access:200 GET /id/wnsgnl00000/pass/abc1234!/name/%ED%95%9C%EB%B0%A9%EA%B0%90%EC%9E%90%EC%95%84%EA%B5%AC%EC%B0%9C/email/jpark426@naver.com/logininfo/normal (127.0.0.1) 7.80ms
