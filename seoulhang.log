@@ -29961,3 +29961,4 @@ INFO:tornado.access:200 POST /login_ok (127.0.0.1) 9.64ms
 WARNING:tornado.access:404 GET /login_ok_assets/js/scripts.js (127.0.0.1) 15.72ms
 INFO:tornado.access:200 POST /regit_ok (127.0.0.1) 44.26ms
 WARNING:tornado.access:404 GET /static/style.css (127.0.0.1) 2.17ms
+INFO:tornado.access:200 GET /notice/id/aaa (127.0.0.1) 6.53ms

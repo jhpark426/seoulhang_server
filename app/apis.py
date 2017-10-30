@@ -954,12 +954,12 @@ class Notice_c(Resource):
             create_time = splited_time.split('.')[0]
             info = {
                 "title_ko" : i.title_ko,
-                "title_en" : i.contents_en,
+                "title_en" : i.title_en,
                 "date1": create_time.split(' ')[0],
                 "date2": create_time.split(' ')[1]
             }
             result.append(info)
-
+            print(result)
         return result
 
 ##등급을 보내준다.
