@@ -1,7 +1,3 @@
-#####################################
-###   by jpark, nolgong changsu   ###
-#####################################
-
 from random import randint
 from app import db
 from json import JSONEncoder
@@ -15,7 +11,7 @@ from math import log2
 import logging
 import tornado
 import time
-## by nolgong changsu ##
+
 class JSONEncoder(JSONEncoder):
     def default(self, o):
         # print("object : ", o)

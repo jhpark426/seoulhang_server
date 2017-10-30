@@ -135,6 +135,7 @@ class PlayerUnit(Resource):
         add_to_db(player_row)
         return player
 
+##퀘스트를 획득한다.
 class QuestionCollection(Resource):
 #   @profiling
     def get(self, player_id, question_code):
@@ -189,6 +190,7 @@ class QuestionCollection(Resource):
         db.session.commit()
         return 1
 
+##푼 문제의 상태를 업데이트 한다.
 class Inventoryupdating(Resource):
     def get(self,player_id,question_code):
 
@@ -319,6 +321,7 @@ class Ranking(Resource):
 
         return return_rank
 
+##달성률을 보여준다.
 class Achievementrate(Resource):
     def get(self,player_id):
 
@@ -376,7 +379,7 @@ class Achievementrate(Resource):
             return_dict.append(temp)
         return return_dict
 
-#show player have finish question_list
+##show player have finish question_list
 class Questionfinishlist(Resource):
     def get(self,player_id):
 
@@ -566,8 +569,8 @@ class Questionstartlist(Resource):
 
             return question
 
+##언어 설정을 한다.
 class SettingLanguage(Resource):
-    #'/set_language/<string:player_id>/language/<int:language>')
     def get(self,player_id,language):
         search_player=Player.query.filter(Player.id==player_id).first()
 
@@ -580,6 +583,7 @@ class SettingLanguage(Resource):
 
             return 1
 
+##퀘스트 획득을 정상적으로 하는지 확인한다.
 class Checking(Resource):
     def get(self,player_id, question_code):
         search_player=Player.query.filter(Player.id==player_id).first()
@@ -605,6 +609,7 @@ class Checking(Resource):
                 print("call fail")
                 return 0
 
+##힌트값을 계산한다.
 class Hint(Resource):
     def get(self,player_id,question_code,check):
         search_player=Player.query.filter(Player.id==player_id).first()
@@ -635,6 +640,8 @@ class Hint(Resource):
                 }
                 return return_hint
 
+
+##아이디의 중복을 확인한다.
 class CheckID(Resource):
     def get(self,player_id):
         search_player=Player.query.filter(Player.id==player_id).first()
@@ -645,6 +652,7 @@ class CheckID(Resource):
         print("아이디가 안겹친다.")
         return player_id
 
+##회원가입을 한다.
 class Regist(Resource):
     def get(self, player_id, password, name ,email, logininfo):
 
@@ -671,6 +679,7 @@ class Regist(Resource):
             return player_id
         return player_id
 
+##아이디를 찾는다.
 class FindId(Resource):
     def get(self, name, email):
         pname = Player.query.filter(name == Player.name).all()
@@ -716,6 +725,7 @@ class FindId(Resource):
         info = {'id': pid, 'password' : ppass, 'name':pname, 'code': ""}
         return info
 
+##비밀번호를 찾는다.
 class FindPassword(Resource):
     def get(self, name, email, player_id):
         pid = Player.query.filter(player_id == Player.id).first()
@@ -751,7 +761,6 @@ class FindPassword(Resource):
             else:
                 key = key + chr(rand)
 
-        print ("여긴왓니1")
         data = {'lost' : "password",
                 'name' : pname,
                 'id' : pid,
@@ -767,8 +776,6 @@ class FindPassword(Resource):
 
         finfo = FindInfo.query.filter(player_id == FindInfo.player_id).first()
 
-        print("aaaa", finfo)
-
         if finfo is None:
             temp_add=FindInfo(id=len(all_index)+1, player_id=str(pid) , key = str(key))
             db.session.add(temp_add)
@@ -782,12 +789,12 @@ class FindPassword(Resource):
         info = {"id": pid, "password" : ppass, "name":pname, "code": key}
         return info
 
+## 코드를 입력을 확인한다.
 class EnterCode(Resource):
     def get(self, player_id, code):
         fid = FindInfo.query.filter(player_id == FindInfo.player_id).first()
         player = make_plain_dict(fid)
 
-        print("aaa", player['key'])
         code = code.upper()
         print("bbb", code)
 
@@ -798,6 +805,7 @@ class EnterCode(Resource):
         print("찾기 성공")
         return player
 
+##비밀번호를 변경한다.
 class UpdatePassword(Resource):
     def get(self, player_id, password):
         pid = Player.query.filter(player_id == Player.id).first()
@@ -807,6 +815,7 @@ class UpdatePassword(Resource):
         info = {"id": 'aa', "password" : 'aa', "name":'pname', "code": 'key'}
         return info
 
+##회원탈퇴 확인을 한다.
 class Withdrawal(Resource):
     def get(self, player_id, password):
         pinfo = Player.query.filter(Player.id == player_id).first()
@@ -816,6 +825,7 @@ class Withdrawal(Resource):
         print("회원탈퇴를 시도한다..")
         return "success"
 
+##회원탈퇴를 한다.
 class RealWithdrawal(Resource):
     def get(self, player_id):
         Player.query.filter(Player.id == player_id).delete()
@@ -825,6 +835,7 @@ class RealWithdrawal(Resource):
         print("회원탈퇴를 했다.")
         return "success"
 
+##회원정보를 수정한다.
 class EditProfile(Resource):
     def get(self, player_id, password, nickname, email):
         print("정보를 수정한다.")
@@ -850,6 +861,7 @@ class EditProfile(Resource):
         print("수정 성공")
         return "success"
 
+##퀘스트 코드 리스트를 전송한다.
 class SendQuestionNumber(Resource):
     def get(self, player_id):
         pinven = Inventory.query.filter(Inventory.player_code == player_id).all()
@@ -860,6 +872,7 @@ class SendQuestionNumber(Resource):
         print("plyer inven", pinvenlist)
         return pinvenlist
 
+##닉네임이 있는지 여부를 확인한다.
 class StartGame(Resource):
     def get(self, player_id):
         player = Player.query.filter(Player.id ==player_id).first()
@@ -870,6 +883,7 @@ class StartGame(Resource):
         print("nickname 있다.")
         return 0
 
+##새로운 닉네임을 입력한다.
 class NewNickname(Resource):
     def get (self, player_id, nickname):
         print("nickname now", nickname)
@@ -890,6 +904,7 @@ class NewNickname(Resource):
         print("수정 성공")
         return "success"
 
+##탑텐 지역을 보내준다.
 class TopTenRegion(Resource):
     def get (self, player_id):
         print("call TopTenRegion")
@@ -927,6 +942,7 @@ class TopTenRegion(Resource):
 
         return result
 
+##공지사항을 보내준다.
 class Notice_c(Resource):
     def get(self, player_id):
         print("notice!!!!")
@@ -946,6 +962,7 @@ class Notice_c(Resource):
 
         return result
 
+##등급을 보내준다.
 class GradeRate(Resource):
     def get (self, player_id):
         print("grade rate!!!!")
@@ -957,6 +974,7 @@ class GradeRate(Resource):
         print(result)
         return result
 
+##퀴즈를 등록한다.
 class MakingQuiz(Resource):
     def get(self, player_id, question_name, x_coordinate, y_coordinate, question, answer, hint, locale):
         print("making quiz!!")
@@ -1015,6 +1033,7 @@ class MakingQuiz(Resource):
         print("성공..")
         return 1
 
+##데이터베이스를 보내준다.
 class SendDB(Resource):
     def get (self, player_id):
         print("sendDB!!")
@@ -1045,6 +1064,7 @@ class SendDB(Resource):
 
         return result
 
+##ox문제는 따로 관리한다.
 class OKFalse(Resource):
     def get(self, player_id, question_code):
         player = Player.query.filter(Player.id==player_id).first()
