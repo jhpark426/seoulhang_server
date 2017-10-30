@@ -176,14 +176,14 @@ class FindInfo(db.Model):
 class Notice(db.Model):
     __tablename__='notice'
     id=db.Column(db.Integer,primary_key=True)
-    title=db.Column(db.String)
-    contents=db.Column(db.String)
+    title_ko=db.Column(db.String)
+    title_en=db.Column(db.String)
     create_time=db.Column(db.DateTime,default=datetime.now)
 
-    def __init__(self,id,title,contents,create_time):
+    def __init__(self,id,title_ko,title_en,create_time):
         self.id=id
-        self.title=title
-        self.contents=contents
+        self.title_ko=title_ko
+        self.title_en=title_en
         self.create_time = create_time
 
 class QuestionNum(db.Model):

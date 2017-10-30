@@ -23,7 +23,7 @@
                     <div class="col-sm-6 col-sm-offset-3 form-box">
                         <div class="form-top">
                             <div class="form-top-left">
-                                <h3>서울행 관리자 페이지</h3>
+                                <h3>서울행 공지사항 등록 페이지</h3>
                             </div>
                             <div class="form-top-right">
                                 <i class="fa fa-lock"></i>
@@ -33,28 +33,28 @@
                             <form method="post" role="form" class="login-form" name="loginfrm" action="{{url_for('regit_ok')}}" onsubmit="return false;">
                                 <div class="form-group">
                                     <label class="sr-only" for="form-title">title</label>
-                                    <label for="title" class="col-sm-2">제목</label>
+                                    <label for="title_ko" class="col-sm-2">한글</label>
 
-                                    <input type="text" name="title" placeholder="제목" class="form-title form-control iText" id="form-username">
+                                    <input type="text" name="title_ko" placeholder="한글" class="form-title form-control iText" id="form-username">
                                 </div>
 
                                 <div class="form-group">
                                     <label class="sr-only" for="form-content">content</label>
-                                    <label for="form-content" class="col-sm-2">내용</label>
+                                    <label for="form-content" class="col-sm-2">영어</label>
 
-                                    <textarea name="content" placeholder="내용" class="form-content form-control iText" id="form-password"></textarea>
+                                    <textarea name="title_en" placeholder="영어" class="form-title form-control iText" id="form-password"></textarea>
                                 </div>
                                   <button type="submit" class="btn" onclick=regist_ok()>등록</button>
                                   <!-- <a href="/administer" id="" class="loginBtn">관리자페이지로 가기</a> -->
                                   <script type="text/javascript">
                                   function regist_ok() {
-                                      if (document.loginfrm.title.value == "") {
+                                      if (document.loginfrm.title_ko.value == "") {
                                           alert("제목을 입력하여 주시기 바랍니다.");
                                           document.loginfrm1.title.focus();
                                           return false;
                                       }
 
-                                      if (document.loginfrm.content.value == "") {
+                                      if (document.loginfrm.title_en.value == "") {
                                           alert("내용을 입력하여 주시기 바랍니다.");
                                           document.loginfrm1.content.focus();
                                           return false;

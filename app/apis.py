@@ -61,11 +61,11 @@ def regit_ok():
     if request.method == "POST":
         print(request.method)
         print(request.form)
-        title = request.form["title"]
-        content = request.form["content"]
+        title_ko = request.form["title_ko"]
+        title_en = request.form["title_en"]
 
-        print("title", title)
-        print("content", content)
+        print("title_ko", title_ko)
+        print("title_en", title_en)
 
         fmt = "%Y-%m-%d %H:%M:%S %Z%z"
 
@@ -76,11 +76,11 @@ def regit_ok():
         notice_index = Notice.query.order_by(Notice.id)
         notice_index = list(notice_index)
 
-        temp_notice=Notice(id=len(notice_index)+1, title=title, contents=content, create_time=kst)
+        temp_notice=Notice(id=len(notice_index)+1, title_ko=title_ko, title_en=title_en, create_time=kst)
         db.session.add(temp_notice)
         db.session.commit()
 
-    return render_template('regit_ok.html', title = title, content=content)
+    return render_template('regit_ok.html', title_ko = title_ko, title_en=title_en)
 
 class PlayerFindUnit(Resource):
     # @profiling
@@ -953,8 +953,8 @@ class Notice_c(Resource):
             splited_time = str(i.create_time)
             create_time = splited_time.split('.')[0]
             info = {
-                "title" : i.title,
-                "contents" : i.contents,
+                "title_ko" : i.title_ko,
+                "title_en" : i.contents_en,
                 "date1": create_time.split(' ')[0],
                 "date2": create_time.split(' ')[1]
             }

@@ -120,7 +120,7 @@ def _create_notice():
             row={}
             for c,key in enumerate(load_keys(create_notice)):
                 row[key]=create_notice.cell_value(r+1,c)
-            s = Notice(id=int(row["id"]), title=str(row["title"]), contents=str(row["contents"]), create_time=datetime.now())
+            s = Notice(id=int(row["id"]), title_ko=str(row["title_ko"]), title_en=str(row["title_en"]), create_time=datetime.now())
             db.session.add(s)
         db.session.commit()
 
