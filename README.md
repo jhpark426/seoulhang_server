@@ -1,3 +1,5 @@
+2017년 서울시 앱공모전 출품작(서울행)
+
 # seoulhang_server
 
 폴더 생성
@@ -8,7 +10,8 @@
     GUI 툴은 https://addons.mozilla.org/ko/firefox/addon/sqlite-manager/ 을 쓴다.
 
 - 공지사항 등록
-  ec2-13-124-194-255.ap-northeast-2.compute.amazonaws.com:5000/login에서 로그인 후 공지사항 등록.
+  ec2-13-124-194-255.ap-northeast-2.compute.amazonaws.com:5000/login
+  관리자 페이지에서 로그인 후 공지사항 등록.
 
 pip3 install
 
@@ -21,4 +24,5 @@ pip3 install
 bower install
 
 - gmail 모듈을 설치한다.
-    https://github.com/charlierguo/gmail
+  메일 전송 서비스
+  https://github.com/charlierguo/gmail
