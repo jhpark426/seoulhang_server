@@ -29968,3 +29968,9 @@ INFO:tornado.access:200 GET /id/wnsgnl00/pass/abc1234!/name/%EA%B0%90%EC%9E%90/e
 INFO:tornado.access:200 GET /id/wnsgnl000/pass/abc1234!/name/%EC%95%84%EA%B5%AC%EC%B0%9C/email/wnsgnl000@naver.com/logininfo/normal (127.0.0.1) 5.51ms
 INFO:tornado.access:200 GET /id/wnsgnl0000/pass/abc1234!/name/%ED%95%9C%EB%B0%A9%EA%B0%90%EC%9E%90/email/wnsgnl00@hanmail.net/logininfo/normal (127.0.0.1) 4.35ms
 INFO:tornado.access:200 GET /id/wnsgnl00000/pass/abc1234!/name/%ED%95%9C%EB%B0%A9%EA%B0%90%EC%9E%90%EC%95%84%EA%B5%AC%EC%B0%9C/email/jpark426@naver.com/logininfo/normal (127.0.0.1) 7.80ms
+INFO:tornado.access:200 GET /ranking/jpark426 (127.0.0.1) 46.16ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.access:200 GET /ranking/jpark426 (127.0.0.1) 31.12ms
+INFO:tornado.access:200 GET /ranking/oper920 (127.0.0.1) 30.01ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.access:200 GET /ranking/jpark426 (127.0.0.1) 28.93ms

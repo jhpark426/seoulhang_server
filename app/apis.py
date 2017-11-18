@@ -277,7 +277,7 @@ class Ranking(Resource):
 
         sorted_ranking=sorted(ranking.items(),key=operator.itemgetter(1),reverse=True)
 
-        rank=1
+        rank=0b01
         for s in sorted_ranking:
             print('"asdfasdfasdf"', s)
             if player_id in s:
@@ -285,7 +285,7 @@ class Ranking(Resource):
             pid = Player.query.filter(Player.id==s[0]).first()
             if not pid.nickname is "":
                 if not pid.nickname is None:
-                    rank+=1
+                    rank+=0b01
 
         return_rank=[]
         temp={}
@@ -301,7 +301,7 @@ class Ranking(Resource):
 
         return_rank.append(temp)
 
-        present_rank=1
+        present_rank=0b01
 
         for s in sorted_ranking:
             temp={}
@@ -316,8 +316,9 @@ class Ranking(Resource):
             if not search_player.nickname is '':
                 if not search_player.nickname is None:
                     print("@@@@@@@@@@", search_player.nickname)
-                    present_rank+=1
+                    present_rank+=0b01
                     return_rank.append(temp)
+        print(return_rank)
 
         return return_rank
 
@@ -1124,6 +1125,7 @@ class OKFalse(Resource):
                         return "rankup"
 
                     print("grade_test", grade.grade)
+
                 return "success"
 
 api.add_resource(Hint,'/hint_player/<string:player_id>/call_code/<int:question_code>/check/<string:check>')
