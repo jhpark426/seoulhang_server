@@ -277,7 +277,7 @@ class Ranking(Resource):
 
         sorted_ranking=sorted(ranking.items(),key=operator.itemgetter(1),reverse=True)
 
-        rank=0b01
+        rank=1
         for s in sorted_ranking:
             print('"asdfasdfasdf"', s)
             if player_id in s:
@@ -285,7 +285,9 @@ class Ranking(Resource):
             pid = Player.query.filter(Player.id==s[0]).first()
             if not pid.nickname is "":
                 if not pid.nickname is None:
-                    rank+=0b01
+                    rank+=1
+
+
 
         return_rank=[]
         temp={}
@@ -300,12 +302,13 @@ class Ranking(Resource):
         }
 
         return_rank.append(temp)
-
-        present_rank=0b01
+        present_rank=-1
 
         for s in sorted_ranking:
             temp={}
             search_player= Player.query.filter(Player.id==s[0]).first()
+            if abs(present_rank) > 3:
+                present_rank = abs(present_rank)
             temp={
                 "player_id":search_player.id,
                 "player_name":search_player.nickname,
@@ -316,7 +319,10 @@ class Ranking(Resource):
             if not search_player.nickname is '':
                 if not search_player.nickname is None:
                     print("@@@@@@@@@@", search_player.nickname)
-                    present_rank+=0b01
+                    if abs(present_rank) > 3:
+                        present_rank = -present_rank
+                    present_rank-=1
+
                     return_rank.append(temp)
         print(return_rank)
 
