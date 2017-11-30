@@ -148,15 +148,22 @@ class QuestionCollection(Resource):
 
         inven_index = Inventory.query.order_by(Inventory.id)
         inven_index = list(inven_index)
+
+        inven_id=[]
+        for i in inven_index:
+            inven_id.append(i.id)
+        max_inven_id = max(inven_id)
+
         print("playernick", player.nickname)
         print("question_name", question_check.question_name)
 
         if player.nickname == question_check.question_name:
             if question_check.region_code == 26:
                 print("본인이 낸 문제")
-                temp_inven=Inventory(id=len(inven_index)+1, player_code=player_id, question_code=question_code, status='finish')
+                temp_inven=Inventory(id=max_inven_id+1, player_code=player_id, question_code=question_code, status='finish')
 
                 db.session.add(temp_inven)
+                db.session.commit()
                 player.questionstatus = 1
                 db.session.commit()
                 return 2
@@ -177,17 +184,18 @@ class QuestionCollection(Resource):
                     return 0
 
         print("처음이다.")
-        print(len(inven_index))
         print(player_id)
         print(question_code)
-        temp_inven=Inventory(id=len(inven_index)+1, player_code=player_id, question_code=question_code, status='start')
+        temp_inven=Inventory(id=max_inven_id+1, player_code=player_id, question_code=question_code, status='start')
         db.session.add(temp_inven)
-
+        db.session.commit()
         print("본인이 내지 않은 문제2")
         question_num.question_count += 1
-
         player.questionstatus = 1
         db.session.commit()
+
+        print(player.questionstatus)
+
         return 1
 
 ##푼 문제의 상태를 업데이트 한다.

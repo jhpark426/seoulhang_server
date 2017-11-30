@@ -30365,3 +30365,822 @@ INFO:tornado.access:200 GET /notice/id/dpdp22 (192.168.43.1) 3.59ms
 INFO:tornado.access:200 GET /send_db/id/dpdp22 (192.168.43.1) 402.62ms
 INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
 INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+WARNING:tornado.general:403 GET /www/ (127.0.0.1):  is not a file
+WARNING:tornado.access:403 GET /www/ (127.0.0.1) 11.69ms
+INFO:tornado.access:200 GET /players/qpqp22/password/qpqp22@@ (172.30.1.1) 17.77ms
+INFO:tornado.access:200 GET /players/qpqp22/password/qpqp22@@ (172.30.1.1) 5.85ms
+INFO:tornado.access:200 GET /players/qpqp22/password/qpqp22@@ (172.30.1.1) 4.83ms
+INFO:tornado.access:200 GET /players/qpqp22/password/qpqp22@@ (172.30.1.1) 7.29ms
+INFO:tornado.access:200 GET /startgame/id/qpqp22 (172.30.1.1) 7.78ms
+INFO:tornado.access:200 GET /finish_player/qpqp22 (172.30.1.1) 11.02ms
+INFO:tornado.access:200 GET /setting_language/qpqp22/language/0 (172.30.1.1) 5.77ms
+INFO:tornado.access:200 GET /finish_player/qpqp22 (172.30.1.1) 7.46ms
+INFO:tornado.access:200 GET /setting_language/qpqp22/language/0 (172.30.1.1) 4.53ms
+INFO:tornado.access:200 GET /toptenregion/id/qpqp22 (172.30.1.1) 55.46ms
+INFO:tornado.access:200 GET /notice/id/qpqp22 (172.30.1.1) 5.78ms
+INFO:tornado.access:200 GET /ranking/qpqp22 (172.30.1.1) 58.90ms
+INFO:tornado.access:200 GET /send_db/id/qpqp22 (172.30.1.1) 519.37ms
+INFO:tornado.access:200 GET /start_player/qpqp22 (172.30.1.1) 3.74ms
+INFO:tornado.access:200 GET /finish_player/qpqp22 (172.30.1.1) 6.85ms
+INFO:tornado.access:200 GET /finish_player/qpqp22 (172.30.1.1) 9.08ms
+INFO:tornado.access:200 GET /setting_language/qpqp22/language/0 (172.30.1.1) 4.62ms
+INFO:tornado.access:200 GET /toptenregion/id/qpqp22 (172.30.1.1) 72.79ms
+INFO:tornado.access:200 GET /notice/id/qpqp22 (172.30.1.1) 7.62ms
+INFO:tornado.access:200 GET /start_player/qpqp22 (172.30.1.1) 9.52ms
+INFO:tornado.access:200 GET /finish_player/qpqp22 (172.30.1.1) 10.70ms
+INFO:tornado.access:200 GET /ranking/qpqp22 (172.30.1.1) 117.54ms
+INFO:tornado.access:200 GET /send_db/id/qpqp22 (172.30.1.1) 553.91ms
+INFO:tornado.access:200 GET /start_player/qpqp22 (172.30.1.1) 4.04ms
+INFO:tornado.access:200 GET /finish_player/qpqp22 (172.30.1.1) 6.25ms
+INFO:tornado.access:200 GET /quiznum/id/qpqp22 (172.30.1.1) 5.69ms
+INFO:tornado.access:200 GET /start_player/qpqp22 (172.30.1.1) 4.02ms
+INFO:tornado.access:200 GET /finish_player/qpqp22 (172.30.1.1) 6.57ms
+ERROR:tornado.application:Uncaught exception GET /collect/qpqp22/call_code/286 (172.30.1.1)
+HTTPServerRequest(protocol='http', host='172.30.1.6:5000', method='GET', uri='/collect/qpqp22/call_code/286', version='HTTP/1.1', remote_ip='172.30.1.1', headers={'User-Agent': 'okhttp/3.3.0', 'Host': '172.30.1.6:5000', 'Accept-Encoding': 'gzip', 'Connection': 'Keep-Alive'})
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/web.py", line 1422, in _execute
+    result = self.prepare()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/web.py", line 2681, in prepare
+    self.fallback(self.request)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/wsgi.py", line 277, in __call__
+    WSGIContainer.environ(request), start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/_compat.py", line 32, in reraise
+    raise value.with_traceback(tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/_compat.py", line 32, in reraise
+    raise value.with_traceback(tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 477, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/views.py", line 84, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 587, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py", line 190, in get
+    db.session.commit()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/scoping.py", line 150, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 790, in commit
+    self.transaction.commit()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 392, in commit
+    self._prepare_impl()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 372, in _prepare_impl
+    self.session.flush()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 2004, in flush
+    self._flush(objects)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 2122, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/util/langhelpers.py", line 60, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/util/compat.py", line 182, in reraise
+    raise value
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 2086, in _flush
+    flush_context.execute()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/unitofwork.py", line 373, in execute
+    rec.execute(self)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/unitofwork.py", line 532, in execute
+    uow
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/persistence.py", line 149, in save_obj
+    base_mapper, states, uowtransaction
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/persistence.py", line 301, in _organize_states_for_save
+    state_str(existing)))
+sqlalchemy.orm.exc.FlushError: New instance <Inventory at 0x1044bc9e8> with identity key (<class 'app.models.Inventory'>, (11,)) conflicts with persistent instance <Inventory at 0x104908898>
+ERROR:tornado.access:500 GET /collect/qpqp22/call_code/286 (172.30.1.1) 38.30ms
+INFO:tornado.access:200 GET /check_player/qpqp22/question_code/286 (172.30.1.1) 6.94ms
+INFO:tornado.access:200 GET /start_player/qpqp22 (172.30.1.1) 4.15ms
+INFO:tornado.access:200 GET /finish_player/qpqp22 (172.30.1.1) 7.79ms
+ERROR:tornado.application:Uncaught exception GET /collect/qpqp22/call_code/286 (172.30.1.1)
+HTTPServerRequest(protocol='http', host='172.30.1.6:5000', method='GET', uri='/collect/qpqp22/call_code/286', version='HTTP/1.1', remote_ip='172.30.1.1', headers={'User-Agent': 'okhttp/3.3.0', 'Host': '172.30.1.6:5000', 'Accept-Encoding': 'gzip', 'Connection': 'Keep-Alive'})
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/web.py", line 1422, in _execute
+    result = self.prepare()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/web.py", line 2681, in prepare
+    self.fallback(self.request)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/wsgi.py", line 277, in __call__
+    WSGIContainer.environ(request), start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/_compat.py", line 32, in reraise
+    raise value.with_traceback(tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/_compat.py", line 32, in reraise
+    raise value.with_traceback(tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 477, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/views.py", line 84, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 587, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py", line 190, in get
+    db.session.commit()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/scoping.py", line 150, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 790, in commit
+    self.transaction.commit()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 392, in commit
+    self._prepare_impl()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 372, in _prepare_impl
+    self.session.flush()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 2004, in flush
+    self._flush(objects)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 2122, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/util/langhelpers.py", line 60, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/util/compat.py", line 182, in reraise
+    raise value
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 2086, in _flush
+    flush_context.execute()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/unitofwork.py", line 373, in execute
+    rec.execute(self)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/unitofwork.py", line 532, in execute
+    uow
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/persistence.py", line 149, in save_obj
+    base_mapper, states, uowtransaction
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/persistence.py", line 301, in _organize_states_for_save
+    state_str(existing)))
+sqlalchemy.orm.exc.FlushError: New instance <Inventory at 0x10494e668> with identity key (<class 'app.models.Inventory'>, (11,)) conflicts with persistent instance <Inventory at 0x10494e5c0>
+ERROR:tornado.access:500 GET /collect/qpqp22/call_code/286 (172.30.1.1) 25.76ms
+INFO:tornado.access:200 GET /check_player/qpqp22/question_code/286 (172.30.1.1) 5.23ms
+INFO:tornado.access:200 GET /finish_player/qpqp22 (172.30.1.1) 6.62ms
+INFO:tornado.access:200 GET /start_player/qpqp22 (172.30.1.1) 4.36ms
+INFO:tornado.access:200 GET /setting_language/qpqp22/language/0 (172.30.1.1) 6.46ms
+INFO:tornado.access:200 GET /notice/id/qpqp22 (172.30.1.1) 3.29ms
+INFO:tornado.access:200 GET /toptenregion/id/qpqp22 (172.30.1.1) 62.12ms
+INFO:tornado.access:200 GET /ranking/qpqp22 (172.30.1.1) 49.66ms
+INFO:tornado.access:200 GET /send_db/id/qpqp22 (172.30.1.1) 458.59ms
+INFO:tornado.access:200 GET /finish_player/qpqp22 (172.30.1.1) 8.16ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.access:200 GET /start_player/qpqp22 (172.30.1.1) 5.90ms
+INFO:tornado.access:200 GET /finish_player/qpqp22 (172.30.1.1) 8.54ms
+ERROR:tornado.application:Uncaught exception GET /collect/qpqp22/call_code/286 (172.30.1.1)
+HTTPServerRequest(protocol='http', host='172.30.1.6:5000', method='GET', uri='/collect/qpqp22/call_code/286', version='HTTP/1.1', remote_ip='172.30.1.1', headers={'Accept-Encoding': 'gzip', 'Host': '172.30.1.6:5000', 'User-Agent': 'okhttp/3.3.0', 'Connection': 'Keep-Alive'})
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/web.py", line 1422, in _execute
+    result = self.prepare()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/web.py", line 2681, in prepare
+    self.fallback(self.request)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/wsgi.py", line 277, in __call__
+    WSGIContainer.environ(request), start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/_compat.py", line 32, in reraise
+    raise value.with_traceback(tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/_compat.py", line 32, in reraise
+    raise value.with_traceback(tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 477, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/views.py", line 84, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 587, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py", line 192, in get
+    db.session.commit()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/scoping.py", line 150, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 790, in commit
+    self.transaction.commit()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 392, in commit
+    self._prepare_impl()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 372, in _prepare_impl
+    self.session.flush()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 2004, in flush
+    self._flush(objects)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 2122, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/util/langhelpers.py", line 60, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/util/compat.py", line 182, in reraise
+    raise value
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 2086, in _flush
+    flush_context.execute()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/unitofwork.py", line 373, in execute
+    rec.execute(self)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/unitofwork.py", line 532, in execute
+    uow
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/persistence.py", line 149, in save_obj
+    base_mapper, states, uowtransaction
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/persistence.py", line 301, in _organize_states_for_save
+    state_str(existing)))
+sqlalchemy.orm.exc.FlushError: New instance <Inventory at 0x1045c8978> with identity key (<class 'app.models.Inventory'>, (11,)) conflicts with persistent instance <Inventory at 0x103d748d0>
+ERROR:tornado.access:500 GET /collect/qpqp22/call_code/286 (172.30.1.1) 68.94ms
+INFO:tornado.access:200 GET /check_player/qpqp22/question_code/286 (172.30.1.1) 4.94ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.access:200 GET /start_player/qpqp22 (172.30.1.1) 5.52ms
+INFO:tornado.access:200 GET /finish_player/qpqp22 (172.30.1.1) 6.87ms
+ERROR:tornado.application:Uncaught exception GET /collect/qpqp22/call_code/286 (172.30.1.1)
+HTTPServerRequest(protocol='http', host='172.30.1.6:5000', method='GET', uri='/collect/qpqp22/call_code/286', version='HTTP/1.1', remote_ip='172.30.1.1', headers={'User-Agent': 'okhttp/3.3.0', 'Connection': 'Keep-Alive', 'Host': '172.30.1.6:5000', 'Accept-Encoding': 'gzip'})
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/web.py", line 1422, in _execute
+    result = self.prepare()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/web.py", line 2681, in prepare
+    self.fallback(self.request)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/wsgi.py", line 277, in __call__
+    WSGIContainer.environ(request), start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/_compat.py", line 32, in reraise
+    raise value.with_traceback(tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/_compat.py", line 32, in reraise
+    raise value.with_traceback(tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 477, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/views.py", line 84, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 587, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py", line 193, in get
+    db.session.commit()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/scoping.py", line 150, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 790, in commit
+    self.transaction.commit()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 392, in commit
+    self._prepare_impl()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 372, in _prepare_impl
+    self.session.flush()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 2004, in flush
+    self._flush(objects)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 2122, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/util/langhelpers.py", line 60, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/util/compat.py", line 182, in reraise
+    raise value
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 2086, in _flush
+    flush_context.execute()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/unitofwork.py", line 373, in execute
+    rec.execute(self)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/unitofwork.py", line 532, in execute
+    uow
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/persistence.py", line 149, in save_obj
+    base_mapper, states, uowtransaction
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/persistence.py", line 301, in _organize_states_for_save
+    state_str(existing)))
+sqlalchemy.orm.exc.FlushError: New instance <Inventory at 0x1046d94e0> with identity key (<class 'app.models.Inventory'>, (11,)) conflicts with persistent instance <Inventory at 0x1046f1fd0>
+ERROR:tornado.access:500 GET /collect/qpqp22/call_code/286 (172.30.1.1) 39.27ms
+INFO:tornado.access:200 GET /check_player/qpqp22/question_code/286 (172.30.1.1) 4.79ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.access:200 GET /quiznum/id/qpqp22 (172.30.1.1) 5.70ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.access:200 GET /start_player/qpqp22 (172.30.1.1) 4.20ms
+INFO:tornado.access:200 GET /finish_player/qpqp22 (172.30.1.1) 8.34ms
+ERROR:tornado.application:Uncaught exception GET /collect/qpqp22/call_code/286 (172.30.1.1)
+HTTPServerRequest(protocol='http', host='172.30.1.6:5000', method='GET', uri='/collect/qpqp22/call_code/286', version='HTTP/1.1', remote_ip='172.30.1.1', headers={'Host': '172.30.1.6:5000', 'User-Agent': 'okhttp/3.3.0', 'Accept-Encoding': 'gzip', 'Connection': 'Keep-Alive'})
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/web.py", line 1422, in _execute
+    result = self.prepare()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/web.py", line 2681, in prepare
+    self.fallback(self.request)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/wsgi.py", line 277, in __call__
+    WSGIContainer.environ(request), start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/_compat.py", line 32, in reraise
+    raise value.with_traceback(tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/_compat.py", line 32, in reraise
+    raise value.with_traceback(tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 477, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/views.py", line 84, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 587, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py", line 188, in get
+    db.session.commit()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/scoping.py", line 150, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 790, in commit
+    self.transaction.commit()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 392, in commit
+    self._prepare_impl()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 372, in _prepare_impl
+    self.session.flush()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 2004, in flush
+    self._flush(objects)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 2122, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/util/langhelpers.py", line 60, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/util/compat.py", line 182, in reraise
+    raise value
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 2086, in _flush
+    flush_context.execute()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/unitofwork.py", line 373, in execute
+    rec.execute(self)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/unitofwork.py", line 532, in execute
+    uow
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/persistence.py", line 149, in save_obj
+    base_mapper, states, uowtransaction
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/persistence.py", line 301, in _organize_states_for_save
+    state_str(existing)))
+sqlalchemy.orm.exc.FlushError: New instance <Inventory at 0x1046a00b8> with identity key (<class 'app.models.Inventory'>, (11,)) conflicts with persistent instance <Inventory at 0x10465cc50>
+ERROR:tornado.access:500 GET /collect/qpqp22/call_code/286 (172.30.1.1) 52.56ms
+INFO:tornado.access:200 GET /check_player/qpqp22/question_code/286 (172.30.1.1) 5.04ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+WARNING:tornado.access:404 GET /collect/qpqp22/call_code/286) (127.0.0.1) 21.41ms
+WARNING:tornado.access:404 GET /favicon.ico (127.0.0.1) 1.12ms
+ERROR:tornado.application:Uncaught exception GET /collect/qpqp22/call_code/286 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='localhost:5000', method='GET', uri='/collect/qpqp22/call_code/286', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Host': 'localhost:5000', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36', 'Accept-Encoding': 'gzip, deflate, br', 'Accept-Language': 'ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7,ja;q=0.6', 'Upgrade-Insecure-Requests': '1', 'Connection': 'keep-alive', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'})
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/web.py", line 1422, in _execute
+    result = self.prepare()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/web.py", line 2681, in prepare
+    self.fallback(self.request)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/wsgi.py", line 277, in __call__
+    WSGIContainer.environ(request), start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/_compat.py", line 32, in reraise
+    raise value.with_traceback(tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/_compat.py", line 32, in reraise
+    raise value.with_traceback(tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 477, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/views.py", line 84, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 587, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py", line 189, in get
+    db.session.commit()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/scoping.py", line 150, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 790, in commit
+    self.transaction.commit()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 392, in commit
+    self._prepare_impl()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 372, in _prepare_impl
+    self.session.flush()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 2004, in flush
+    self._flush(objects)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 2122, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/util/langhelpers.py", line 60, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/util/compat.py", line 182, in reraise
+    raise value
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 2086, in _flush
+    flush_context.execute()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/unitofwork.py", line 373, in execute
+    rec.execute(self)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/unitofwork.py", line 532, in execute
+    uow
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/persistence.py", line 149, in save_obj
+    base_mapper, states, uowtransaction
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/persistence.py", line 301, in _organize_states_for_save
+    state_str(existing)))
+sqlalchemy.orm.exc.FlushError: New instance <Inventory at 0x10472fe80> with identity key (<class 'app.models.Inventory'>, (11,)) conflicts with persistent instance <Inventory at 0x10466ac88>
+ERROR:tornado.access:500 GET /collect/qpqp22/call_code/286 (127.0.0.1) 36.91ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+ERROR:tornado.application:Uncaught exception GET /collect/qpqp22/call_code/286 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='localhost:5000', method='GET', uri='/collect/qpqp22/call_code/286', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36', 'Cache-Control': 'max-age=0', 'Accept-Language': 'ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7,ja;q=0.6', 'Connection': 'keep-alive', 'Accept-Encoding': 'gzip, deflate, br', 'Host': 'localhost:5000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8', 'Upgrade-Insecure-Requests': '1'})
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/web.py", line 1422, in _execute
+    result = self.prepare()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/web.py", line 2681, in prepare
+    self.fallback(self.request)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/wsgi.py", line 277, in __call__
+    WSGIContainer.environ(request), start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/_compat.py", line 32, in reraise
+    raise value.with_traceback(tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/_compat.py", line 32, in reraise
+    raise value.with_traceback(tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 477, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/views.py", line 84, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 587, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py", line 190, in get
+    db.session.commit()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/scoping.py", line 150, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 790, in commit
+    self.transaction.commit()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 392, in commit
+    self._prepare_impl()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 372, in _prepare_impl
+    self.session.flush()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 2004, in flush
+    self._flush(objects)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 2122, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/util/langhelpers.py", line 60, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/util/compat.py", line 182, in reraise
+    raise value
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 2086, in _flush
+    flush_context.execute()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/unitofwork.py", line 373, in execute
+    rec.execute(self)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/unitofwork.py", line 532, in execute
+    uow
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/persistence.py", line 149, in save_obj
+    base_mapper, states, uowtransaction
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/persistence.py", line 301, in _organize_states_for_save
+    state_str(existing)))
+sqlalchemy.orm.exc.FlushError: New instance <Inventory at 0x104699198> with identity key (<class 'app.models.Inventory'>, (11,)) conflicts with persistent instance <Inventory at 0x1046a0160>
+ERROR:tornado.access:500 GET /collect/qpqp22/call_code/286 (127.0.0.1) 27.05ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+ERROR:tornado.application:Uncaught exception GET /collect/qpqp22/call_code/286 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='localhost:5000', method='GET', uri='/collect/qpqp22/call_code/286', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Encoding': 'gzip, deflate, br', 'Cache-Control': 'max-age=0', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8', 'Connection': 'keep-alive', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36', 'Host': 'localhost:5000', 'Upgrade-Insecure-Requests': '1', 'Accept-Language': 'ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7,ja;q=0.6'})
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/web.py", line 1422, in _execute
+    result = self.prepare()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/web.py", line 2681, in prepare
+    self.fallback(self.request)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/wsgi.py", line 277, in __call__
+    WSGIContainer.environ(request), start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/_compat.py", line 32, in reraise
+    raise value.with_traceback(tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/_compat.py", line 32, in reraise
+    raise value.with_traceback(tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 477, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/views.py", line 84, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 587, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py", line 190, in get
+    db.session.commit()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/scoping.py", line 150, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 790, in commit
+    self.transaction.commit()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 392, in commit
+    self._prepare_impl()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 372, in _prepare_impl
+    self.session.flush()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 2004, in flush
+    self._flush(objects)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 2122, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/util/langhelpers.py", line 60, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/util/compat.py", line 182, in reraise
+    raise value
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 2086, in _flush
+    flush_context.execute()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/unitofwork.py", line 373, in execute
+    rec.execute(self)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/unitofwork.py", line 532, in execute
+    uow
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/persistence.py", line 149, in save_obj
+    base_mapper, states, uowtransaction
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/persistence.py", line 301, in _organize_states_for_save
+    state_str(existing)))
+sqlalchemy.orm.exc.FlushError: New instance <Inventory at 0x1045fdf60> with identity key (<class 'app.models.Inventory'>, (11,)) conflicts with persistent instance <Inventory at 0x1045c6080>
+ERROR:tornado.access:500 GET /collect/qpqp22/call_code/286 (127.0.0.1) 34.65ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+ERROR:tornado.application:Uncaught exception GET /collect/qpqp22/call_code/286 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='localhost:5000', method='GET', uri='/collect/qpqp22/call_code/286', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Connection': 'keep-alive', 'Accept-Encoding': 'gzip, deflate, br', 'Host': 'localhost:5000', 'Upgrade-Insecure-Requests': '1', 'Accept-Language': 'ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7,ja;q=0.6', 'Cache-Control': 'max-age=0', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36'})
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/web.py", line 1422, in _execute
+    result = self.prepare()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/web.py", line 2681, in prepare
+    self.fallback(self.request)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/wsgi.py", line 277, in __call__
+    WSGIContainer.environ(request), start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/_compat.py", line 32, in reraise
+    raise value.with_traceback(tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/_compat.py", line 32, in reraise
+    raise value.with_traceback(tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 477, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/views.py", line 84, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 587, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py", line 154, in get
+    inven_id.appen(i.id)
+AttributeError: 'list' object has no attribute 'appen'
+ERROR:tornado.access:500 GET /collect/qpqp22/call_code/286 (127.0.0.1) 26.44ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+ERROR:tornado.application:Uncaught exception GET /collect/qpqp22/call_code/286 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='localhost:5000', method='GET', uri='/collect/qpqp22/call_code/286', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Host': 'localhost:5000', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36', 'Connection': 'keep-alive', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8', 'Accept-Encoding': 'gzip, deflate, br', 'Accept-Language': 'ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7,ja;q=0.6', 'Upgrade-Insecure-Requests': '1', 'Cache-Control': 'max-age=0'})
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/web.py", line 1422, in _execute
+    result = self.prepare()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/web.py", line 2681, in prepare
+    self.fallback(self.request)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/wsgi.py", line 277, in __call__
+    WSGIContainer.environ(request), start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/_compat.py", line 32, in reraise
+    raise value.with_traceback(tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/_compat.py", line 32, in reraise
+    raise value.with_traceback(tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 477, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/views.py", line 84, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 587, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py", line 193, in get
+    db.session.commit()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/scoping.py", line 150, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 790, in commit
+    self.transaction.commit()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 392, in commit
+    self._prepare_impl()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 372, in _prepare_impl
+    self.session.flush()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 2004, in flush
+    self._flush(objects)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 2122, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/util/langhelpers.py", line 60, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/util/compat.py", line 182, in reraise
+    raise value
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/session.py", line 2086, in _flush
+    flush_context.execute()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/unitofwork.py", line 373, in execute
+    rec.execute(self)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/unitofwork.py", line 532, in execute
+    uow
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/persistence.py", line 149, in save_obj
+    base_mapper, states, uowtransaction
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sqlalchemy/orm/persistence.py", line 301, in _organize_states_for_save
+    state_str(existing)))
+sqlalchemy.orm.exc.FlushError: New instance <Inventory at 0x1046f8b00> with identity key (<class 'app.models.Inventory'>, (11,)) conflicts with persistent instance <Inventory at 0x1046ffda0>
+ERROR:tornado.access:500 GET /collect/qpqp22/call_code/286 (127.0.0.1) 33.96ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+ERROR:tornado.application:Uncaught exception GET /collect/qpqp22/call_code/286 (127.0.0.1)
+HTTPServerRequest(protocol='http', host='localhost:5000', method='GET', uri='/collect/qpqp22/call_code/286', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8', 'Accept-Encoding': 'gzip, deflate, br', 'Connection': 'keep-alive', 'Host': 'localhost:5000', 'Cache-Control': 'max-age=0', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36', 'Accept-Language': 'ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7,ja;q=0.6', 'Upgrade-Insecure-Requests': '1'})
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/web.py", line 1422, in _execute
+    result = self.prepare()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/web.py", line 2681, in prepare
+    self.fallback(self.request)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/wsgi.py", line 277, in __call__
+    WSGIContainer.environ(request), start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/_compat.py", line 32, in reraise
+    raise value.with_traceback(tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 271, in error_router
+    return original_handler(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/_compat.py", line 32, in reraise
+    raise value.with_traceback(tb)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 477, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask/views.py", line 84, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/flask_restful/__init__.py", line 587, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py", line 189, in get
+    temp_inven=Inventory(id=inven_index+1, player_code=player_id, question_code=question_code, status='start')
+TypeError: can only concatenate list (not "int") to list
+ERROR:tornado.access:500 GET /collect/qpqp22/call_code/286 (127.0.0.1) 26.40ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.access:200 GET /collect/qpqp22/call_code/286 (127.0.0.1) 34.04ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.access:200 GET /collect/qpqp22/call_code/286 (127.0.0.1) 15.60ms
+INFO:tornado.access:200 GET /collect/qpqp22/call_code/286 (127.0.0.1) 19.55ms
+INFO:tornado.access:200 GET /collect/qpqp22/call_code/286 (127.0.0.1) 35.10ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.access:200 GET /players/qpqp22/password/qpqp22@@ (172.30.1.1) 9.24ms
+INFO:tornado.access:200 GET /startgame/id/qpqp22 (172.30.1.1) 5.98ms
+INFO:tornado.access:200 GET /finish_player/qpqp22 (172.30.1.1) 9.13ms
+INFO:tornado.access:200 GET /setting_language/qpqp22/language/0 (172.30.1.1) 5.69ms
+INFO:tornado.access:200 GET /toptenregion/id/qpqp22 (172.30.1.1) 61.62ms
+INFO:tornado.access:200 GET /start_player/qpqp22 (172.30.1.1) 5.35ms
+INFO:tornado.access:200 GET /finish_player/qpqp22 (172.30.1.1) 8.45ms
+INFO:tornado.access:200 GET /notice/id/qpqp22 (172.30.1.1) 5.45ms
+INFO:tornado.access:200 GET /ranking/qpqp22 (172.30.1.1) 34.09ms
+INFO:tornado.access:200 GET /send_db/id/qpqp22 (172.30.1.1) 430.55ms
+INFO:tornado.access:200 GET /start_player/qpqp22 (172.30.1.1) 3.83ms
+INFO:tornado.access:200 GET /finish_player/qpqp22 (172.30.1.1) 6.81ms
+INFO:tornado.access:200 GET /collect/qpqp22/call_code/286 (172.30.1.1) 31.15ms
+INFO:tornado.access:200 GET /check_player/qpqp22/question_code/286 (172.30.1.1) 12.47ms
+INFO:tornado.access:200 GET /finish_player/qpqp22 (172.30.1.1) 9.38ms
+INFO:tornado.access:200 GET /setting_language/qpqp22/language/0 (172.30.1.1) 4.61ms
+INFO:tornado.access:200 GET /toptenregion/id/qpqp22 (172.30.1.1) 41.54ms
+INFO:tornado.access:200 GET /notice/id/qpqp22 (172.30.1.1) 4.17ms
+INFO:tornado.access:200 GET /finish_player/qpqp22 (172.30.1.1) 9.65ms
+INFO:tornado.access:200 GET /ranking/qpqp22 (172.30.1.1) 37.62ms
+INFO:tornado.access:200 GET /start_player/qpqp22 (172.30.1.1) 18.18ms
+INFO:tornado.access:200 GET /send_db/id/qpqp22 (172.30.1.1) 507.42ms
+INFO:tornado.access:200 GET /start_player/qpqp22 (172.30.1.1) 44.05ms
+INFO:tornado.access:200 GET /finish_player/qpqp22 (172.30.1.1) 7.21ms
+INFO:tornado.general:/Users/HwiRiRic/Documents/seoulhang_server/seoulhang_server/app/apis.py modified; restarting server
+INFO:tornado.access:200 GET /collect/qpqp22/call_code/285 (172.30.1.1) 34.00ms
+INFO:tornado.access:200 GET /check_player/qpqp22/question_code/285 (172.30.1.1) 11.71ms
+INFO:tornado.access:200 GET /finish_player/qpqp22 (172.30.1.1) 9.35ms
+INFO:tornado.access:200 GET /setting_language/qpqp22/language/0 (172.30.1.1) 5.20ms
+INFO:tornado.access:200 GET /notice/id/qpqp22 (172.30.1.1) 10.08ms
+INFO:tornado.access:200 GET /toptenregion/id/qpqp22 (172.30.1.1) 117.34ms
+INFO:tornado.access:200 GET /start_player/qpqp22 (172.30.1.1) 20.99ms
+INFO:tornado.access:200 GET /finish_player/qpqp22 (172.30.1.1) 16.84ms
+INFO:tornado.access:200 GET /ranking/qpqp22 (172.30.1.1) 60.98ms
+INFO:tornado.access:200 GET /send_db/id/qpqp22 (172.30.1.1) 472.43ms
+INFO:tornado.access:200 GET /start_player/qpqp22 (172.30.1.1) 16.60ms
+INFO:tornado.access:200 GET /finish_player/qpqp22 (172.30.1.1) 8.37ms
